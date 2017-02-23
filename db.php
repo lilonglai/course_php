@@ -6,7 +6,7 @@
  * Time: 21:14
  */
 
-class PDOBaseOperation{
+abstract class PDOBaseOperation{
     const USERNAME="root";
     const PASSWORD="";
     const HOST="localhost";
@@ -33,6 +33,28 @@ class PDOBaseOperation{
         return $result;
     }
 
+    public function get($key){
+        $sql = "select * from " . $this->getTableName() ." where id = $key";
+        $list = $this->executeSql($sql);
+        $result = null;
+        if($list != null){
+            $result = $list[0];
+        }
+        return $result;
+    }
+
+    public abstract function getTableName();
+
+    public function getAll(){
+        $sql = "select * from " . $this->getTableName();
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function delete($key){
+        $sql = "delete from " . $this->getTableName() . " where id =:$key";
+        $this->executeUpdateSql($sql);
+    }
 }
 
 class PDOFirstCourseOperation extends PDOBaseOperation{
@@ -52,6 +74,10 @@ class PDOFirstCourseOperation extends PDOBaseOperation{
     public function  update($firstCourse){
         $sql = "update " . self::TABLENAME . " set grade=$firstCourse[grade], name='$firstCourse[name]', shortname= '$firstCourse[shortname]', description='$firstCourse[description]' where id=$firstCourse[id]";
         $this->executeUpdateSql($sql);
+    }
+
+    public function getTableName(){
+        return self::TABLENAME;
     }
 
 }
@@ -94,6 +120,10 @@ class PDOSecondCourseOperation extends PDOBaseOperation {
     public function  update($secondCourse){
         $sql = "update " . self::TABLENAME . " set name='$secondCourse[name]', shortname= '$secondCourse[shortname]', firstcourseid=$secondCourse[firstcourseid], description='$secondCourse[description]' where id=$secondCourse[id]";
         $this->executeUpdateSql($sql);
+    }
+
+    public function getTableName(){
+        return self::TABLENAME;
     }
 }
 
@@ -164,8 +194,13 @@ class PDOStudentOperation extends PDOBaseOperation {
         $sql = "update " . self::TABLENAME . " set isalive=false where id=$key";
         $this->executeUpdateSql($sql);
     }
+
+    public function getTableName(){
+        return self::TABLENAME;
+    }
 }
 
+/*
 $test = new PDOStudentOperation();
 $test->getAlive();
 $test->getNotAlive();
@@ -191,3 +226,175 @@ $student['description'] = "this is the test";
 $student['description'] = "this is the test4";
 $student['id'] = 94;
 $test->update($student);
+*/
+
+class PDOTeacherOperation extends PDOBaseOperation {
+    const TABLENAME = "teacher";
+    public function getByName($name){
+        $sql = "select * from ". self::TABLENAME . " where name = '$name'";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getByShortName($shortName){
+        $sql = "select * from ". self::TABLENAME . " where shortname = '$shortName'";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getAlive(){
+        $sql = "select * from ". self::TABLENAME . " where isalive = true";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getNotAlive(){
+        $sql = "select * from ". self::TABLENAME . " where isalive = false";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getByCondition($teacher){
+        $sql = "select * from " . self::TABLENAME . " where ";
+        $andFlag = false;
+        if($teacher['name'] != null){
+            $sql = $sql . " name='$teacher[name]' ";
+            $andFlag=true;
+        }
+
+        if($teacher['shortname'] != null){
+            $sql = $sql . ($andFlag? "and":"");
+            $sql = $sql . " shortname='$teacher[shortname]' ";
+            $andFlag=true;
+        }
+
+        if($teacher['phone'] != null){
+            $sql = $sql . ($andFlag? "and":"");
+            $sql = $sql . " phone='$teacher[phone]' ";
+            $andFlag=true;
+        }
+
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function add($teacher){
+        $sql = "insert into " . self::TABLENAME . "(name,shortname,phone,ismaster) values(
+        '$teacher[name]', '$teacher[shortname]', '$teacher[phone]', $teacher[ismaster])";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function update($teacher){
+        $sql = "update " . self::TABLENAME . " set name='$teacher[name]', shortname='$teacher[shortname]', phone='$teacher[phone]', ismaster=$teacher[ismaster] 
+        where id=$teacher[id]";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function retire($key){
+        $sql = "update " . self::TABLENAME . " set isalive=false where id=$key";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function getTableName(){
+        return self::TABLENAME;
+    }
+}
+
+/*
+$test = new PDOTeacherOperation();
+$test->get(1);
+
+$test->getByName("test");
+
+$test->getByShortName("test");
+
+$test->getAll();
+
+$test->getAlive();
+
+$test->getNotAlive();
+
+$teacher = array();
+$teacher['name'] = 'test';
+$test->getByCondition($teacher);
+
+$teacher['name'] = "test";
+$teacher['shortname'] = "test";
+$teacher['ismaster'] = true;
+$teacher['phone'] = "15221002264";
+//$test->add($teacher);
+$teacher['id'] = 37;
+$teacher['ismaster'] = 'false';
+$test->update($teacher);
+*/
+
+class PDOTeacherAbilityOperation extends PDOBaseOperation {
+    const TABLENAME = "teacherability";
+    public function getAll(){
+        $sql = "select teacherability.* from " . PDOFirstCourseOperation::TABLENAME ." firstcourse, " . self::TABLENAME . " teacherability"
+            . " where firstcourse.id=teacherability.courseid"
+            . " order by firstcourse.grade";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getByTeacherId($teacherId){
+        $sql = "select teacherability.* from " . PDOFirstCourseOperation::TABLENAME ." firstcourse, " . self::TABLENAME . " teacherability"
+            . " where firstcourse.id=teacherability.courseid and teacherability.teacherid = $teacherId"
+            . " order by firstcourse.grade";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getByCourseId($courseId){
+        $sql = "select teacherability.* from " . PDOFirstCourseOperation::TABLENAME ." firstcourse, " . self::TABLENAME . " teacherability"
+            . " where firstcourse.id=teacherability.courseid and teacherability.courseid = $courseId"
+            . " order by firstcourse.grade";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function add($teacherAbility){
+        $sql = "insert into " . self::TABLENAME . "(teacherid,courseid) values(
+        $teacherAbility[teacherid], $teacherAbility[courseid])";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function update($teacherAbility){
+        $sql = "update " . self::TABLENAME . " set teacherid=$teacherAbility[teacherid], courseid=$teacherAbility[courseid]
+        where id=$teacherAbility[id]";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function deleteByTeacherId($teacherId){
+        $sql = "delete from " . self::TABLENAME . " where teacherid = $teacherId";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function deleteByTeacherAndGrade($teacherId,$grade){
+        $sql = "delete t from " .  self::TABLENAME . " t where t.teacherid = $teacherId and t.courseid in(select c.id from " . PDOFirstCourseOperation::TABLENAME . " c where c.grade = $grade)";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function getTableName(){
+        return self::TABLENAME;
+    }
+}
+
+$test = new PDOTeacherAbilityOperation();
+$test->get(1);
+
+$test->getAll(1);
+
+$test->getByTeacherId(1);
+
+$test->getByCourseId(1);
+
+$test->deleteByTeacherId(1);
+
+$test->deleteByTeacherAndGrade(1,1);
+
+$teacherAbility = array();
+$teacherAbility['teacherid'] = 25;
+$teacherAbility['courseid'] = 25;
+$test->add($teacherAbility);
