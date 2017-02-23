@@ -45,6 +45,10 @@ abstract class PDOBaseOperation{
 
     public abstract function getTableName();
 
+    public function bool2String($value){
+        return $value ? 'true' : 'false';
+    }
+
     public function getAll(){
         $sql = "select * from " . $this->getTableName();
         $result = $this->executeSql($sql);
@@ -279,12 +283,14 @@ class PDOTeacherOperation extends PDOBaseOperation {
     }
 
     public function add($teacher){
+        $teacher['ismaster'] = $this->bool2String($teacher['ismaster']);
         $sql = "insert into " . self::TABLENAME . "(name,shortname,phone,ismaster) values(
         '$teacher[name]', '$teacher[shortname]', '$teacher[phone]', $teacher[ismaster])";
         $this->executeUpdateSql($sql);
     }
 
     public function update($teacher){
+        $teacher['ismaster'] = $this->bool2String($teacher['ismaster']);
         $sql = "update " . self::TABLENAME . " set name='$teacher[name]', shortname='$teacher[shortname]', phone='$teacher[phone]', ismaster=$teacher[ismaster] 
         where id=$teacher[id]";
         $this->executeUpdateSql($sql);
@@ -381,6 +387,7 @@ class PDOTeacherAbilityOperation extends PDOBaseOperation {
     }
 }
 
+/*
 $test = new PDOTeacherAbilityOperation();
 $test->get(1);
 
@@ -398,3 +405,137 @@ $teacherAbility = array();
 $teacherAbility['teacherid'] = 25;
 $teacherAbility['courseid'] = 25;
 $test->add($teacherAbility);
+*/
+
+class PDOTeacherDefaultHolidayOperation extends PDOBaseOperation {
+    const TABLENAME = "teacherdefaultholiday";
+
+    public function getByTeacherId($teacherId){
+        $sql = "select * from " . self::TABLENAME . " where teacherid = $teacherId";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function add($teacherDefaultHoliday){
+        $teacherDefaultHoliday['week1'] = $this->bool2String($teacherDefaultHoliday['week1']);
+        $teacherDefaultHoliday['week2'] = $this->bool2String($teacherDefaultHoliday['week2']);
+        $teacherDefaultHoliday['week3'] = $this->bool2String($teacherDefaultHoliday['week3']);
+        $teacherDefaultHoliday['week4'] = $this->bool2String($teacherDefaultHoliday['week4']);
+        $teacherDefaultHoliday['week5'] = $this->bool2String($teacherDefaultHoliday['week5']);
+        $teacherDefaultHoliday['week6'] = $this->bool2String($teacherDefaultHoliday['week6']);
+        $teacherDefaultHoliday['week7'] = $this->bool2String($teacherDefaultHoliday['week7']);
+
+        $sql = "insert into " . self::TABLENAME . "(teacherid,week1,week2,week3,week4,week5,week6,week7) values(
+        $teacherDefaultHoliday[teacherid], 
+        $teacherDefaultHoliday[week1], $teacherDefaultHoliday[week2], $teacherDefaultHoliday[week3], 
+        $teacherDefaultHoliday[week4], $teacherDefaultHoliday[week5], $teacherDefaultHoliday[week6], $teacherDefaultHoliday[week7])";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function update($teacherDefaultHoliday){
+        $teacherDefaultHoliday['week1'] = $this->bool2String($teacherDefaultHoliday['week1']);
+        $teacherDefaultHoliday['week2'] = $this->bool2String($teacherDefaultHoliday['week2']);
+        $teacherDefaultHoliday['week3'] = $this->bool2String($teacherDefaultHoliday['week3']);
+        $teacherDefaultHoliday['week4'] = $this->bool2String($teacherDefaultHoliday['week4']);
+        $teacherDefaultHoliday['week5'] = $this->bool2String($teacherDefaultHoliday['week5']);
+        $teacherDefaultHoliday['week6'] = $this->bool2String($teacherDefaultHoliday['week6']);
+        $teacherDefaultHoliday['week7'] = $this->bool2String($teacherDefaultHoliday['week7']);
+
+        $sql = "update " . self::TABLENAME . " set teacherid=$teacherDefaultHoliday[teacherid], week1=$teacherDefaultHoliday[week1], week2=$teacherDefaultHoliday[week2], 
+        week3=$teacherDefaultHoliday[week3], week4=$teacherDefaultHoliday[week4], week5=$teacherDefaultHoliday[week5], week6=$teacherDefaultHoliday[week6], week7=$teacherDefaultHoliday[week7]
+        where id=$teacherDefaultHoliday[id]";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function deleteByTeacherId($teacherId){
+        $sql = "delete from " . self::TABLENAME . " where teacherid = $teacherId";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function getTableName(){
+        return self::TABLENAME;
+    }
+}
+
+/*
+$test = new PDOTeacherDefaultHolidayOperation();
+$test->get(1);
+
+$test->getByTeacherId(1);
+
+$test->getAll();
+
+$test->deleteByTeacherId(1);
+
+$teacherDefaultHoliday = array();
+$teacherDefaultHoliday['teacherid'] = 2;
+$teacherDefaultHoliday['week1'] = true;
+$teacherDefaultHoliday['week4'] = true;
+$test->add($teacherDefaultHoliday);
+
+$list = $test->getAll();
+foreach ( $list as $teacherDefaultHoliday){
+    if($teacherDefaultHoliday['teacherid'] == 2){
+        $teacherDefaultHoliday['week3'] = true;
+        $teacherDefaultHoliday['week6'] = true;
+        $test->update($teacherDefaultHoliday);
+    }
+}
+*/
+
+class PDOTeacherHolidayOperation extends PDOBaseOperation {
+    const TABLENAME = "teacherholiday";
+    public function getTableName(){
+        return self::TABLENAME;
+    }
+
+    public function getByTeacherId($teacherId){
+        $sql = "select * from " . self::TABLENAME . " where teacherid = $teacherId";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getByTeacherAndDate($teacherId, $adjustDate){
+        $sql = "select * from " . self::TABLENAME . " where teacherid = $teacherId and adjustdate='$adjustDate'";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function add($teacherHoliday){
+        $teacherHoliday['isholiday'] = $this->bool2String($teacherHoliday['isholiday']);
+        $sql = "insert into " . self::TABLENAME . "(teacherid,adjustdate,isholiday) values(" .
+        "$teacherHoliday[teacherid], '$teacherHoliday[adjustdate]', $teacherHoliday[isholiday])";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function update($teacherHoliday){
+        $teacherHoliday['isholiday'] = $this->bool2String($teacherHoliday['isholiday']);
+        $sql = "update " . self::TABLENAME . " set teacherid=$teacherHoliday[teacherid], adjustdate='$teacherHoliday[adjustdate]', isholiday=$teacherHoliday[isholiday] " .
+            "where id = $teacherHoliday[id]";
+        $this->executeUpdateSql($sql);
+    }
+}
+
+/*
+$test = new PDOTeacherHolidayOperation();
+$test->get(2);
+$test->getAll();
+$test->getByTeacherId(2);
+$test->getByTeacherAndDate(2, "1989-7-21");
+
+$teacherHoliday = array();
+$teacherHoliday['teacherid'] = 2;
+$teacherHoliday['adjustdate'] = "1989-07-23";
+$teacherHoliday['isholiday'] = true;
+$test->add($teacherHoliday);
+
+$list = $test->getAll();
+foreach ( $list as $teacherHoliday){
+    if($teacherHoliday['teacherid'] == 2){
+        $teacherHoliday['adjustdate'] = "1985-06-20";
+        $teacherHoliday['isholiday'] = false;
+        $test->update($teacherHoliday);
+    }
+}
+
+*/
