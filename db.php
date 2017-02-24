@@ -43,6 +43,12 @@ abstract class PDOBaseOperation{
         return $result;
     }
 
+    public function mysql_insert_id(){
+        $sql = "select last_insert_id()";
+        $list = $this->executeSql($sql);
+        return $list[0][0];
+    }
+
     public abstract function getTableName();
 
     public function bool2String($value){
@@ -287,6 +293,7 @@ class PDOTeacherOperation extends PDOBaseOperation {
         $sql = "insert into " . self::TABLENAME . "(name,shortname,phone,ismaster) values(
         '$teacher[name]', '$teacher[shortname]', '$teacher[phone]', $teacher[ismaster])";
         $this->executeUpdateSql($sql);
+        $teacher['id'] = $this->mysql_insert_id();
     }
 
     public function update($teacher){
@@ -328,7 +335,7 @@ $teacher['name'] = "test";
 $teacher['shortname'] = "test";
 $teacher['ismaster'] = true;
 $teacher['phone'] = "15221002264";
-//$test->add($teacher);
+$test->add($teacher);
 $teacher['id'] = 37;
 $teacher['ismaster'] = 'false';
 $test->update($teacher);
@@ -430,6 +437,7 @@ class PDOTeacherDefaultHolidayOperation extends PDOBaseOperation {
         $teacherDefaultHoliday[week1], $teacherDefaultHoliday[week2], $teacherDefaultHoliday[week3], 
         $teacherDefaultHoliday[week4], $teacherDefaultHoliday[week5], $teacherDefaultHoliday[week6], $teacherDefaultHoliday[week7])";
         $this->executeUpdateSql($sql);
+        $teacherDefaultHoliday['id'] = $this->mysql_insert_id();
     }
 
     public function update($teacherDefaultHoliday){

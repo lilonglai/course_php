@@ -25,7 +25,7 @@
         }
 
         function addTeacher() {
-            $("#teacherForm").attr("action","teacherAdd.html");
+            $("#teacherForm").attr("action","teacherAdd.php");
             $("#teacherForm").submit();
         }
 
@@ -57,9 +57,9 @@ if($status == null){
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="./course.html">课程信息</a></li>
-                <li><a href="./teacher.html">老师信息</a></li>
-                <li><a href="./student.html">学生信息</a></li>
+                <li><a href="./course.php">课程信息</a></li>
+                <li><a href="./teacher.php">老师信息</a></li>
+                <li><a href="./student.php">学生信息</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
