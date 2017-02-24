@@ -591,6 +591,7 @@ class PDOScheduleOperation extends PDOBaseOperation {
     }
 }
 
+/*
 $test = new PDOScheduleOperation();
 $test->get(1);
 
@@ -615,3 +616,4 @@ $test->add($schedule);
 $schedule['ontime'] = 2;
 $schedule['id'] = 1;
 $test->update($schedule);
+*/

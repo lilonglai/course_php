@@ -44,7 +44,12 @@
 </head>
 
 <body>
-
+<?php
+@$status = $_GET['status'];
+if($status == null){
+    $status = 2;
+}
+?>
 <div class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -67,25 +72,25 @@
     <form action="teacher.php" method="get" name="statusForm" id="statusForm">
         <select name="status" onChange="document.getElementById('statusForm').submit()">
             <?php
-            if(_GET['status']  == 1) {
+            if($status  == 1) {
                 echo '<option value="1" selected> 所有老师</option>';
             }
             else{
                 echo '<option value="1"> 所有老师</option>';
             }
 
-            if(_GET['status']  == 2) {
-                echo '<option value="2" selected> 离职老师</option>';
+            if($status  == 2) {
+                echo '<option value="2" selected> 在职老师</option>';
             }
             else{
-                echo '<option value="2"> 离职老师</option>';
+                echo '<option value="2"> 在职老师</option>';
             }
 
-            if(_GET['status']  == 3) {
-                echo '<option value="3" selected> 在职老师</option>';
+            if($status  == 3) {
+                echo '<option value="3" selected>离职老师</option>';
             }
             else{
-                echo '<option value="3"> 在职老师</option>';
+                echo '<option value="3"> 离职老师</option>';
             }
             ?>
         </select>
@@ -94,11 +99,6 @@
     <?php
     require "db.php";
     $teacherOperation = new PDOTeacherOperation();
-    $status = $_GET['status'];
-    if($status == null){
-        $status = 2;
-    }
-
     switch ($status){
         case 1:
             $teacherList = $teacherOperation->getAll();
@@ -130,32 +130,48 @@
             </thead>
 
             <tbody>
-            <c:forEach var="teacher" items="${teacherList}" varStatus="status">
+
+            <?php
+            $teacherIndex = 0;
+            foreach($teacherList as $teacher) {
+                $teacherIndex++;
+            ?>
+
                 <tr>
-                    <td>${status.index}</td>
-                    <td>${teacher.name}</td>
-                    <td>${teacher.shortName}</td>
-                    <td>${teacher.phone}</td>
-                    <c:if test="${teacher.isMaster == true}">
-                        <td><input type="checkbox" name="isMaster" checked disabled/></td>
-                    </c:if>
-                    <c:if test="${teacher.isMaster == false}">
-                        <td><input type="checkbox" name="isMaster" disabled/></td>
-                    </c:if>
+                    <td><?php echo $teacherIndex?></td>
+                    <td><?php echo $teacher['name']?></td>
+                    <td><?php echo $teacher['shortname']?></td>
+                    <td><?php echo $teacher['phone']?></td>
+                    <?php
+                    if($teacher['ismaster'] == true){
+                        echo '<td><input type="checkbox" name="isMaster" checked disabled/></td>';
+                    }
+                    else{
+                        echo '<td><input type="checkbox" name="isMaster" disabled/></td>';
+                    }
+                    ?>
 
                     <td><input type="button" class="btn btn-default" value='修改' onclick="modifyTeacher(${teacher.id})">
                         <input type="button" class="btn btn-default" value='删除' onclick="deleteTeacher(${teacher.id})">
-                        <c:if test="${teacher.isAlive == true}">
+                        <?php
+                        if($teacher['isalive'] == true) {
+                         ?>
                             <input type="button" class="btn btn-default" value='离职'
                                    onclick="retireTeacher(${teacher.id})">
                             <input type="button" class="btn btn-default" value='修改假期'
                                    onclick="modifyTeacherHoliday(${teacher.id})">
                             <input type="button" class="btn btn-default" value='修改能力'
                                    onclick="modifyTeacherAbility(${teacher.id})">
-                        </c:if>
+                        <?php
+                        }
+                        ?>
                     </td>
                 </tr>
-            </c:forEach>
+
+            <?php
+            }
+            ?>
+
 
             </tbody>
         </table>
