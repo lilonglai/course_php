@@ -539,3 +539,79 @@ foreach ( $list as $teacherHoliday){
 }
 
 */
+
+class PDOScheduleOperation extends PDOBaseOperation {
+    const TABLENAME = "schedule";
+    public function getTableName(){
+        return self::TABLENAME;
+    }
+
+    public function getByStudentIdOnDateAndTime($studentId, $onDate, $onTime){
+        $sql = "select * from " . self::TABLENAME . " where studentid = $studentId and ondate = '$onDate' and ontime=$onTime";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getByStudentId($studentId){
+        $sql = "select * from " . self::TABLENAME . " where studentid = $studentId order by ondate,ontime";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getByTeacherId($teacherId){
+        $sql = "select * from " . self::TABLENAME . " where teacherid = $teacherId order by ondate,ontime";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function getByDateAndTime($onDate, $onTime){
+        $sql = "select * from " . self::TABLENAME . " where ondate = $onDate ";
+        if($onTime >=1){
+            $sql .= "and ontime=$onTime ";
+        }
+        $sql .= "order by ondate,ontime";
+        $result = $this->executeSql($sql);
+        return $result;
+    }
+
+    public function add($schedule){
+        $sql = "insert into " . self::TABLENAME . "(ondate,ontime,studentid,courseid,teacherid,addition,description) 
+        values('$schedule[ondate]', $schedule[ontime], $schedule[studentid], $schedule[courseid], $schedule[teacherid], 
+        '$schedule[addition]', '$schedule[description]')";
+        $this->executeUpdateSql($sql);
+    }
+
+    public function update($schedule){
+        $sql = "update ". self::TABLENAME .
+            " set ondate='$schedule[ondate]', ontime=$schedule[ontime],
+            studentid=$schedule[studentid], courseid=$schedule[courseid], teacherid=$schedule[teacherid],
+            addition='$schedule[addition]', description='$schedule[description]'
+            where id=$schedule[id]";
+        $this->executeUpdateSql($sql);
+    }
+}
+
+$test = new PDOScheduleOperation();
+$test->get(1);
+
+$test->getByStudentIdOnDateAndTime(1, "1989-07-23", 1);
+
+$test->getByStudentId(1);
+
+$test->getByTeacherId(1);
+
+$test->getAll();
+
+$test->getByDateAndTime("1989-07-23", 1);
+
+$schedule =array();
+$schedule['ondate'] = "1989-07-23";
+$schedule['ontime'] = 1;
+$schedule['studentid'] = 1;
+$schedule['courseid'] = 1;
+$schedule['teacherid'] = 1;
+$test->add($schedule);
+
+$schedule['ontime'] = 2;
+$schedule['id'] = 1;
+$test->update($schedule);

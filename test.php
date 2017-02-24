@@ -8,3 +8,6 @@
 
 $isflag = false;
 echo $isflag;
+
+$digit = 0;
+echo "$digit";
