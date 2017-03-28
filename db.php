@@ -12,13 +12,18 @@ abstract class PDOBaseOperation{
     const HOST="localhost";
     const DB="course";
 
-    private function getConnection(){
-        $username = self::USERNAME;
-        $password = self::PASSWORD;
-        $host = self::HOST;
-        $db = self::DB;
-        $connection = new PDO("mysql:dbname=$db;host=$host", $username, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND=>'SET NAMES utf8'));
-        return $connection;
+    private static $connection;
+
+    private function getConnection()
+    {
+        if (self::$connection == null) {
+            $username = self::USERNAME;
+            $password = self::PASSWORD;
+            $host = self::HOST;
+            $db = self::DB;
+            self::$connection  = new PDO("mysql:dbname=$db;host=$host", $username, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+    }
+        return self::$connection ;
     }
 
     protected function executeUpdateSql($sql){

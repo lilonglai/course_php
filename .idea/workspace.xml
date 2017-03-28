@@ -31,16 +31,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-3.1.1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/jquery-3.1.1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,108 +64,116 @@
       <file leaf-file-name="teacher.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teacher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="893">
               <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="25" column="32" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="32" />
               <folding>
-                <marker date="1487933306037" expanded="true" signature="5915:6031" ph="..." />
+                <element signature="e#6#85#0#PHP" expanded="true" />
+                <marker date="1490711488530" expanded="true" signature="1064:1077" ph="select * fro... " />
+                <marker date="1490711488530" expanded="true" signature="1064:1078" ph="select * fro... ${this}" />
+                <marker date="1490711488530" expanded="true" signature="1064:1118" ph="select * fro... where" />
+                <marker date="1490711488530" expanded="true" signature="1345:1352" ph="select * fro... ${$this-&gt;getTableName()}" />
+                <marker date="1490711488530" expanded="true" signature="1629:1642" ph="select * fro... " />
+                <marker date="1490711488530" expanded="true" signature="1629:1643" ph="select * fro... ${getTableName()}" />
+                <marker date="1490711488530" expanded="true" signature="1794:1806" ph="delete from " />
+                <marker date="1490711488530" expanded="true" signature="1794:1847" ph="delete from " />
+                <marker date="1490711488530" expanded="true" signature="1794:1851" ph="delete from " />
+                <marker date="1490711488530" expanded="true" signature="2052:2065" ph="select * fro... " />
+                <marker date="1490711488530" expanded="true" signature="2052:2066" ph="select * fro... ${getTableName()}" />
+                <marker date="1490711488530" expanded="true" signature="2052:2084" ph="select * fro... self" />
+                <marker date="1490711488530" expanded="true" signature="2052:2103" ph="select * fro... self" />
+                <marker date="1490711488530" expanded="true" signature="2052:2109" ph="select * fro... where" />
+                <marker date="1490711488530" expanded="true" signature="2242:2254" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
+                <marker date="1490711488530" expanded="true" signature="2242:2273" ph="insert into " />
+                <marker date="1490711488530" expanded="true" signature="2242:2362" ph="insert into " />
+                <marker date="1490711488530" expanded="true" signature="2242:2389" ph="insert into " />
+                <marker date="1490711488530" expanded="true" signature="2242:2417" ph="insert into " />
+                <marker date="1490711488530" expanded="true" signature="2525:2701" ph="update self:... " />
+                <marker date="1490711488530" expanded="true" signature="3373:3432" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="3579:3605" ph="select aeas_... " />
+                <marker date="1490711488530" expanded="true" signature="3579:3606" ph="select aeas_... ${aeas_firstcourse}" />
+                <marker date="1490711488530" expanded="true" signature="3579:3662" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="3579:3663" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="3579:3766" ph="select aeas_... aeas_firstcourse" />
+                <marker date="1490711488530" expanded="true" signature="3579:3819" ph="select aeas_... aeas_firstcourse" />
+                <marker date="1490711488530" expanded="true" signature="3953:4148" ph="insert into ${self::TABLENAME}... " />
+                <marker date="1490711488530" expanded="true" signature="5115:5172" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="5305:5356" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="5305:5362" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="5487:5540" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="5487:5544" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="5672:5725" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="5672:5730" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="5871:5926" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="6064:6265" ph="insert into ${self::TABLENAME}... " />
+                <marker date="1490711488530" expanded="true" signature="6064:6410" ph="insert into ${self::TABLENAME}... " />
+                <marker date="1490711488530" expanded="true" signature="7904:7961" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="8102:8169" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="8294:8351" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="8479:8537" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="8676:8689" ph="select * fro... " />
+                <marker date="1490711488530" expanded="true" signature="8676:8690" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="8676:8719" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="9448:9610" ph="insert into ${self::TABLENAME}... " />
+                <marker date="1490711488530" expanded="true" signature="10926:10954" ph="select teach... " />
+                <marker date="1490711488530" expanded="true" signature="10926:10955" ph="select teach... ${aeas_teacherability}" />
+                <marker date="1490711488530" expanded="true" signature="10926:11008" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="10926:11010" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="10926:11011" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="10926:11048" ph="select teach... aeas_teacherability" />
+                <marker date="1490711488530" expanded="true" signature="10926:11110" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="10926:11154" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="11295:11417" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="11295:11511" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="11295:11565" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="11704:11826" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="11704:11919" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="11704:11972" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="12107:12179" ph="insert into ${self::TABLENAME}... " />
+                <marker date="1490711488530" expanded="true" signature="12107:12233" ph="insert into ${self::TABLENAME}... " />
+                <marker date="1490711488530" expanded="true" signature="12603:12615" ph="delete from " />
+                <marker date="1490711488530" expanded="true" signature="12603:12656" ph="delete from " />
+                <marker date="1490711488530" expanded="true" signature="12603:12657" ph="delete from " />
+                <marker date="1490711488530" expanded="true" signature="13606:13619" ph="select * fro... " />
+                <marker date="1490711488530" expanded="true" signature="13606:13661" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="13606:13662" ph="select * fro... where" />
+                <marker date="1490711488530" expanded="true" signature="14480:14854" ph="insert into ${self::TABLENAME}... " />
+                <marker date="1490711488530" expanded="true" signature="16208:16262" ph="delete from " />
+                <marker date="1490711488530" expanded="true" signature="17246:17302" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="17471:17527" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="17471:17566" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="17790:17865" ph="insert into " />
+                <marker date="1490711488530" expanded="true" signature="17790:17964" ph="insert into ${self::TABLENAME}... " />
+                <marker date="1490711488530" expanded="true" signature="19251:19264" ph="select * fro... " />
+                <marker date="1490711488530" expanded="true" signature="19251:19352" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="19500:19567" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="19500:19589" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="19730:19819" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="19968:19981" ph="select * fro... " />
+                <marker date="1490711488530" expanded="true" signature="19968:20020" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="19968:20021" ph="select * fro... ${self::TABLENAME}" />
+                <marker date="1490711488530" expanded="true" signature="20278:20378" ph="insert into ${self::TABLENAME}... " />
+                <marker date="1490711488530" expanded="true" signature="20278:20557" ph="insert into ${self::TABLENAME}... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db.php">
+      <file leaf-file-name="PDO.php" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="296" column="0" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
-              <folding>
-                <element signature="e#6#85#0#PHP" expanded="true" />
-                <marker date="1487935296236" expanded="true" signature="943:956" ph="select * fro... " />
-                <marker date="1487935296236" expanded="true" signature="943:957" ph="select * fro... ${this}" />
-                <marker date="1487935296236" expanded="true" signature="943:997" ph="select * fro... where" />
-                <marker date="1487935296236" expanded="true" signature="1224:1231" ph="select * fro... ${$this-&gt;getTableName()}" />
-                <marker date="1487935296236" expanded="true" signature="1508:1521" ph="select * fro... " />
-                <marker date="1487935296236" expanded="true" signature="1508:1522" ph="select * fro... ${getTableName()}" />
-                <marker date="1487935296236" expanded="true" signature="1673:1685" ph="delete from " />
-                <marker date="1487935296236" expanded="true" signature="1673:1726" ph="delete from " />
-                <marker date="1487935296236" expanded="true" signature="1673:1730" ph="delete from " />
-                <marker date="1487935296236" expanded="true" signature="1931:1944" ph="select * fro... " />
-                <marker date="1487935296236" expanded="true" signature="1931:1945" ph="select * fro... ${getTableName()}" />
-                <marker date="1487935296236" expanded="true" signature="1931:1963" ph="select * fro... self" />
-                <marker date="1487935296236" expanded="true" signature="1931:1982" ph="select * fro... self" />
-                <marker date="1487935296236" expanded="true" signature="1931:1988" ph="select * fro... where" />
-                <marker date="1487935296236" expanded="true" signature="2121:2133" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
-                <marker date="1487935296236" expanded="true" signature="2121:2152" ph="insert into " />
-                <marker date="1487935296236" expanded="true" signature="2121:2241" ph="insert into " />
-                <marker date="1487935296236" expanded="true" signature="2121:2268" ph="insert into " />
-                <marker date="1487935296236" expanded="true" signature="2121:2296" ph="insert into " />
-                <marker date="1487935296236" expanded="true" signature="2404:2580" ph="update self:... " />
-                <marker date="1487935296236" expanded="true" signature="3252:3311" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="3458:3484" ph="select aeas_... " />
-                <marker date="1487935296236" expanded="true" signature="3458:3485" ph="select aeas_... ${aeas_firstcourse}" />
-                <marker date="1487935296236" expanded="true" signature="3458:3541" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="3458:3542" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="3458:3645" ph="select aeas_... aeas_firstcourse" />
-                <marker date="1487935296236" expanded="true" signature="3458:3698" ph="select aeas_... aeas_firstcourse" />
-                <marker date="1487935296236" expanded="true" signature="3832:4027" ph="insert into ${self::TABLENAME}... " />
-                <marker date="1487935296236" expanded="true" signature="4994:5051" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="5184:5235" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="5184:5241" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="5366:5419" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="5366:5423" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="5551:5604" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="5551:5609" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="5750:5805" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="5943:6144" ph="insert into ${self::TABLENAME}... " />
-                <marker date="1487935296236" expanded="true" signature="5943:6289" ph="insert into ${self::TABLENAME}... " />
-                <marker date="1487935296236" expanded="true" signature="7783:7840" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="7981:8048" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="8173:8230" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="8358:8416" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="8555:8568" ph="select * fro... " />
-                <marker date="1487935296236" expanded="true" signature="8555:8569" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="8555:8598" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="9327:9489" ph="insert into ${self::TABLENAME}... " />
-                <marker date="1487935296236" expanded="true" signature="10805:10833" ph="select teach... " />
-                <marker date="1487935296236" expanded="true" signature="10805:10834" ph="select teach... ${aeas_teacherability}" />
-                <marker date="1487935296236" expanded="true" signature="10805:10887" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="10805:10889" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="10805:10890" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="10805:10927" ph="select teach... aeas_teacherability" />
-                <marker date="1487935296236" expanded="true" signature="10805:10989" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="10805:11033" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="11174:11296" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="11174:11390" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="11174:11444" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="11583:11705" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="11583:11798" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="11583:11851" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="11986:12058" ph="insert into ${self::TABLENAME}... " />
-                <marker date="1487935296236" expanded="true" signature="11986:12112" ph="insert into ${self::TABLENAME}... " />
-                <marker date="1487935296236" expanded="true" signature="12482:12494" ph="delete from " />
-                <marker date="1487935296236" expanded="true" signature="12482:12535" ph="delete from " />
-                <marker date="1487935296236" expanded="true" signature="12482:12536" ph="delete from " />
-                <marker date="1487935296236" expanded="true" signature="13485:13498" ph="select * fro... " />
-                <marker date="1487935296236" expanded="true" signature="13485:13540" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="13485:13541" ph="select * fro... where" />
-                <marker date="1487935296236" expanded="true" signature="14359:14733" ph="insert into ${self::TABLENAME}... " />
-                <marker date="1487935296236" expanded="true" signature="16087:16141" ph="delete from " />
-                <marker date="1487935296236" expanded="true" signature="17125:17181" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="17350:17406" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="17350:17445" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="17669:17744" ph="insert into " />
-                <marker date="1487935296236" expanded="true" signature="17669:17843" ph="insert into ${self::TABLENAME}... " />
-                <marker date="1487935296236" expanded="true" signature="19130:19143" ph="select * fro... " />
-                <marker date="1487935296236" expanded="true" signature="19130:19231" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="19379:19446" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="19379:19468" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="19609:19698" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="19847:19860" ph="select * fro... " />
-                <marker date="1487935296236" expanded="true" signature="19847:19899" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="19847:19900" ph="select * fro... ${self::TABLENAME}" />
-                <marker date="1487935296236" expanded="true" signature="20157:20257" ph="insert into ${self::TABLENAME}... " />
-                <marker date="1487935296236" expanded="true" signature="20157:20436" ph="insert into ${self::TABLENAME}... " />
-              </folding>
+            <state relative-caret-position="510">
+              <caret line="847" column="20" selection-start-line="847" selection-start-column="20" selection-end-line="847" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,21 +181,18 @@
       <file leaf-file-name="teacherAdd.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teacherAdd.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
+            <state relative-caret-position="380">
               <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-              <folding>
-                <element signature="e#1237#1243#0#HTML" expanded="true" />
-                <element signature="e#1243#1249#0#HTML" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacherAddSubmit.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="teacherAddSubmit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teacherAddSubmit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="1235">
+              <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -225,8 +220,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/teacher.php" />
         <option value="$PROJECT_DIR$/teacherAdd.php" />
-        <option value="$PROJECT_DIR$/db.php" />
         <option value="$PROJECT_DIR$/teacherAddSubmit.php" />
+        <option value="$PROJECT_DIR$/db.php" />
       </list>
     </option>
   </component>
@@ -244,8 +239,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="php5.6" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="412" />
-    <option name="y" value="52" />
+    <option name="x" value="14" />
+    <option name="y" value="25" />
     <option name="width" value="1620" />
     <option name="height" value="844" />
   </component>
@@ -274,6 +269,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -294,8 +291,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,15 +386,16 @@
       <workItem from="1487813635265" duration="10544000" />
       <workItem from="1487858738273" duration="5311000" />
       <workItem from="1487899216273" duration="7882000" />
-      <workItem from="1487919326836" duration="9467000" />
+      <workItem from="1487919326836" duration="9718000" />
+      <workItem from="1490710902147" duration="673000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50609000" />
+    <option name="totallyTimeSpent" value="51533000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="412" y="52" width="1620" height="844" extended-state="0" />
+    <frame x="14" y="25" width="1620" height="844" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16084789" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -407,18 +403,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29925188" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20885287" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6021798" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833788" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39237058" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -442,57 +438,57 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>96</line>
+          <line>101</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>140</line>
+          <line>145</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>221</line>
+          <line>226</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>397</line>
+          <line>402</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>477</line>
+          <line>482</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>488</line>
+          <line>493</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>486</line>
+          <line>491</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>527</line>
+          <line>532</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>537</line>
+          <line>542</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>542</line>
+          <line>547</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>602</line>
+          <line>607</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -502,12 +498,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>291</line>
+          <line>296</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/db.php</url>
-          <line>337</line>
+          <line>342</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -533,7 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -551,7 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -561,91 +555,91 @@
           <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
           <folding>
             <element signature="e#6#85#0#PHP" expanded="true" />
-            <marker date="1487935296236" expanded="true" signature="943:956" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="943:957" ph="select * fro... ${this}" />
-            <marker date="1487935296236" expanded="true" signature="943:997" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="1224:1231" ph="select * fro... ${$this-&gt;getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1508:1521" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="1508:1522" ph="select * fro... ${getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1673:1685" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1673:1726" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1673:1730" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1931:1944" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="1931:1945" ph="select * fro... ${getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1931:1963" ph="select * fro... self" />
-            <marker date="1487935296236" expanded="true" signature="1931:1982" ph="select * fro... self" />
-            <marker date="1487935296236" expanded="true" signature="1931:1988" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="2121:2133" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
-            <marker date="1487935296236" expanded="true" signature="2121:2152" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2241" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2268" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2296" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2404:2580" ph="update self:... " />
-            <marker date="1487935296236" expanded="true" signature="3252:3311" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3484" ph="select aeas_... " />
-            <marker date="1487935296236" expanded="true" signature="3458:3485" ph="select aeas_... ${aeas_firstcourse}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3541" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3542" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3645" ph="select aeas_... aeas_firstcourse" />
-            <marker date="1487935296236" expanded="true" signature="3458:3698" ph="select aeas_... aeas_firstcourse" />
-            <marker date="1487935296236" expanded="true" signature="3832:4027" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="4994:5051" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5184:5235" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5184:5241" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5366:5419" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5366:5423" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5551:5604" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5551:5609" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5750:5805" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5943:6144" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="5943:6289" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="7783:7840" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="7981:8048" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8173:8230" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8358:8416" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8555:8568" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="8555:8569" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8555:8598" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="9327:9489" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="10805:10833" ph="select teach... " />
-            <marker date="1487935296236" expanded="true" signature="10805:10834" ph="select teach... ${aeas_teacherability}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10887" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10889" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10890" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10927" ph="select teach... aeas_teacherability" />
-            <marker date="1487935296236" expanded="true" signature="10805:10989" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:11033" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11296" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11390" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11444" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11705" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11798" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11851" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11986:12058" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="11986:12112" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="12482:12494" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="12482:12535" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="12482:12536" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="13485:13498" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="13485:13540" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="13485:13541" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="14359:14733" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="16087:16141" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="17125:17181" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17350:17406" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17350:17445" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17669:17744" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="17669:17843" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="19130:19143" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="19130:19231" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19379:19446" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19379:19468" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19609:19698" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19847:19860" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="19847:19899" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19847:19900" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="20157:20257" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="20157:20436" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="1064:1077" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="1064:1078" ph="select * fro... ${this}" />
+            <marker date="1490711488530" expanded="true" signature="1064:1118" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="1345:1352" ph="select * fro... ${$this-&gt;getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="1629:1642" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="1629:1643" ph="select * fro... ${getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="1794:1806" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="1794:1847" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="1794:1851" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="2052:2065" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="2052:2066" ph="select * fro... ${getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="2052:2084" ph="select * fro... self" />
+            <marker date="1490711488530" expanded="true" signature="2052:2103" ph="select * fro... self" />
+            <marker date="1490711488530" expanded="true" signature="2052:2109" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="2242:2254" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
+            <marker date="1490711488530" expanded="true" signature="2242:2273" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2362" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2389" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2417" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2525:2701" ph="update self:... " />
+            <marker date="1490711488530" expanded="true" signature="3373:3432" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3605" ph="select aeas_... " />
+            <marker date="1490711488530" expanded="true" signature="3579:3606" ph="select aeas_... ${aeas_firstcourse}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3662" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3663" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3766" ph="select aeas_... aeas_firstcourse" />
+            <marker date="1490711488530" expanded="true" signature="3579:3819" ph="select aeas_... aeas_firstcourse" />
+            <marker date="1490711488530" expanded="true" signature="3953:4148" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="5115:5172" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5305:5356" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5305:5362" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5487:5540" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5487:5544" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5672:5725" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5672:5730" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5871:5926" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="6064:6265" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="6064:6410" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="7904:7961" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8102:8169" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8294:8351" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8479:8537" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8676:8689" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="8676:8690" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8676:8719" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="9448:9610" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="10926:10954" ph="select teach... " />
+            <marker date="1490711488530" expanded="true" signature="10926:10955" ph="select teach... ${aeas_teacherability}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11008" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11010" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11011" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11048" ph="select teach... aeas_teacherability" />
+            <marker date="1490711488530" expanded="true" signature="10926:11110" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11154" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11417" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11511" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11565" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11826" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11919" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11972" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="12107:12179" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="12107:12233" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="12603:12615" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="12603:12656" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="12603:12657" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="13606:13619" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="13606:13661" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="13606:13662" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="14480:14854" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="16208:16262" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="17246:17302" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17471:17527" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17471:17566" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17790:17865" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="17790:17964" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="19251:19264" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="19251:19352" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19500:19567" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19500:19589" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19730:19819" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19968:19981" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="19968:20020" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19968:20021" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="20278:20378" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="20278:20557" ph="insert into ${self::TABLENAME}... " />
           </folding>
         </state>
       </provider>
@@ -662,7 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3553">
           <caret line="187" column="44" selection-start-line="187" selection-start-column="37" selection-end-line="187" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -678,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,7 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,91 +781,91 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#85#0#PHP" expanded="true" />
-            <marker date="1487935296236" expanded="true" signature="943:956" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="943:957" ph="select * fro... ${this}" />
-            <marker date="1487935296236" expanded="true" signature="943:997" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="1224:1231" ph="select * fro... ${$this-&gt;getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1508:1521" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="1508:1522" ph="select * fro... ${getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1673:1685" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1673:1726" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1673:1730" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1931:1944" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="1931:1945" ph="select * fro... ${getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1931:1963" ph="select * fro... self" />
-            <marker date="1487935296236" expanded="true" signature="1931:1982" ph="select * fro... self" />
-            <marker date="1487935296236" expanded="true" signature="1931:1988" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="2121:2133" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
-            <marker date="1487935296236" expanded="true" signature="2121:2152" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2241" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2268" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2296" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2404:2580" ph="update self:... " />
-            <marker date="1487935296236" expanded="true" signature="3252:3311" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3484" ph="select aeas_... " />
-            <marker date="1487935296236" expanded="true" signature="3458:3485" ph="select aeas_... ${aeas_firstcourse}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3541" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3542" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3645" ph="select aeas_... aeas_firstcourse" />
-            <marker date="1487935296236" expanded="true" signature="3458:3698" ph="select aeas_... aeas_firstcourse" />
-            <marker date="1487935296236" expanded="true" signature="3832:4027" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="4994:5051" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5184:5235" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5184:5241" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5366:5419" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5366:5423" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5551:5604" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5551:5609" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5750:5805" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5943:6144" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="5943:6289" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="7783:7840" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="7981:8048" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8173:8230" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8358:8416" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8555:8568" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="8555:8569" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8555:8598" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="9327:9489" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="10805:10833" ph="select teach... " />
-            <marker date="1487935296236" expanded="true" signature="10805:10834" ph="select teach... ${aeas_teacherability}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10887" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10889" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10890" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10927" ph="select teach... aeas_teacherability" />
-            <marker date="1487935296236" expanded="true" signature="10805:10989" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:11033" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11296" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11390" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11444" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11705" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11798" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11851" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11986:12058" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="11986:12112" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="12482:12494" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="12482:12535" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="12482:12536" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="13485:13498" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="13485:13540" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="13485:13541" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="14359:14733" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="16087:16141" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="17125:17181" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17350:17406" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17350:17445" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17669:17744" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="17669:17843" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="19130:19143" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="19130:19231" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19379:19446" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19379:19468" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19609:19698" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19847:19860" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="19847:19899" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19847:19900" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="20157:20257" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="20157:20436" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="1064:1077" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="1064:1078" ph="select * fro... ${this}" />
+            <marker date="1490711488530" expanded="true" signature="1064:1118" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="1345:1352" ph="select * fro... ${$this-&gt;getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="1629:1642" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="1629:1643" ph="select * fro... ${getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="1794:1806" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="1794:1847" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="1794:1851" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="2052:2065" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="2052:2066" ph="select * fro... ${getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="2052:2084" ph="select * fro... self" />
+            <marker date="1490711488530" expanded="true" signature="2052:2103" ph="select * fro... self" />
+            <marker date="1490711488530" expanded="true" signature="2052:2109" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="2242:2254" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
+            <marker date="1490711488530" expanded="true" signature="2242:2273" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2362" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2389" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2417" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2525:2701" ph="update self:... " />
+            <marker date="1490711488530" expanded="true" signature="3373:3432" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3605" ph="select aeas_... " />
+            <marker date="1490711488530" expanded="true" signature="3579:3606" ph="select aeas_... ${aeas_firstcourse}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3662" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3663" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3766" ph="select aeas_... aeas_firstcourse" />
+            <marker date="1490711488530" expanded="true" signature="3579:3819" ph="select aeas_... aeas_firstcourse" />
+            <marker date="1490711488530" expanded="true" signature="3953:4148" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="5115:5172" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5305:5356" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5305:5362" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5487:5540" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5487:5544" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5672:5725" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5672:5730" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5871:5926" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="6064:6265" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="6064:6410" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="7904:7961" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8102:8169" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8294:8351" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8479:8537" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8676:8689" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="8676:8690" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8676:8719" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="9448:9610" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="10926:10954" ph="select teach... " />
+            <marker date="1490711488530" expanded="true" signature="10926:10955" ph="select teach... ${aeas_teacherability}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11008" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11010" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11011" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11048" ph="select teach... aeas_teacherability" />
+            <marker date="1490711488530" expanded="true" signature="10926:11110" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11154" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11417" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11511" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11565" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11826" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11919" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11972" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="12107:12179" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="12107:12233" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="12603:12615" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="12603:12656" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="12603:12657" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="13606:13619" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="13606:13661" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="13606:13662" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="14480:14854" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="16208:16262" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="17246:17302" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17471:17527" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17471:17566" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17790:17865" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="17790:17964" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="19251:19264" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="19251:19352" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19500:19567" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19500:19589" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19730:19819" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19968:19981" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="19968:20020" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19968:20021" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="20278:20378" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="20278:20557" ph="insert into ${self::TABLENAME}... " />
           </folding>
         </state>
       </provider>
@@ -892,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3553">
           <caret line="187" column="44" selection-start-line="187" selection-start-column="37" selection-end-line="187" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -935,91 +923,91 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#85#0#PHP" expanded="true" />
-            <marker date="1487935296236" expanded="true" signature="943:956" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="943:957" ph="select * fro... ${this}" />
-            <marker date="1487935296236" expanded="true" signature="943:997" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="1224:1231" ph="select * fro... ${$this-&gt;getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1508:1521" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="1508:1522" ph="select * fro... ${getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1673:1685" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1673:1726" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1673:1730" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1931:1944" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="1931:1945" ph="select * fro... ${getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1931:1963" ph="select * fro... self" />
-            <marker date="1487935296236" expanded="true" signature="1931:1982" ph="select * fro... self" />
-            <marker date="1487935296236" expanded="true" signature="1931:1988" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="2121:2133" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
-            <marker date="1487935296236" expanded="true" signature="2121:2152" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2241" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2268" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2296" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2404:2580" ph="update self:... " />
-            <marker date="1487935296236" expanded="true" signature="3252:3311" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3484" ph="select aeas_... " />
-            <marker date="1487935296236" expanded="true" signature="3458:3485" ph="select aeas_... ${aeas_firstcourse}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3541" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3542" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3645" ph="select aeas_... aeas_firstcourse" />
-            <marker date="1487935296236" expanded="true" signature="3458:3698" ph="select aeas_... aeas_firstcourse" />
-            <marker date="1487935296236" expanded="true" signature="3832:4027" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="4994:5051" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5184:5235" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5184:5241" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5366:5419" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5366:5423" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5551:5604" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5551:5609" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5750:5805" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5943:6144" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="5943:6289" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="7783:7840" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="7981:8048" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8173:8230" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8358:8416" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8555:8568" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="8555:8569" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8555:8598" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="9327:9489" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="10805:10833" ph="select teach... " />
-            <marker date="1487935296236" expanded="true" signature="10805:10834" ph="select teach... ${aeas_teacherability}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10887" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10889" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10890" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10927" ph="select teach... aeas_teacherability" />
-            <marker date="1487935296236" expanded="true" signature="10805:10989" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:11033" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11296" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11390" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11444" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11705" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11798" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11851" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11986:12058" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="11986:12112" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="12482:12494" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="12482:12535" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="12482:12536" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="13485:13498" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="13485:13540" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="13485:13541" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="14359:14733" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="16087:16141" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="17125:17181" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17350:17406" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17350:17445" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17669:17744" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="17669:17843" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="19130:19143" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="19130:19231" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19379:19446" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19379:19468" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19609:19698" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19847:19860" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="19847:19899" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19847:19900" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="20157:20257" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="20157:20436" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="1064:1077" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="1064:1078" ph="select * fro... ${this}" />
+            <marker date="1490711488530" expanded="true" signature="1064:1118" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="1345:1352" ph="select * fro... ${$this-&gt;getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="1629:1642" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="1629:1643" ph="select * fro... ${getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="1794:1806" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="1794:1847" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="1794:1851" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="2052:2065" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="2052:2066" ph="select * fro... ${getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="2052:2084" ph="select * fro... self" />
+            <marker date="1490711488530" expanded="true" signature="2052:2103" ph="select * fro... self" />
+            <marker date="1490711488530" expanded="true" signature="2052:2109" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="2242:2254" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
+            <marker date="1490711488530" expanded="true" signature="2242:2273" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2362" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2389" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2417" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2525:2701" ph="update self:... " />
+            <marker date="1490711488530" expanded="true" signature="3373:3432" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3605" ph="select aeas_... " />
+            <marker date="1490711488530" expanded="true" signature="3579:3606" ph="select aeas_... ${aeas_firstcourse}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3662" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3663" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3766" ph="select aeas_... aeas_firstcourse" />
+            <marker date="1490711488530" expanded="true" signature="3579:3819" ph="select aeas_... aeas_firstcourse" />
+            <marker date="1490711488530" expanded="true" signature="3953:4148" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="5115:5172" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5305:5356" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5305:5362" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5487:5540" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5487:5544" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5672:5725" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5672:5730" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5871:5926" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="6064:6265" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="6064:6410" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="7904:7961" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8102:8169" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8294:8351" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8479:8537" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8676:8689" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="8676:8690" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8676:8719" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="9448:9610" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="10926:10954" ph="select teach... " />
+            <marker date="1490711488530" expanded="true" signature="10926:10955" ph="select teach... ${aeas_teacherability}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11008" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11010" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11011" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11048" ph="select teach... aeas_teacherability" />
+            <marker date="1490711488530" expanded="true" signature="10926:11110" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11154" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11417" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11511" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11565" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11826" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11919" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11972" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="12107:12179" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="12107:12233" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="12603:12615" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="12603:12656" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="12603:12657" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="13606:13619" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="13606:13661" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="13606:13662" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="14480:14854" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="16208:16262" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="17246:17302" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17471:17527" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17471:17566" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17790:17865" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="17790:17964" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="19251:19264" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="19251:19352" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19500:19567" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19500:19589" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19730:19819" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19968:19981" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="19968:20020" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19968:20021" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="20278:20378" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="20278:20557" ph="insert into ${self::TABLENAME}... " />
           </folding>
         </state>
       </provider>
@@ -1036,7 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3553">
           <caret line="187" column="44" selection-start-line="187" selection-start-column="37" selection-end-line="187" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,15 +1049,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22154">
-          <caret line="1166" column="20" selection-start-line="1166" selection-start-column="20" selection-end-line="1166" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,7 +1056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3553">
           <caret line="187" column="44" selection-start-line="187" selection-start-column="37" selection-end-line="187" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,7 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,7 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1115,7 +1090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,125 +1143,128 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/teacherAdd.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
+        <state relative-caret-position="380">
           <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="e#1237#1243#0#HTML" expanded="true" />
-            <element signature="e#1243#1249#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="296" column="0" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="true" />
-            <marker date="1487935296236" expanded="true" signature="943:956" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="943:957" ph="select * fro... ${this}" />
-            <marker date="1487935296236" expanded="true" signature="943:997" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="1224:1231" ph="select * fro... ${$this-&gt;getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1508:1521" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="1508:1522" ph="select * fro... ${getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1673:1685" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1673:1726" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1673:1730" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="1931:1944" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="1931:1945" ph="select * fro... ${getTableName()}" />
-            <marker date="1487935296236" expanded="true" signature="1931:1963" ph="select * fro... self" />
-            <marker date="1487935296236" expanded="true" signature="1931:1982" ph="select * fro... self" />
-            <marker date="1487935296236" expanded="true" signature="1931:1988" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="2121:2133" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
-            <marker date="1487935296236" expanded="true" signature="2121:2152" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2241" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2268" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2121:2296" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="2404:2580" ph="update self:... " />
-            <marker date="1487935296236" expanded="true" signature="3252:3311" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3484" ph="select aeas_... " />
-            <marker date="1487935296236" expanded="true" signature="3458:3485" ph="select aeas_... ${aeas_firstcourse}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3541" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3542" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="3458:3645" ph="select aeas_... aeas_firstcourse" />
-            <marker date="1487935296236" expanded="true" signature="3458:3698" ph="select aeas_... aeas_firstcourse" />
-            <marker date="1487935296236" expanded="true" signature="3832:4027" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="4994:5051" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5184:5235" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5184:5241" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5366:5419" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5366:5423" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5551:5604" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5551:5609" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5750:5805" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="5943:6144" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="5943:6289" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="7783:7840" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="7981:8048" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8173:8230" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8358:8416" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8555:8568" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="8555:8569" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="8555:8598" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="9327:9489" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="10805:10833" ph="select teach... " />
-            <marker date="1487935296236" expanded="true" signature="10805:10834" ph="select teach... ${aeas_teacherability}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10887" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10889" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10890" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:10927" ph="select teach... aeas_teacherability" />
-            <marker date="1487935296236" expanded="true" signature="10805:10989" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="10805:11033" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11296" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11390" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11174:11444" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11705" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11798" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11583:11851" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="11986:12058" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="11986:12112" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="12482:12494" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="12482:12535" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="12482:12536" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="13485:13498" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="13485:13540" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="13485:13541" ph="select * fro... where" />
-            <marker date="1487935296236" expanded="true" signature="14359:14733" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="16087:16141" ph="delete from " />
-            <marker date="1487935296236" expanded="true" signature="17125:17181" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17350:17406" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17350:17445" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="17669:17744" ph="insert into " />
-            <marker date="1487935296236" expanded="true" signature="17669:17843" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="19130:19143" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="19130:19231" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19379:19446" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19379:19468" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19609:19698" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19847:19860" ph="select * fro... " />
-            <marker date="1487935296236" expanded="true" signature="19847:19899" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="19847:19900" ph="select * fro... ${self::TABLENAME}" />
-            <marker date="1487935296236" expanded="true" signature="20157:20257" ph="insert into ${self::TABLENAME}... " />
-            <marker date="1487935296236" expanded="true" signature="20157:20436" ph="insert into ${self::TABLENAME}... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teacher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="893">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <marker date="1487933306037" expanded="true" signature="5915:6031" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teacherAddSubmit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="1235">
+          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="847" column="20" selection-start-line="847" selection-start-column="20" selection-end-line="847" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="32" />
+          <folding>
+            <element signature="e#6#85#0#PHP" expanded="true" />
+            <marker date="1490711488530" expanded="true" signature="1064:1077" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="1064:1078" ph="select * fro... ${this}" />
+            <marker date="1490711488530" expanded="true" signature="1064:1118" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="1345:1352" ph="select * fro... ${$this-&gt;getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="1629:1642" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="1629:1643" ph="select * fro... ${getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="1794:1806" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="1794:1847" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="1794:1851" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="2052:2065" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="2052:2066" ph="select * fro... ${getTableName()}" />
+            <marker date="1490711488530" expanded="true" signature="2052:2084" ph="select * fro... self" />
+            <marker date="1490711488530" expanded="true" signature="2052:2103" ph="select * fro... self" />
+            <marker date="1490711488530" expanded="true" signature="2052:2109" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="2242:2254" ph="insert into ${self::TABLENAME(grade,name,shortname,description)}... " />
+            <marker date="1490711488530" expanded="true" signature="2242:2273" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2362" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2389" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2242:2417" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="2525:2701" ph="update self:... " />
+            <marker date="1490711488530" expanded="true" signature="3373:3432" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3605" ph="select aeas_... " />
+            <marker date="1490711488530" expanded="true" signature="3579:3606" ph="select aeas_... ${aeas_firstcourse}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3662" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3663" ph="select secon... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="3579:3766" ph="select aeas_... aeas_firstcourse" />
+            <marker date="1490711488530" expanded="true" signature="3579:3819" ph="select aeas_... aeas_firstcourse" />
+            <marker date="1490711488530" expanded="true" signature="3953:4148" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="5115:5172" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5305:5356" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5305:5362" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5487:5540" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5487:5544" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5672:5725" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5672:5730" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="5871:5926" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="6064:6265" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="6064:6410" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="7904:7961" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8102:8169" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8294:8351" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8479:8537" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8676:8689" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="8676:8690" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="8676:8719" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="9448:9610" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="10926:10954" ph="select teach... " />
+            <marker date="1490711488530" expanded="true" signature="10926:10955" ph="select teach... ${aeas_teacherability}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11008" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11010" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11011" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11048" ph="select teach... aeas_teacherability" />
+            <marker date="1490711488530" expanded="true" signature="10926:11110" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="10926:11154" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11417" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11511" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11295:11565" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11826" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11919" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="11704:11972" ph="select teach... ${PDOFirstCourseOperation::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="12107:12179" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="12107:12233" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="12603:12615" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="12603:12656" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="12603:12657" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="13606:13619" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="13606:13661" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="13606:13662" ph="select * fro... where" />
+            <marker date="1490711488530" expanded="true" signature="14480:14854" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="16208:16262" ph="delete from " />
+            <marker date="1490711488530" expanded="true" signature="17246:17302" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17471:17527" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17471:17566" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="17790:17865" ph="insert into " />
+            <marker date="1490711488530" expanded="true" signature="17790:17964" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="19251:19264" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="19251:19352" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19500:19567" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19500:19589" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19730:19819" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19968:19981" ph="select * fro... " />
+            <marker date="1490711488530" expanded="true" signature="19968:20020" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="19968:20021" ph="select * fro... ${self::TABLENAME}" />
+            <marker date="1490711488530" expanded="true" signature="20278:20378" ph="insert into ${self::TABLENAME}... " />
+            <marker date="1490711488530" expanded="true" signature="20278:20557" ph="insert into ${self::TABLENAME}... " />
+          </folding>
         </state>
       </provider>
     </entry>
