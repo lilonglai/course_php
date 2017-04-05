@@ -8,7 +8,7 @@
 
 abstract class PDOBaseOperation{
     const USERNAME="root";
-    const PASSWORD="";
+    const PASSWORD="Bxy19890723";
     const HOST="localhost";
     const DB="course";
 
@@ -84,6 +84,7 @@ class PDOFirstCourseOperation extends PDOBaseOperation{
     public function  add($firstCourse){
         $sql = "insert into " . self::TABLENAME . "(grade,name,shortname,description) values($firstCourse[grade], '$firstCourse[name]', '$firstCourse[shortname]', '$firstCourse[description]')";
         $this->executeUpdateSql($sql);
+        $firstCourse['id'] = $this->mysql_insert_id();
     }
 
     public function  update($firstCourse){
@@ -130,6 +131,7 @@ class PDOSecondCourseOperation extends PDOBaseOperation {
     public function  add($secondCourse){
         $sql = "insert into " . self::TABLENAME . "(name,shortname,firstcourseid,description) values('$secondCourse[name]', '$secondCourse[shortname]', $secondCourse[firstcourseid], '$secondCourse[description]')";
         $this->executeUpdateSql($sql);
+        $secondCourse['id'] = $this->mysql_insert_id();
     }
 
     public function  update($secondCourse){
@@ -195,6 +197,7 @@ class PDOStudentOperation extends PDOBaseOperation {
         $sql = "insert into " . self::TABLENAME . "(name,shortname,grade,testscore,targetscore,examinedate,examineplace,teacherid,description) values(
         '$student[name]', '$student[shortname]', $student[grade], '$student[testscore]', '$student[targetscore]', '$student[examinedate]', '$student[examineplace]', $student[teacherid], '$student[description]' )";
         $this->executeUpdateSql($sql);
+        $student['id'] = $this->mysql_insert_id();
     }
 
     public function update($student){
@@ -376,6 +379,7 @@ class PDOTeacherAbilityOperation extends PDOBaseOperation {
         $sql = "insert into " . self::TABLENAME . "(teacherid,courseid) values(
         $teacherAbility[teacherid], $teacherAbility[courseid])";
         $this->executeUpdateSql($sql);
+        $teacherAbility['id'] = $this->mysql_insert_id();
     }
 
     public function update($teacherAbility){
@@ -519,6 +523,7 @@ class PDOTeacherHolidayOperation extends PDOBaseOperation {
         $sql = "insert into " . self::TABLENAME . "(teacherid,adjustdate,isholiday) values(" .
         "$teacherHoliday[teacherid], '$teacherHoliday[adjustdate]', $teacherHoliday[isholiday])";
         $this->executeUpdateSql($sql);
+        $teacherHoliday['id'] = $this->mysql_insert_id();
     }
 
     public function update($teacherHoliday){
@@ -592,6 +597,7 @@ class PDOScheduleOperation extends PDOBaseOperation {
         values('$schedule[ondate]', $schedule[ontime], $schedule[studentid], $schedule[courseid], $schedule[teacherid], 
         '$schedule[addition]', '$schedule[description]')";
         $this->executeUpdateSql($sql);
+        $schedule['id'] = $this->mysql_insert_id();
     }
 
     public function update($schedule){
