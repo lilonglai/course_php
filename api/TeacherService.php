@@ -9,6 +9,8 @@
 /*
  * begin to operate Teacher
  */
+require "../bussiness/TeacherBusinessOperation.php";
+
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 

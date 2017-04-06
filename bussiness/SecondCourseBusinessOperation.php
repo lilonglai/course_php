@@ -6,6 +6,8 @@
  * Date: 2017/4/6
  * Time: 15:05
  */
+require "../db/PDOSecondCourseOperation.php";
+
 class SecondCourseBusinessOperation
 {
     public function get($key){

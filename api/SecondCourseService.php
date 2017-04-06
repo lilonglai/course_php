@@ -9,6 +9,8 @@
 /*
 *  begin to operate SecondCourse
 */
+require "../bussiness/SecondCourseBusinessOperation.php";
+
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 

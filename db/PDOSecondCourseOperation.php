@@ -6,7 +6,7 @@
  * Date: 2017/4/6
  * Time: 14:52
  */
-require "PDOBaseOperation.php";
+require_once "PDOBaseOperation.php";
 
 class PDOSecondCourseOperation extends PDOBaseOperation {
     const TABLENAME = "secondcourse" ;

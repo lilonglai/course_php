@@ -9,6 +9,8 @@
 /*
  * begin to operate TeacherAbility
  */
+require "../bussiness/TeacherAbilityBusinessOperation.php";
+
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 

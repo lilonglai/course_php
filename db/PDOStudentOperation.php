@@ -6,7 +6,7 @@
  * Date: 2017/4/6
  * Time: 14:53
  */
-require "PDOBaseOperation.php";
+require_once "PDOBaseOperation.php";
 
 class PDOStudentOperation extends PDOBaseOperation {
     const TABLENAME = "student";

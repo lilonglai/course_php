@@ -9,6 +9,8 @@
 /*
  * begin to operate TeacherHoliday
  */
+require "../bussiness/TeacherDefaultHolidayBusinessOperation.php";
+
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
@@ -17,7 +19,7 @@ class TeacherDefaultHolidayService
     public static function get(Request $request, Response $response)
     {
         $key = $request->getParam('id');
-        $operator = new TeacherAbilityBusinessOperation();
+        $operator = new TeacherDefaultHolidayBusinessOperation();
         $o = $operator->get($key);
         $result = json_encode($o);
         echo $result;
@@ -25,7 +27,7 @@ class TeacherDefaultHolidayService
 
     public static function getAll(Request $request, Response $response)
     {
-        $operator = new TeacherAbilityBusinessOperation();
+        $operator = new TeacherDefaultHolidayBusinessOperation();
         $list = $operator->getAll();
         $result = json_encode($list);
         echo $result;
@@ -43,7 +45,7 @@ class TeacherDefaultHolidayService
         $o[week6] = $request->getParam('week6');
         $o[week7] = $request->getParam('week7');
 
-        $operator = new TeacherAbilityBusinessOperation();
+        $operator = new TeacherDefaultHolidayBusinessOperation();
         $operator->add($o);
     }
 
@@ -60,14 +62,14 @@ class TeacherDefaultHolidayService
         $o[week6] = $request->getParam('week6');
         $o[week7] = $request->getParam('week7');
 
-        $operator = new TeacherAbilityBusinessOperation();
+        $operator = new TeacherDefaultHolidayBusinessOperation();
         $operator->update($o);
     }
 
     public static function delete(Request $request, Response $response)
     {
         $key = $request->getParam('id');
-        $operator = new TeacherAbilityBusinessOperation();
+        $operator = new TeacherDefaultHolidayBusinessOperation();
         $operator->delete($key);
     }
 }
