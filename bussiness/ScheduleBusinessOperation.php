@@ -7,22 +7,20 @@
  * Time: 15:05
  */
 require "../db/PDOScheduleOperation.php";
+require "../utils/DateHelp.php";
 
 class ScheduleBusinessOperation
 {
-    public function get(Request $request, Response $response){
-        $key = $request->getParam('id');
+    public function get($key){
         $operator = new PDOScheduleOperation();
         $o = $operator->get($key);
-        $result = json_encode($o);
-        echo $result;
+        echo $o;
     }
 
-    public function getAll(Request $request, Response $response){
+    public function getAll(){
         $operator = new PDOScheduleOperation();
         $list = $operator->getAll();
-        $result = json_encode($list);
-        echo $result;
+        return $list;
     }
 
     private static function isCourseScheduled($secondCourse, $scheduleList){
@@ -51,9 +49,7 @@ class ScheduleBusinessOperation
 
     }
 
-    public function getSecondCourseList(Request $request, Response $response){
-        $studentId = $request->getParam('studentId');
-        $firstCourseId = $request->getParam('firstCourseId');
+    public function getAvailableSecondCourseList($studentId, $firstCourseId){
         $scheduleOperation = new PDOScheduleOperation();
         $secondCourseOperation = new PDOSecondCourseOperation();
         $secondCourseList = $secondCourseOperation->getByFirstCourseId($firstCourseId);
@@ -65,14 +61,10 @@ class ScheduleBusinessOperation
             }
             $resultList[] = $secondCourse;
         }
-        $result = json_encode($resultList);
-        echo $result;
+        return $resultList;
     }
 
-    public function getTeacherListByGet(Request $request, Response $response){
-        $onDate = $request->getParam('onDate');
-        $onTime = $request->getParam('onTime');
-        $firstCourseId = $request->getParam('firstCourseId');
+    public function getAvailableTeacherListByAbility($onDate, $onTime, $firstCourseId){
         $scheduleOperation = new PDOScheduleOperation();
         $teacherOperation = new PDOTeacherOperation();
         $teacherAbilityOperation = new PDOTeacherAbilityOperation();
@@ -90,13 +82,10 @@ class ScheduleBusinessOperation
             }
             $resultList[] = $teacherOperation->get($teacherId);
         }
-        $result = json_encode($resultList);
-        echo $result;
+        return $resultList;
     }
 
-    public function getAvailableTeacherListByGet(Request $request, Response $response){
-        $onDate = $request->getParam('onDate');
-        $onTime = $request->getParam('onTime');
+    public function getAvailableTeacherList($onDate, $onTime){
         $scheduleOperation = new PDOScheduleOperation();
         $teacherOperation = new PDOTeacherOperation();
         $scheduleList = $scheduleOperation->getByDateAndTime(onDate, onTime);
@@ -114,48 +103,27 @@ class ScheduleBusinessOperation
 
             $resultList[] = $teacher;
         }
-        $result = json_encode($resultList);
-        echo $result;
+        return $resultList;
     }
 
-    public function getSecondCourseAndTeacherListByGet(Request $request, Response $response){
-        $onDate = $request->getParam('onDate');
-        $onTime = $request->getParam('onTime');
-        $studentId = $request->getParam('studentId');
-        $firstCourseId = $request->getParam('firstCourseId');
+    public function getSecondCourseAndTeacherList($onDate, $onTime, $studentId, $firstCourseId){
+        $secondCourseList = $this->getAvailableSecondCourseList($studentId, $firstCourseId);
+        $teacherList = $this->getAvailableTeacherListByAbility($onDate, $onTime, $firstCourseId);
+        $resultList = array("secondCourseList" => $secondCourseList, "teacherList" => $teacherList);
+        return $resultList;
     }
 
-    public function add(Request $request, Response $response){
-        $o = array();
-        $o[ondate] = $request->getParam('ondate');
-        $o[ontime] = $request->getParam('ontime');
-        $o[studentid] = $request->getParam('studentid');
-        $o[courseid] = $request->getParam('courseid');
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[addition] = $request->getParam('addition');
-        $o[description] = $request->getParam('description');
-
+    public function add($o){
         $operator = new PDOScheduleOperation();
         $operator->add($o);
     }
 
-    public function update(Request $request, Response $response){
-        $o = array();
-        $o[id] = $request->getParam('id');
-        $o[ondate] = $request->getParam('ondate');
-        $o[ontime] = $request->getParam('ontime');
-        $o[studentid] = $request->getParam('studentid');
-        $o[courseid] = $request->getParam('courseid');
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[addition] = $request->getParam('addition');
-        $o[description] = $request->getParam('description');
-
+    public function update($o){
         $operator = new PDOScheduleOperation();
         $operator->update($o);
     }
 
-    public function delete(Request $request, Response $response){
-        $key = $request->getParam('id');
+    public function delete($key){
         $operator = new PDOScheduleOperation();
         $operator->delete($key);
     }

@@ -33,111 +33,47 @@ class ScheduleService
         echo $result;
     }
 
-    private static function isCourseScheduled($secondCourse, $scheduleList)
-    {
-        foreach ($scheduleList as $schedule) {
-            if ($secondCourse->id == $schedule->courseId) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static function isTeacherScheduled($teacherId, $scheduleList)
-    {
-        foreach ($scheduleList as $schedule) {
-            if ($teacherId == $schedule->teacherId) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static function isTeacherInHoliday($teacherId, $onDate)
-    {
-        $teacherDefaultHolidayOperation = new PDOTeacherDefaultHolidayOperation();
-        $teacherHolidayOperation = new PDOTeacherHolidayOperation();
-        $teacherDefaultHoliday = $teacherDefaultHolidayOperation->getByTeacherId($teacherId);
-        $holidayList = $teacherHolidayOperation->getByTeacherId($teacherId);
-
-    }
-
-    public static function getSecondCourseList(Request $request, Response $response)
+    public static function getAvailableSecondCourseList(Request $request, Response $response)
     {
         $studentId = $request->getParam('studentId');
         $firstCourseId = $request->getParam('firstCourseId');
-        $scheduleOperation = new PDOScheduleOperation();
-        $secondCourseOperation = new PDOSecondCourseOperation();
-        $secondCourseList = $secondCourseOperation->getByFirstCourseId($firstCourseId);
-        $scheduleList = $scheduleOperation->getByStudentId($studentId);
-        $resultList = array();
-        foreach ($secondCourseList as $secondCourse) {
-            if (self::isCourseScheduled($secondCourse, $scheduleList)) {
-                continue;
-            }
-            $resultList[] = $secondCourse;
-        }
+        $operator = new ScheduleBusinessOperation();
+        $resultList = $operator->getAvailableSecondCourseList($studentId, $firstCourseId);
         $result = json_encode($resultList);
         echo $result;
     }
 
-    public static function getTeacherListByGet(Request $request, Response $response)
+    public static function getAvailableTeacherListByAbility(Request $request, Response $response)
     {
         $onDate = $request->getParam('onDate');
         $onTime = $request->getParam('onTime');
         $firstCourseId = $request->getParam('firstCourseId');
-        $scheduleOperation = new PDOScheduleOperation();
-        $teacherOperation = new PDOTeacherOperation();
-        $teacherAbilityOperation = new PDOTeacherAbilityOperation();
-        $secondCourseOperation = new PDOSecondCourseOperation();
-        $scheduleList = $scheduleOperation . getByDateAndTime(onDate, onTime);
-        $teacherAbilityList = $teacherAbilityOperation->getByCourseId($firstCourseId);
-        $resultList = array();
-        foreach ($teacherAbilityList as $teacherAbility) {
-            $teacherId = $teacherAbility->teacherId;
-            if (self::isTeacherInHoliday($teacherId, $onTime)) {
-                continue;
-            }
-            if (self::isTeacherScheduled($teacherId, $scheduleList)) {
-                continue;
-            }
-            $resultList[] = $teacherOperation->get($teacherId);
-        }
+        $operator = new ScheduleBusinessOperation();
+        $resultList = $operator->getAvailableTeacherListByAbility($onDate, $onTime, $firstCourseId);
         $result = json_encode($resultList);
         echo $result;
     }
 
-    public static function getAvailableTeacherListByGet(Request $request, Response $response)
+    public static function getAvailableTeacherList(Request $request, Response $response)
     {
         $onDate = $request->getParam('onDate');
         $onTime = $request->getParam('onTime');
-        $scheduleOperation = new PDOScheduleOperation();
-        $teacherOperation = new PDOTeacherOperation();
-        $scheduleList = $scheduleOperation->getByDateAndTime($onDate, $onTime);
-        $teacherList = $teacherOperation->getAll();
-        $resultList = array();
-        foreach ($teacherList as $teacher) {
-            $teacherId = $teacher->id;
-            if (self::isTeacherInHoliday($teacherId, $onTime)) {
-                continue;
-            }
-
-            if (self::isTeacherScheduled($teacherId, $scheduleList)) {
-                continue;
-            }
-
-            $resultList[] = $teacher;
-        }
+        $operator = new ScheduleBusinessOperation();
+        $resultList = $operator->getAvailableTeacherList($onDate, $onTime);
         $result = json_encode($resultList);
         echo $result;
     }
 
-    public static function getSecondCourseAndTeacherListByGet(Request $request, Response $response)
+    public static function getSecondCourseAndTeacherList(Request $request, Response $response)
     {
         $onDate = $request->getParam('onDate');
         $onTime = $request->getParam('onTime');
         $studentId = $request->getParam('studentId');
         $firstCourseId = $request->getParam('firstCourseId');
+        $operator = new ScheduleBusinessOperation();
+        $resultList = $operator->getSecondCourseAndTeacherList($onDate, $onTime, $studentId, $firstCourseId);
+        $result = json_encode($resultList);
+        echo $result;
     }
 
     public static function add(Request $request, Response $response)
@@ -151,7 +87,7 @@ class ScheduleService
         $o[addition] = $request->getParam('addition');
         $o[description] = $request->getParam('description');
 
-        $operator = new PDOScheduleOperation();
+        $operator = new ScheduleBusinessOperation();
         $operator->add($o);
     }
 
@@ -167,14 +103,14 @@ class ScheduleService
         $o[addition] = $request->getParam('addition');
         $o[description] = $request->getParam('description');
 
-        $operator = new PDOScheduleOperation();
+        $operator = new ScheduleBusinessOperation();
         $operator->update($o);
     }
 
     public static function delete(Request $request, Response $response)
     {
         $key = $request->getParam('id');
-        $operator = new PDOScheduleOperation();
+        $operator = new ScheduleBusinessOperation();
         $operator->delete($key);
     }
 }
