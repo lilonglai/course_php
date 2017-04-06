@@ -12,37 +12,43 @@
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
-class StudentService{
-    static function get(Request $request, Response $response){
+class StudentService
+{
+    public static function get(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOStudentOperation();
+        $operator = new StudentBusinessOperation();
         $o = $operator->get($key);
         $result = json_encode($o);
         echo $result;
     }
 
-    static function getAll(Request $request, Response $response){
-        $operator = new PDOStudentOperation();
+    public static function getAll(Request $request, Response $response)
+    {
+        $operator = new StudentBusinessOperation();
         $list = $operator->getAll();
         $result = json_encode($list);
         echo $result;
     }
 
-    static function getAlive(){
-        $operator = new PDOStudentOperation();
+    public static function getAlive()
+    {
+        $operator = new StudentBusinessOperation();
         $list = $operator->getAlive();
         $result = json_encode($list);
         echo $result;
     }
 
-    static function getNotAlive(){
-        $operator = new PDOStudentOperation();
+    public static function getNotAlive()
+    {
+        $operator = new StudentBusinessOperation();
         $list = $operator->getNotAlive();
         $result = json_encode($list);
         echo $result;
     }
 
-    static function add(Request $request, Response $response){
+    public static function add(Request $request, Response $response)
+    {
         $o = array();
         $o[name] = $request->getParam('name');
         $o[shortname] = $request->getParam('shortname');
@@ -54,11 +60,12 @@ class StudentService{
         $o[teacherid] = $request->getParam('teacherid');
         $o[description] = $request->getParam('description');
 
-        $operator = new PDOStudentOperation();
+        $operator = new StudentBusinessOperation();
         $operator->add($o);
     }
 
-    static function update(Request $request, Response $response){
+    public static function update(Request $request, Response $response)
+    {
         $o = array();
         $o[id] = $request->getParam('id');
         $o[name] = $request->getParam('name');
@@ -71,20 +78,22 @@ class StudentService{
         $o[teacherid] = $request->getParam('teacherid');
         $o[description] = $request->getParam('description');
 
-        $operator = new PDOStudentOperation();
+        $operator = new StudentBusinessOperation();
         $operator->update($o);
     }
 
-    static function retire(Request $request, Response $response){
+    public static function retire(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
 
-        $operator = new PDOStudentOperation();
+        $operator = new StudentBusinessOperation();
         $operator->retire($key);
     }
 
-    static function delete(Request $request, Response $response){
+    public static function delete(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOStudentOperation();
+        $operator = new StudentBusinessOperation();
         $operator->delete($key);
     }
 }

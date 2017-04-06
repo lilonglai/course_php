@@ -12,44 +12,50 @@
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
-class TeacherAbilityService{
-    static function get(Request $request, Response $response){
+class TeacherAbilityService
+{
+    public static function get(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOTeacherAbilityOperation();
+        $operator = new TeacherAbilityBusinessOperation();
         $o = $operator->get($key);
         $result = json_encode($o);
         echo $result;
     }
 
-    static function getAll(Request $request, Response $response){
-        $operator = new PDOTeacherAbilityOperation();
+    public static function getAll(Request $request, Response $response)
+    {
+        $operator = new TeacherAbilityBusinessOperation();
         $list = $operator->getAll();
         $result = json_encode($list);
         echo $result;
     }
 
-    static function add(Request $request, Response $response){
+    public static function add(Request $request, Response $response)
+    {
         $o = array();
         $o[teacherid] = $request->getParam('teacherid');
         $o[courseid] = $request->getParam('courseid');
 
-        $operator = new PDOTeacherAbilityOperation();
+        $operator = new TeacherAbilityBusinessOperation();
         $operator->add($o);
     }
 
-    static function update(Request $request, Response $response){
+    public static function update(Request $request, Response $response)
+    {
         $o = array();
         $o[id] = $request->getParam('id');
         $o[teacherid] = $request->getParam('teacherid');
         $o[courseid] = $request->getParam('courseid');
 
-        $operator = new PDOTeacherAbilityOperation();
+        $operator = new TeacherAbilityBusinessOperation();
         $operator->update($o);
     }
 
-    static function delete(Request $request, Response $response){
+    public static function delete(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOTeacherAbilityOperation();
+        $operator = new TeacherAbilityBusinessOperation();
         $operator->delete($key);
     }
 }

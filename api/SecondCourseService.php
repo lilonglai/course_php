@@ -12,34 +12,39 @@
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
-class SecondCourseService{
-    static function get(Request $request, Response $response){
+class SecondCourseService
+{
+    public static function get(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOSecondCourseOperation();
+        $operator = new SecondCourseBusinessOperation();
         $o = $operator->get($key);
         $result = json_encode($o);
         echo $result;
     }
 
-    static function getAll(Request $request, Response $response){
-        $operator = new PDOSecondCourseOperation();
+    public static function getAll(Request $request, Response $response)
+    {
+        $operator = new SecondCourseBusinessOperation();
         $list = $operator->getAll();
         $result = json_encode($list);
         echo $result;
     }
 
-    static function add(Request $request, Response $response){
+    public static function add(Request $request, Response $response)
+    {
         $o = array();
         $o[name] = $request->getParam('name');
         $o[shortname] = $request->getParam('shortname');
         $o[firstcourseid] = $request->getParam('firstcourseid');
         $o[description] = $request->getParam('description');
 
-        $operator = new PDOSecondCourseOperation();
+        $operator = new SecondCourseBusinessOperation();
         $operator->add($o);
     }
 
-    static function update(Request $request, Response $response){
+    public static function update(Request $request, Response $response)
+    {
         $o = array();
         $o[id] = $request->getParam('id');
         $o[name] = $request->getParam('name');
@@ -47,13 +52,14 @@ class SecondCourseService{
         $o[firstcourseid] = $request->getParam('firstcourseid');
         $o[description] = $request->getParam('description');
 
-        $operator = new PDOSecondCourseOperation();
+        $operator = new SecondCourseBusinessOperation();
         $operator->update($o);
     }
 
-    static function delete(Request $request, Response $response){
+    public static function delete(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOSecondCourseOperation();
+        $operator = new SecondCourseBusinessOperation();
         $operator->delete($key);
     }
 }

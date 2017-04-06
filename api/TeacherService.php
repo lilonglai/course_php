@@ -12,37 +12,43 @@
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
-class TeacherService{
-    static function get(Request $request, Response $response){
+class TeacherService
+{
+    public static function get(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOTeacherOperation();
+        $operator = new TeacherBusinessOperation();
         $o = $operator->get($key);
         $result = json_encode($o);
         echo $result;
     }
 
-    static function getAll(Request $request, Response $response){
-        $operator = new PDOTeacherOperation();
+    public static function getAll(Request $request, Response $response)
+    {
+        $operator = new TeacherBusinessOperation();
         $list = $operator->getAll();
         $result = json_encode($list);
         echo $result;
     }
 
-    static function getAlive(){
-        $operator = new PDOTeacherOperation();
+    public static function getAlive()
+    {
+        $operator = new TeacherBusinessOperation();
         $list = $operator->getAlive();
         $result = json_encode($list);
         echo $result;
     }
 
-    static function getNotAlive(){
-        $operator = new PDOTeacherOperation();
+    public static function getNotAlive()
+    {
+        $operator = new TeacherBusinessOperation();
         $list = $operator->getNotAlive();
         $result = json_encode($list);
         echo $result;
     }
 
-    static function add(Request $request, Response $response){
+    public static function add(Request $request, Response $response)
+    {
         $o = array();
         $o[name] = $request->getParam('name');
         $o[shortname] = $request->getParam('shortname');
@@ -53,7 +59,8 @@ class TeacherService{
         $operator->add($o);
     }
 
-    static function update(Request $request, Response $response){
+    public static function update(Request $request, Response $response)
+    {
         $o = array();
         $o[id] = $request->getParam('id');
         $o[name] = $request->getParam('name');
@@ -61,20 +68,22 @@ class TeacherService{
         $o[phone] = $request->getParam('phone');
         $o[ismaster] = $request->getParam('ismaster');
 
-        $operator = new PDOTeacherOperation();
+        $operator = new TeacherBusinessOperation();
         $operator->update($o);
     }
 
-    static function retire(Request $request, Response $response){
+    public static function retire(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
 
-        $operator = new PDOTeacherOperation();
+        $operator = new TeacherBusinessOperation();
         $operator->retire($key);
     }
 
-    static function delete(Request $request, Response $response){
+    public static function delete(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOTeacherOperation();
+        $operator = new TeacherBusinessOperation();
         $operator->delete($key);
     }
 }

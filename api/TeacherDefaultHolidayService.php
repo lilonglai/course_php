@@ -12,23 +12,27 @@
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
-class TeacherDefaultHolidayService{
-    static function get(Request $request, Response $response){
+class TeacherDefaultHolidayService
+{
+    public static function get(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOTeacherDefaultHolidayOperation();
+        $operator = new TeacherAbilityBusinessOperation();
         $o = $operator->get($key);
         $result = json_encode($o);
         echo $result;
     }
 
-    static function getAll(Request $request, Response $response){
-        $operator = new PDOTeacherDefaultHolidayOperation();
+    public static function getAll(Request $request, Response $response)
+    {
+        $operator = new TeacherAbilityBusinessOperation();
         $list = $operator->getAll();
         $result = json_encode($list);
         echo $result;
     }
 
-    static function add(Request $request, Response $response){
+    public static function add(Request $request, Response $response)
+    {
         $o = array();
         $o[teacherid] = $request->getParam('teacherid');
         $o[week1] = $request->getParam('week1');
@@ -39,11 +43,12 @@ class TeacherDefaultHolidayService{
         $o[week6] = $request->getParam('week6');
         $o[week7] = $request->getParam('week7');
 
-        $operator = new PDOTeacherDefaultHolidayOperation();
+        $operator = new TeacherAbilityBusinessOperation();
         $operator->add($o);
     }
 
-    static function update(Request $request, Response $response){
+    public static function update(Request $request, Response $response)
+    {
         $o = array();
         $o[id] = $request->getParam('id');
         $o[teacherid] = $request->getParam('teacherid');
@@ -55,13 +60,14 @@ class TeacherDefaultHolidayService{
         $o[week6] = $request->getParam('week6');
         $o[week7] = $request->getParam('week7');
 
-        $operator = new PDOTeacherDefaultHolidayOperation();
+        $operator = new TeacherAbilityBusinessOperation();
         $operator->update($o);
     }
 
-    static function delete(Request $request, Response $response){
+    public static function delete(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOTeacherDefaultHolidayOperation();
+        $operator = new TeacherAbilityBusinessOperation();
         $operator->delete($key);
     }
 }

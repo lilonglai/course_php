@@ -12,41 +12,47 @@
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
-class ScheduleService{
-    static function get(Request $request, Response $response){
+class ScheduleService
+{
+    public static function get(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
-        $operator = new PDOScheduleOperation();
+        $operator = new ScheduleBusinessOperation();
         $o = $operator->get($key);
         $result = json_encode($o);
         echo $result;
     }
 
-    static function getAll(Request $request, Response $response){
-        $operator = new PDOScheduleOperation();
+    public static function getAll(Request $request, Response $response)
+    {
+        $operator = new ScheduleBusinessOperation();
         $list = $operator->getAll();
         $result = json_encode($list);
         echo $result;
     }
 
-    private static function isCourseScheduled($secondCourse, $scheduleList){
-        foreach ($scheduleList as $schedule){
-            if($secondCourse->id == $schedule->courseId){
+    private static function isCourseScheduled($secondCourse, $scheduleList)
+    {
+        foreach ($scheduleList as $schedule) {
+            if ($secondCourse->id == $schedule->courseId) {
                 return true;
             }
         }
         return false;
     }
 
-    private static function isTeacherScheduled($teacherId, $scheduleList){
-        foreach ($scheduleList as $schedule){
-            if($teacherId == $schedule->teacherId){
+    private static function isTeacherScheduled($teacherId, $scheduleList)
+    {
+        foreach ($scheduleList as $schedule) {
+            if ($teacherId == $schedule->teacherId) {
                 return true;
             }
         }
         return false;
     }
 
-    private static function isTeacherInHoliday($teacherId, $onDate){
+    private static function isTeacherInHoliday($teacherId, $onDate)
+    {
         $teacherDefaultHolidayOperation = new PDOTeacherDefaultHolidayOperation();
         $teacherHolidayOperation = new PDOTeacherHolidayOperation();
         $teacherDefaultHoliday = $teacherDefaultHolidayOperation->getByTeacherId($teacherId);
@@ -54,7 +60,8 @@ class ScheduleService{
 
     }
 
-    static function getSecondCourseList(Request $request, Response $response){
+    public static function getSecondCourseList(Request $request, Response $response)
+    {
         $studentId = $request->getParam('studentId');
         $firstCourseId = $request->getParam('firstCourseId');
         $scheduleOperation = new PDOScheduleOperation();
@@ -62,8 +69,8 @@ class ScheduleService{
         $secondCourseList = $secondCourseOperation->getByFirstCourseId($firstCourseId);
         $scheduleList = $scheduleOperation->getByStudentId($studentId);
         $resultList = array();
-        foreach($secondCourseList as $secondCourse){
-            if(self::isCourseScheduled($secondCourse, $scheduleList)){
+        foreach ($secondCourseList as $secondCourse) {
+            if (self::isCourseScheduled($secondCourse, $scheduleList)) {
                 continue;
             }
             $resultList[] = $secondCourse;
@@ -72,7 +79,8 @@ class ScheduleService{
         echo $result;
     }
 
-    static function getTeacherListByGet(Request $request, Response $response){
+    public static function getTeacherListByGet(Request $request, Response $response)
+    {
         $onDate = $request->getParam('onDate');
         $onTime = $request->getParam('onTime');
         $firstCourseId = $request->getParam('firstCourseId');
@@ -80,15 +88,15 @@ class ScheduleService{
         $teacherOperation = new PDOTeacherOperation();
         $teacherAbilityOperation = new PDOTeacherAbilityOperation();
         $secondCourseOperation = new PDOSecondCourseOperation();
-        $scheduleList = $scheduleOperation.getByDateAndTime(onDate, onTime);
+        $scheduleList = $scheduleOperation . getByDateAndTime(onDate, onTime);
         $teacherAbilityList = $teacherAbilityOperation->getByCourseId($firstCourseId);
         $resultList = array();
-        foreach($teacherAbilityList as $teacherAbility){
+        foreach ($teacherAbilityList as $teacherAbility) {
             $teacherId = $teacherAbility->teacherId;
-            if(self::isTeacherInHoliday($teacherId, $onTime)){
+            if (self::isTeacherInHoliday($teacherId, $onTime)) {
                 continue;
             }
-            if(self::isTeacherScheduled($teacherId, $scheduleList)){
+            if (self::isTeacherScheduled($teacherId, $scheduleList)) {
                 continue;
             }
             $resultList[] = $teacherOperation->get($teacherId);
@@ -97,21 +105,22 @@ class ScheduleService{
         echo $result;
     }
 
-    static function getAvailableTeacherListByGet(Request $request, Response $response){
+    public static function getAvailableTeacherListByGet(Request $request, Response $response)
+    {
         $onDate = $request->getParam('onDate');
         $onTime = $request->getParam('onTime');
         $scheduleOperation = new PDOScheduleOperation();
         $teacherOperation = new PDOTeacherOperation();
-        $scheduleList = $scheduleOperation->getByDateAndTime(onDate, onTime);
+        $scheduleList = $scheduleOperation->getByDateAndTime($onDate, $onTime);
         $teacherList = $teacherOperation->getAll();
         $resultList = array();
-        foreach ($teacherList as $teacher){
+        foreach ($teacherList as $teacher) {
             $teacherId = $teacher->id;
-            if(self::isTeacherInHoliday($teacherId, $onTime)){
+            if (self::isTeacherInHoliday($teacherId, $onTime)) {
                 continue;
             }
 
-            if(self::isTeacherScheduled($teacherId, $scheduleList)){
+            if (self::isTeacherScheduled($teacherId, $scheduleList)) {
                 continue;
             }
 
@@ -121,14 +130,16 @@ class ScheduleService{
         echo $result;
     }
 
-    static function getSecondCourseAndTeacherListByGet(Request $request, Response $response){
+    public static function getSecondCourseAndTeacherListByGet(Request $request, Response $response)
+    {
         $onDate = $request->getParam('onDate');
         $onTime = $request->getParam('onTime');
         $studentId = $request->getParam('studentId');
         $firstCourseId = $request->getParam('firstCourseId');
     }
 
-    static function add(Request $request, Response $response){
+    public static function add(Request $request, Response $response)
+    {
         $o = array();
         $o[ondate] = $request->getParam('ondate');
         $o[ontime] = $request->getParam('ontime');
@@ -142,7 +153,8 @@ class ScheduleService{
         $operator->add($o);
     }
 
-    static function update(Request $request, Response $response){
+    public static function update(Request $request, Response $response)
+    {
         $o = array();
         $o[id] = $request->getParam('id');
         $o[ondate] = $request->getParam('ondate');
@@ -157,7 +169,8 @@ class ScheduleService{
         $operator->update($o);
     }
 
-    static function delete(Request $request, Response $response){
+    public static function delete(Request $request, Response $response)
+    {
         $key = $request->getParam('id');
         $operator = new PDOScheduleOperation();
         $operator->delete($key);
