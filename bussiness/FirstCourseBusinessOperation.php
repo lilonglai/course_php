@@ -13,13 +13,13 @@ class FirstCourseBusinessOperation
     public function get($key){
         $operator = new PDOFirstCourseOperation();
         $o = $operator->get($key);
-        echo $o;
+        return $o;
     }
 
     public function getAll(){
         $operator = new PDOFirstCourseOperation();
         $list = $operator->getAll();
-        echo $list;
+        return $list;
     }
 
     public function add($o){

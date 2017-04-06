@@ -13,13 +13,13 @@ class TeacherHolidayBusinessOperation
     public function get($key){
         $operator = new PDOTeacherHolidayOperation();
         $o = $operator->get($key);
-        echo $o;
+        return $o;
     }
 
     public function getAll(){
         $operator = new PDOTeacherHolidayOperation();
         $list = $operator->getAll();
-        echo $list;
+        return $list;
     }
 
     public function add($o){

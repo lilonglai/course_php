@@ -19,19 +19,19 @@ class TeacherBusinessOperation
     public function getAll(){
         $operator = new PDOTeacherOperation();
         $list = $operator->getAll();
-        echo $list;
+        return $list;
     }
 
     public function getAlive(){
         $operator = new PDOTeacherOperation();
         $list = $operator->getAlive();
-        echo $list;
+        return $list;
     }
 
     public function getNotAlive(){
         $operator = new PDOTeacherOperation();
         $list = $operator->getNotAlive();
-        echo $list;
+        return $list;
     }
 
     public function add($o){

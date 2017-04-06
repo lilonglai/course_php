@@ -13,10 +13,10 @@ class TeacherAbilityBusinessOperation
     public function get($key){
         $operator = new PDOTeacherAbilityOperation();
         $o = $operator->get($key);
-        echo $o;
+        return $o;
     }
 
-    public function getAll(Request $request, Response $response){
+    public function getAll(){
         $operator = new PDOTeacherAbilityOperation();
         $list = $operator->getAll();
         return $list;
