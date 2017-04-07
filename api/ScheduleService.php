@@ -20,17 +20,17 @@ class ScheduleService
     {
         $key = $request->getParam('id');
         $operator = new ScheduleBusinessOperation();
-        $o = $operator->get($key);
-        $result = json_encode($o);
-        echo $result;
+        $result = $operator->get($key);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function getAll(Request $request, Response $response)
     {
         $operator = new ScheduleBusinessOperation();
         $list = $operator->getAll();
-        $result = json_encode($list);
-        echo $result;
+        $newResponse = $response->withJson($list);
+        return $newResponse;
     }
 
     public static function getAvailableSecondCourseList(Request $request, Response $response)
@@ -38,9 +38,9 @@ class ScheduleService
         $studentId = $request->getParam('studentId');
         $firstCourseId = $request->getParam('firstCourseId');
         $operator = new ScheduleBusinessOperation();
-        $resultList = $operator->getAvailableSecondCourseList($studentId, $firstCourseId);
-        $result = json_encode($resultList);
-        echo $result;
+        $result = $operator->getAvailableSecondCourseList($studentId, $firstCourseId);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function getAvailableTeacherListByAbility(Request $request, Response $response)
@@ -49,9 +49,9 @@ class ScheduleService
         $onTime = $request->getParam('onTime');
         $firstCourseId = $request->getParam('firstCourseId');
         $operator = new ScheduleBusinessOperation();
-        $resultList = $operator->getAvailableTeacherListByAbility($onDate, $onTime, $firstCourseId);
-        $result = json_encode($resultList);
-        echo $result;
+        $result = $operator->getAvailableTeacherListByAbility($onDate, $onTime, $firstCourseId);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function getAvailableTeacherList(Request $request, Response $response)
@@ -59,9 +59,9 @@ class ScheduleService
         $onDate = $request->getParam('onDate');
         $onTime = $request->getParam('onTime');
         $operator = new ScheduleBusinessOperation();
-        $resultList = $operator->getAvailableTeacherList($onDate, $onTime);
-        $result = json_encode($resultList);
-        echo $result;
+        $result = $operator->getAvailableTeacherList($onDate, $onTime);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function getSecondCourseAndTeacherList(Request $request, Response $response)
@@ -71,9 +71,9 @@ class ScheduleService
         $studentId = $request->getParam('studentId');
         $firstCourseId = $request->getParam('firstCourseId');
         $operator = new ScheduleBusinessOperation();
-        $resultList = $operator->getSecondCourseAndTeacherList($onDate, $onTime, $studentId, $firstCourseId);
-        $result = json_encode($resultList);
-        echo $result;
+        $result = $operator->getSecondCourseAndTeacherList($onDate, $onTime, $studentId, $firstCourseId);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function add(Request $request, Response $response)

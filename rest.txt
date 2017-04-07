@@ -22,3 +22,6 @@ http://localhost:8090/course_php/api/teacherholiday/getall?id=2
 
 http://localhost:8090/course_php/api/teacherdefaultholiday/get?id=2
 http://localhost:8090/course_php/api/teacherdefaultholiday/getall?id=2
+
+http://localhost:8090/course_php/api/schedule/get?id=2
+http://localhost:8090/course_php/api/schedule/getall?id=2

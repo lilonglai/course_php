@@ -20,33 +20,33 @@ class TeacherService
     {
         $key = $request->getParam('id');
         $operator = new TeacherBusinessOperation();
-        $o = $operator->get($key);
-        $result = json_encode($o);
-        echo $result;
+        $result = $operator->get($key);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function getAll(Request $request, Response $response)
     {
         $operator = new TeacherBusinessOperation();
-        $list = $operator->getAll();
-        $result = json_encode($list);
-        echo $result;
+        $result = $operator->getAll();
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
-    public static function getAlive()
+    public static function getAlive(Request $request, Response $response)
     {
         $operator = new TeacherBusinessOperation();
-        $list = $operator->getAlive();
-        $result = json_encode($list);
-        echo $result;
+        $result = $operator->getAlive();
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
-    public static function getNotAlive()
+    public static function getNotAlive(Request $request, Response $response)
     {
         $operator = new TeacherBusinessOperation();
-        $list = $operator->getNotAlive();
-        $result = json_encode($list);
-        echo $result;
+        $result = $operator->getNotAlive();
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function add(Request $request, Response $response)

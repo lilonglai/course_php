@@ -20,17 +20,17 @@ class TeacherDefaultHolidayService
     {
         $key = $request->getParam('id');
         $operator = new TeacherDefaultHolidayBusinessOperation();
-        $o = $operator->get($key);
-        $result = json_encode($o);
-        echo $result;
+        $result = $operator->get($key);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function getAll(Request $request, Response $response)
     {
         $operator = new TeacherDefaultHolidayBusinessOperation();
-        $list = $operator->getAll();
-        $result = json_encode($list);
-        echo $result;
+        $result = $operator->getAll();
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function add(Request $request, Response $response)
