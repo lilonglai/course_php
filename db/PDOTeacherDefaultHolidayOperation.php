@@ -13,7 +13,11 @@ class PDOTeacherDefaultHolidayOperation extends PDOBaseOperation {
 
     public function getByTeacherId($teacherId){
         $sql = "select * from " . self::TABLENAME . " where teacherid = $teacherId";
-        $result = $this->executeSql($sql);
+        $list = $this->executeSql($sql);
+        $result = null;
+        if($list != null){
+            $result = $list[0];
+        }
         return $result;
     }
 

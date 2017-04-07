@@ -46,6 +46,12 @@ class ScheduleBusinessOperation
         $teacherHolidayOperation = new PDOTeacherHolidayOperation();
         $teacherDefaultHoliday = $teacherDefaultHolidayOperation->getByTeacherId($teacherId);
         $holidayList = $teacherHolidayOperation->getByTeacherId($teacherId);
+        if(DateHelp::isHoliday($onDate, $teacherDefaultHoliday, $holidayList)){
+            return true;
+        }
+        else{
+            return false;
+        }
 
     }
 
@@ -69,12 +75,12 @@ class ScheduleBusinessOperation
         $teacherOperation = new PDOTeacherOperation();
         $teacherAbilityOperation = new PDOTeacherAbilityOperation();
         $secondCourseOperation = new PDOSecondCourseOperation();
-        $scheduleList = $scheduleOperation.getByDateAndTime(onDate, onTime);
+        $scheduleList = $scheduleOperation->getByDateAndTime($onDate, $onTime);
         $teacherAbilityList = $teacherAbilityOperation->getByCourseId($firstCourseId);
         $resultList = array();
         foreach($teacherAbilityList as $teacherAbility){
-            $teacherId = $teacherAbility->teacherId;
-            if(self::isTeacherInHoliday($teacherId, $onTime)){
+            $teacherId = $teacherAbility['teacherid'];
+            if(self::isTeacherInHoliday($teacherId, $onDate)){
                 continue;
             }
             if(self::isTeacherScheduled($teacherId, $scheduleList)){
@@ -88,12 +94,12 @@ class ScheduleBusinessOperation
     public function getAvailableTeacherList($onDate, $onTime){
         $scheduleOperation = new PDOScheduleOperation();
         $teacherOperation = new PDOTeacherOperation();
-        $scheduleList = $scheduleOperation->getByDateAndTime(onDate, onTime);
+        $scheduleList = $scheduleOperation->getByDateAndTime($onDate, $onTime);
         $teacherList = $teacherOperation->getAll();
         $resultList = array();
         foreach ($teacherList as $teacher){
-            $teacherId = $teacher->id;
-            if(self::isTeacherInHoliday($teacherId, $onTime)){
+            $teacherId = $teacher['id'];
+            if(self::isTeacherInHoliday($teacherId, $onDate)){
                 continue;
             }
 
