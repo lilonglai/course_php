@@ -35,33 +35,14 @@ class TeacherDefaultHolidayService
 
     public static function add(Request $request, Response $response)
     {
-        $o = array();
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[week1] = $request->getParam('week1');
-        $o[week2] = $request->getParam('week2');
-        $o[week3] = $request->getParam('week3');
-        $o[week4] = $request->getParam('week4');
-        $o[week5] = $request->getParam('week5');
-        $o[week6] = $request->getParam('week6');
-        $o[week7] = $request->getParam('week7');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new TeacherDefaultHolidayBusinessOperation();
         $operator->add($o);
     }
 
     public static function update(Request $request, Response $response)
     {
-        $o = array();
-        $o[id] = $request->getParam('id');
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[week1] = $request->getParam('week1');
-        $o[week2] = $request->getParam('week2');
-        $o[week3] = $request->getParam('week3');
-        $o[week4] = $request->getParam('week4');
-        $o[week5] = $request->getParam('week5');
-        $o[week6] = $request->getParam('week6');
-        $o[week7] = $request->getParam('week7');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new TeacherDefaultHolidayBusinessOperation();
         $operator->update($o);
     }

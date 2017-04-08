@@ -51,25 +51,14 @@ class TeacherService
 
     public static function add(Request $request, Response $response)
     {
-        $o = array();
-        $o[name] = $request->getParam('name');
-        $o[shortname] = $request->getParam('shortname');
-        $o[phone] = $request->getParam('phone');
-        $o[ismaster] = $request->getParam('ismaster');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new PDOTeacherOperation();
         $operator->add($o);
     }
 
     public static function update(Request $request, Response $response)
     {
-        $o = array();
-        $o[id] = $request->getParam('id');
-        $o[name] = $request->getParam('name');
-        $o[shortname] = $request->getParam('shortname');
-        $o[phone] = $request->getParam('phone');
-        $o[ismaster] = $request->getParam('ismaster');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new TeacherBusinessOperation();
         $operator->update($o);
     }

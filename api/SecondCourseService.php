@@ -35,25 +35,14 @@ class SecondCourseService
 
     public static function add(Request $request, Response $response)
     {
-        $o = array();
-        $o[name] = $request->getParam('name');
-        $o[shortname] = $request->getParam('shortname');
-        $o[firstcourseid] = $request->getParam('firstcourseid');
-        $o[description] = $request->getParam('description');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new SecondCourseBusinessOperation();
         $operator->add($o);
     }
 
     public static function update(Request $request, Response $response)
     {
-        $o = array();
-        $o[id] = $request->getParam('id');
-        $o[name] = $request->getParam('name');
-        $o[shortname] = $request->getParam('shortname');
-        $o[firstcourseid] = $request->getParam('firstcourseid');
-        $o[description] = $request->getParam('description');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new SecondCourseBusinessOperation();
         $operator->update($o);
     }

@@ -78,31 +78,14 @@ class ScheduleService
 
     public static function add(Request $request, Response $response)
     {
-        $o = array();
-        $o[ondate] = $request->getParam('ondate');
-        $o[ontime] = $request->getParam('ontime');
-        $o[studentid] = $request->getParam('studentid');
-        $o[courseid] = $request->getParam('courseid');
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[addition] = $request->getParam('addition');
-        $o[description] = $request->getParam('description');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new ScheduleBusinessOperation();
         $operator->add($o);
     }
 
     public static function update(Request $request, Response $response)
     {
-        $o = array();
-        $o[id] = $request->getParam('id');
-        $o[ondate] = $request->getParam('ondate');
-        $o[ontime] = $request->getParam('ontime');
-        $o[studentid] = $request->getParam('studentid');
-        $o[courseid] = $request->getParam('courseid');
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[addition] = $request->getParam('addition');
-        $o[description] = $request->getParam('description');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new ScheduleBusinessOperation();
         $operator->update($o);
     }

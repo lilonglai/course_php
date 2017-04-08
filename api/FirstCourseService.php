@@ -35,25 +35,14 @@ class FirstCourseService
 
     public static function add(Request $request, Response $response)
     {
-        $o = array();
-        $o[grade] = $request->getParam('grade');
-        $o[name] = $request->getParam('name');
-        $o[shortname] = $request->getParam('shortname');
-        $o[description] = $request->getParam('description');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new FirstCourseBusinessOperation();
         $operator->add($o);
     }
 
     public static function update(Request $request, Response $response)
     {
-        $o = array();
-        $o[id] = $request->getParam('id');
-        $o[grade] = $request->getParam('grade');
-        $o[name] = $request->getParam('name');
-        $o[shortname] = $request->getParam('shortname');
-        $o[description] = $request->getParam('description');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new FirstCourseBusinessOperation();
         $operator->update($o);
     }

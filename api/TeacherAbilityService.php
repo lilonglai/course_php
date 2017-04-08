@@ -35,21 +35,14 @@ class TeacherAbilityService
 
     public static function add(Request $request, Response $response)
     {
-        $o = array();
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[courseid] = $request->getParam('courseid');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new TeacherAbilityBusinessOperation();
         $operator->add($o);
     }
 
     public static function update(Request $request, Response $response)
     {
-        $o = array();
-        $o[id] = $request->getParam('id');
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[courseid] = $request->getParam('courseid');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new TeacherAbilityBusinessOperation();
         $operator->update($o);
     }

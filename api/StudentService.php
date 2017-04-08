@@ -51,35 +51,14 @@ class StudentService
 
     public static function add(Request $request, Response $response)
     {
-        $o = array();
-        $o[name] = $request->getParam('name');
-        $o[shortname] = $request->getParam('shortname');
-        $o[grade] = $request->getParam('grade');
-        $o[testscore] = $request->getParam('testscore');
-        $o[targetscore] = $request->getParam('targetscore');
-        $o[examinedate] = $request->getParam('examinedate');
-        $o[examineplace] = $request->getParam('examineplace');
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[description] = $request->getParam('description');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new StudentBusinessOperation();
         $operator->add($o);
     }
 
     public static function update(Request $request, Response $response)
     {
-        $o = array();
-        $o[id] = $request->getParam('id');
-        $o[name] = $request->getParam('name');
-        $o[shortname] = $request->getParam('shortname');
-        $o[grade] = $request->getParam('grade');
-        $o[testscore] = $request->getParam('testscore');
-        $o[targetscore] = $request->getParam('targetscore');
-        $o[examinedate] = $request->getParam('examinedate');
-        $o[examineplace] = $request->getParam('examineplace');
-        $o[teacherid] = $request->getParam('teacherid');
-        $o[description] = $request->getParam('description');
-
+        $o = $parsedBody = $request->getParsedBody();
         $operator = new StudentBusinessOperation();
         $operator->update($o);
     }
