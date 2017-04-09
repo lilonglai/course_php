@@ -26,21 +26,29 @@ abstract class PDOBaseOperation{
         return self::$connection ;
     }
 
-    protected function executeUpdateSql($sql){
+    protected function executeUpdateSql($sql, $binds){
         $connection = $this->getConnection();
-        $stmt = $connection->exec($sql);
+        $stmt = $connection->prepare($sql);
+        foreach($binds as $key => $value){
+            $stmt->bindParam($key, $valle);
+        }
+        $stmt->execute();
     }
 
-    protected function executeSql($sql){
+    protected function executeSql($sql, $binds){
         $connection = $this->getConnection();
-        $stmt = $connection->query($sql);
-        $result = $stmt->fetchAll();
+        $stmt = $connection->prepare($sql);
+        foreach($binds as $key => $value){
+            $stmt->bindParam($key, $valle);
+        }
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
         return $result;
     }
 
     public function get($key){
-        $sql = "select * from " . $this->getTableName() ." where id = $key";
-        $list = $this->executeSql($sql);
+        $sql = "select * from " . $this->getTableName() ." where id = :id";
+        $list = $this->executeSql($sql, array("id"=> $key));
         $result = null;
         if($list != null){
             $result = $list[0];
@@ -49,9 +57,9 @@ abstract class PDOBaseOperation{
     }
 
     public function mysql_insert_id(){
-        $sql = "select last_insert_id()";
-        $list = $this->executeSql($sql);
-        return $list[0][0];
+        $connection = $this->getConnection();
+        $id = $connection->lastInsertId();
+        return $id;
     }
 
     public abstract function getTableName();
@@ -67,7 +75,7 @@ abstract class PDOBaseOperation{
     }
 
     public function delete($key){
-        $sql = "delete from " . $this->getTableName() . " where id =:$key";
-        $this->executeUpdateSql($sql);
+        $sql = "delete from " . $this->getTableName() . " where id =:id";
+        $this->executeUpdateSql($sql, array("id"=>$key) );
     }
 }

@@ -20,17 +20,17 @@ class FirstCourseService
     {
         $key = $request->getParam('id');
         $operator = new FirstCourseBusinessOperation();
-        $o = $operator->get($key);
-        $result = json_encode($o);
-        echo $result;
+        $result = $operator->get($key);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
     }
 
     public static function getAll(Request $request, Response $response)
     {
         $operator = new FirstCourseBusinessOperation();
         $list = $operator->getAll();
-        $result = json_encode($list);
-        echo $result;
+        $newResponse = $response->withJson($list);
+        return $newResponse;
     }
 
     public static function add(Request $request, Response $response)
