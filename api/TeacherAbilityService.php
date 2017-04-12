@@ -9,7 +9,7 @@
 /*
  * begin to operate TeacherAbility
  */
-require "../bussiness/TeacherAbilityBusinessOperation.php";
+require __DIR__ . "/../bussiness/TeacherAbilityBusinessOperation.php";
 
 use \Slim\Http\Request;
 use \Slim\Http\Response;

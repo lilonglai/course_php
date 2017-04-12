@@ -6,7 +6,7 @@
  * Date: 2017/4/6
  * Time: 15:05
  */
-require "../db/PDOSecondCourseOperation.php";
+require __DIR__ ."/../db/PDOSecondCourseOperation.php";
 
 class SecondCourseBusinessOperation
 {
@@ -14,6 +14,12 @@ class SecondCourseBusinessOperation
         $operator = new PDOSecondCourseOperation();
         $o = $operator->get($key);
         return $o;
+    }
+
+    public function getByGrade($grade){
+        $operator = new PDOSecondCourseOperation();
+        $list = $operator->getByGrade($grade);
+        return $list;
     }
 
     public function getAll(){

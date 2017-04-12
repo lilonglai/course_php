@@ -6,7 +6,7 @@
  * Date: 2017/4/6
  * Time: 15:06
  */
-require "../db/PDOTeacherAbilityOperation.php";
+require __DIR__ ."/../db/PDOTeacherAbilityOperation.php";
 
 class TeacherAbilityBusinessOperation
 {

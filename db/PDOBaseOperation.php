@@ -26,20 +26,24 @@ abstract class PDOBaseOperation{
         return self::$connection ;
     }
 
-    protected function executeUpdateSql($sql, $binds){
+    protected function executeUpdateSql($sql, $binds = null){
         $connection = $this->getConnection();
         $stmt = $connection->prepare($sql);
-        foreach($binds as $key => $value){
-            $stmt->bindParam($key, $valle);
+        if($binds != null) {
+            foreach ($binds as $key => $value) {
+                $stmt->bindParam($key, $valle);
+            }
         }
         $stmt->execute();
     }
 
-    protected function executeSql($sql, $binds){
+    protected function executeSql($sql, $binds = null){
         $connection = $this->getConnection();
         $stmt = $connection->prepare($sql);
-        foreach($binds as $key => $value){
-            $stmt->bindParam($key, $valle);
+        if($binds != null) {
+            foreach ($binds as $key => $value) {
+                $stmt->bindParam($key, $valle);
+            }
         }
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_OBJ);

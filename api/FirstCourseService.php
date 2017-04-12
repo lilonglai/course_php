@@ -9,7 +9,7 @@
 /*
  *  begin to operate FirstCourse
  */
-require "../bussiness/FirstCourseBusinessOperation.php";
+require __DIR__ ."/../bussiness/FirstCourseBusinessOperation.php";
 
 use \Slim\Http\Request;
 use \Slim\Http\Response;
@@ -21,6 +21,15 @@ class FirstCourseService
         $key = $request->getParam('id');
         $operator = new FirstCourseBusinessOperation();
         $result = $operator->get($key);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
+    }
+
+    public static function getByGrade(Request $request, Response $response)
+    {
+        $grade = $request->getParam('grade');
+        $operator = new FirstCourseBusinessOperation();
+        $result = $operator->getByGrade($grade);
         $newResponse = $response->withJson($result);
         return $newResponse;
     }

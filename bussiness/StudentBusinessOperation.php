@@ -6,7 +6,7 @@
  * Date: 2017/4/6
  * Time: 15:06
  */
-require "../db/PDOStudentOperation.php";
+require __DIR__ ."/../db/PDOStudentOperation.php";
 
 class StudentBusinessOperation
 {

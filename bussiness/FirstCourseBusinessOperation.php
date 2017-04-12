@@ -6,7 +6,7 @@
  * Date: 2017/4/6
  * Time: 15:05
  */
-require "../db/PDOFirstCourseOperation.php";
+require __DIR__ . "/../db/PDOFirstCourseOperation.php";
 
 class FirstCourseBusinessOperation
 {
@@ -14,6 +14,12 @@ class FirstCourseBusinessOperation
         $operator = new PDOFirstCourseOperation();
         $o = $operator->get($key);
         return $o;
+    }
+
+    public function getByGrade($grade){
+        $operator = new PDOFirstCourseOperation();
+        $list = $operator->getByGrade($grade);
+        return $list;
     }
 
     public function getAll(){

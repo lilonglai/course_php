@@ -9,7 +9,7 @@
 /*
 *  begin to operate SecondCourse
 */
-require "../bussiness/SecondCourseBusinessOperation.php";
+require __DIR__ . "/../bussiness/SecondCourseBusinessOperation.php";
 
 use \Slim\Http\Request;
 use \Slim\Http\Response;
@@ -21,6 +21,15 @@ class SecondCourseService
         $key = $request->getParam('id');
         $operator = new SecondCourseBusinessOperation();
         $result = $operator->get($key);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
+    }
+
+    public static function getByGrade(Request $request, Response $response)
+    {
+        $grade = $request->getParam('grade');
+        $operator = new SecondCourseBusinessOperation();
+        $result = $operator->getByGrade($grade);
         $newResponse = $response->withJson($result);
         return $newResponse;
     }

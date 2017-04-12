@@ -9,7 +9,7 @@
 /*
 *  begin to operate Student
 */
-require "../bussiness/StudentBusinessOperation.php";
+require __DIR__ . "/../bussiness/StudentBusinessOperation.php";
 
 use \Slim\Http\Request;
 use \Slim\Http\Response;

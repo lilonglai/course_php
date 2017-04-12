@@ -6,8 +6,8 @@
  * Date: 2017/4/6
  * Time: 15:05
  */
-require "../db/PDOScheduleOperation.php";
-require "../utils/DateHelp.php";
+require __DIR__ ."/../db/PDOScheduleOperation.php";
+require __DIR__ ."/../utils/DateHelp.php";
 
 class ScheduleBusinessOperation
 {

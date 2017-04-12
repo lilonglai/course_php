@@ -7,16 +7,16 @@
  */
 
 
-require "../vendor/autoload.php";
+require __DIR__ . "/../vendor/autoload.php";
 
-require "FirstCourseService.php";
-require "SecondCourseService.php";
-require "StudentService.php";
-require "TeacherService.php";
-require "TeacherAbilityService.php";
-require "TeacherHolidayService.php";
-require "TeacherDefaultHolidayService.php";
-require "ScheduleService.php";
+require __DIR__ . "/FirstCourseService.php";
+require __DIR__ . "/SecondCourseService.php";
+require __DIR__ . "/StudentService.php";
+require __DIR__ . "/TeacherService.php";
+require __DIR__ . "/TeacherAbilityService.php";
+require __DIR__ . "/TeacherHolidayService.php";
+require __DIR__ . "/TeacherDefaultHolidayService.php";
+require __DIR__ . "/ScheduleService.php";
 
 use \Slim\Http\Request;
 use \Slim\Http\Response;

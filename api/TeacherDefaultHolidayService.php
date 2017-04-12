@@ -9,7 +9,7 @@
 /*
  * begin to operate TeacherHoliday
  */
-require "../bussiness/TeacherDefaultHolidayBusinessOperation.php";
+require __DIR__ . "/../bussiness/TeacherDefaultHolidayBusinessOperation.php";
 
 use \Slim\Http\Request;
 use \Slim\Http\Response;
