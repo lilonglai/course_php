@@ -4,6 +4,7 @@
     <option name="skippedFunctions">
       <list>
         <option value="PDOTeacherOperation-&gt;update" />
+        <option value="PDOBaseOperation-&gt;executeUpdateSql" />
       </list>
     </option>
   </component>

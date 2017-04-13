@@ -11,12 +11,19 @@
                 alert("课程名字不能为空")
                 return false;
             }
-            if ($("[name='grade']").val().length == 0) {
-                alert("请选择一个年级")
-                return false;
-            }
 
-            return true;
+            $.ajax({
+                url: "api/secondcourse/add",
+                context: document.body,
+                type: "POST",
+                data: {name: $("[name='name']").val(), shortName: $("[name='shortName']").val(), firstCourseId: $("[name='firstCourseId']").val(), description: $("[name='description']").val() }
+            }).done(function () {
+                alert("success add a second course");
+            }).fail(function () {
+                alert("fail to add a second course");
+            });
+
+            return false;
         }
     </script>
 </head>
