@@ -11,12 +11,19 @@
                 alert("课程名字不能为空")
                 return false;
             }
-            if ($("[name='grade']").val().length == 0) {
-                alert("请选择一个年级")
-                return false;
-            }
 
-            return true;
+            $.ajax({
+                url: "api/secondcourse/update",
+                context: document.body,
+                type: "PUT",
+                data: {id: $("[name='id']").val(), name: $("[name='name']").val(), shortName: $("[name='shortName']").val(), firstCourseId: $("[name='firstCourseId']").val(), description: $("[name='description']").val() }
+            }).done(function () {
+                alert("success update a second course");
+            }).fail(function (data) {
+                alert("fail to update a second course:" + data.statusText);
+            });
+
+            return false;
         }
     </script>
 </head>

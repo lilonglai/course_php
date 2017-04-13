@@ -19,8 +19,8 @@
                 data: {name: $("[name='name']").val(), shortName: $("[name='shortName']").val(), firstCourseId: $("[name='firstCourseId']").val(), description: $("[name='description']").val() }
             }).done(function () {
                 alert("success add a second course");
-            }).fail(function () {
-                alert("fail to add a second course");
+            }).fail(function (data) {
+                alert("fail to update a second course:" + data.statusText);
             });
 
             return false;

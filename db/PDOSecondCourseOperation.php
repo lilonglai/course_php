@@ -30,7 +30,7 @@ class PDOSecondCourseOperation extends PDOBaseOperation {
     }
 
     public function  update($secondCourse){
-        $sql = "update " . self::TABLENAME . " set name = :name', shortname = :shortName, firstcourseid = :firstCourseId, description = :description where id = :id";
+        $sql = "update " . self::TABLENAME . " set name = :name, shortname = :shortName, firstcourseid = :firstCourseId, description = :description where id = :id";
         $this->executeUpdateSql($sql, $secondCourse);
     }
 
