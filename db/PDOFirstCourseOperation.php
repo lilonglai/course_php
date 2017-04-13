@@ -33,4 +33,15 @@ class PDOFirstCourseOperation extends PDOBaseOperation{
         return self::TABLENAME;
     }
 
+    public function generateObject($row)
+    {
+        $o = new stdClass();
+        $o->id = $row['id'];
+        $o->grade = $row['grade'];
+        $o->name = $row['name'];
+        $o->shortName = $row['shortname'];
+        $o->description = $row['description'];
+        return $o;
+    }
+
 }

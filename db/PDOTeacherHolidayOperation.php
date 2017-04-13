@@ -39,4 +39,14 @@ class PDOTeacherHolidayOperation extends PDOBaseOperation {
          where id = :id";
         $this->executeUpdateSql($sql, $teacherHoliday);
     }
+
+    public function generateObject($row)
+    {
+        $o = new stdClass();
+        $o->id = $row['id'];
+        $o->teacherId = $row['teacherid'];
+        $o->adjustDate = $row['adjustdate'];
+        $o->isHoliday = $row['isholiday'];
+        return $o;
+    }
 }

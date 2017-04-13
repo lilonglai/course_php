@@ -59,4 +59,19 @@ class PDOTeacherDefaultHolidayOperation extends PDOBaseOperation {
     public function getTableName(){
         return self::TABLENAME;
     }
+
+    public function generateObject($row)
+    {
+        $o = new stdClass();
+        $o->id = $row['id'];
+        $o->teacherId = $row['teacherid'];
+        $o->week1 = $row['week1'];
+        $o->week2 = $row['week2'];
+        $o->week3 = $row['week3'];
+        $o->week4 = $row['week4'];
+        $o->week5 = $row['week5'];
+        $o->week6 = $row['week6'];
+        $o->week7 = $row['week7'];
+        return $o;
+    }
 }

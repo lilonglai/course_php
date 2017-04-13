@@ -31,7 +31,8 @@ abstract class PDOBaseOperation{
         $stmt = $connection->prepare($sql);
         if($binds != null) {
             foreach ($binds as $key => $value) {
-                $stmt->bindParam($key, $valle);
+                $key = ":" . $key;
+                $stmt->bindParam($key, $value);
             }
         }
         $stmt->execute();
@@ -42,11 +43,20 @@ abstract class PDOBaseOperation{
         $stmt = $connection->prepare($sql);
         if($binds != null) {
             foreach ($binds as $key => $value) {
-                $stmt->bindParam($key, $valle);
+                $key = ":" . $key;
+                $stmt->bindParam($key, $value);
             }
         }
         $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+        //$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $rows = $stmt->fetchAll();
+        $result = array();
+        if($rows != null){
+            foreach ($rows as $row){
+                $o = $this->generateObject($row);
+                $result[] = $o;
+            }
+        }
         return $result;
     }
 
@@ -67,6 +77,8 @@ abstract class PDOBaseOperation{
     }
 
     public abstract function getTableName();
+
+    public abstract function generateObject($row);
 
     public function bool2String($value){
         return $value ? 'true' : 'false';

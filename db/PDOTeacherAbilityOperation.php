@@ -58,4 +58,13 @@ class PDOTeacherAbilityOperation extends PDOBaseOperation {
     public function getTableName(){
         return self::TABLENAME;
     }
+
+    public function generateObject($row)
+    {
+        $o = new stdClass();
+        $o->id = $row['id'];
+        $o->teacherId = $row['teacherid'];
+        $o->courseId = $row['courseid'];
+        return $o;
+    }
 }

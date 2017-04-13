@@ -10,9 +10,6 @@ require_once "PDOBaseOperation.php";
 
 class PDOScheduleOperation extends PDOBaseOperation {
     const TABLENAME = "schedule";
-    public function getTableName(){
-        return self::TABLENAME;
-    }
 
     public function getByStudentIdOnDateAndTime($studentId, $onDate, $onTime){
         $sql = "select * from " . self::TABLENAME . " where studentid = :studentId and ondate = :onDate and ontime= :onTime";
@@ -58,5 +55,23 @@ class PDOScheduleOperation extends PDOBaseOperation {
             addition = :addition, description = :description
             where id = :id";
         $this->executeUpdateSql($sql, $schedule);
+    }
+
+    public function getTableName(){
+        return self::TABLENAME;
+    }
+
+    public function generateObject($row)
+    {
+        $o = new stdClass();
+        $o->id = $row['id'];
+        $o->onDate = $row['ondate'];
+        $o->onTime = $row['ontime'];
+        $o->studentId = $row['studentid'];
+        $o->courseId = $row['courseid'];
+        $o->teacherId = $row['teacherid'];
+        $o->addition = $row['addition'];
+        $o->description = $row['description'];
+        return $o;
     }
 }

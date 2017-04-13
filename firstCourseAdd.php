@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>增加新课程</title>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
     <script type="text/javascript">
         function checkForm() {
             if ($("[name='name']").val().length == 0) {
@@ -22,6 +22,14 @@
 </head>
 <body>
 
+<?php
+if(isset($_GET["grade"])){
+    $grade = $_GET["grade"];
+}
+else{
+    $grade = 1;
+}
+?>
 <div class="container">
     <form action="firstCourseAddSubmit.html" role="form" method="get" onSubmit="return checkForm();">
         <div class="form-group">

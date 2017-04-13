@@ -37,4 +37,15 @@ class PDOSecondCourseOperation extends PDOBaseOperation {
     public function getTableName(){
         return self::TABLENAME;
     }
+
+    public function generateObject($row)
+    {
+        $o = new stdClass();
+        $o->id = $row['id'];
+        $o->name = $row['name'];
+        $o->shortName = $row['shortname'];
+        $o->firstCourseId = $row['firstcourseid'];
+        $o->description = $row['description'];
+        return $o;
+    }
 }

@@ -1,13 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-         pageEncoding="utf-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>增加新课程</title>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
     <script type="text/javascript">
         function checkForm() {
             if ($("[name='name']").val().length == 0) {
@@ -24,6 +21,23 @@
     </script>
 </head>
 <body>
+<?php
+require __DIR__ . "/bussiness/FirstCourseBusinessOperation.php";
+require __DIR__ . "/bussiness/SecondCourseBusinessOperation.php";
+if(isset($_GET["grade"])){
+    $grade = $_GET["grade"];
+}
+else{
+    $grade = 1;
+}
+
+if(isset($_GET["id"])){
+    $id = $_GET["id"];
+}
+else{
+    echo "course id is not set";
+}
+?>
 <div class="container">
     <form action="secondCourseAddSubmit.html" method="get" onSubmit="return checkForm();">
         <div class="form-group">
@@ -34,14 +48,18 @@
         </div>
         <div class="form-group">
             课程分类: <select name="firstCourseId">
-            <c:forEach var="firstCourse2" items="${firstCourseList}">
-                <c:if test="${firstCourse2.id == firstCourse.id}">
-                    <option value="${firstCourse2.id}" selected> ${firstCourse2.name}</option>
-                </c:if>
-                <c:if test="${firstCourse2.id != firstCourse.id}">
-                    <option value="${firstCourse2.id}"> ${firstCourse2.name}</option>
-                </c:if>
-            </c:forEach>
+                <?php
+                $firstCourseOperator = new FirstCourseBusinessOperation();
+                $firstCourseList = $firstCourseOperator->getByGrade($grade);
+                foreach ($firstCourseList as $firstCourse){
+                    if($firstCourse->id == $id){
+                        echo '<option value="',$firstCourse->id, '" selected>', $firstCourse->name, '</option>';
+                    }
+                    else{
+                        echo '<option value="',$firstCourse->id, '" >', $firstCourse->name, '</option>';
+                    }
+                }
+                ?>
         </select>
         </div>
         <div class="form-group">

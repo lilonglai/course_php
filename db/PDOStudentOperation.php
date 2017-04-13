@@ -64,4 +64,20 @@ class PDOStudentOperation extends PDOBaseOperation {
     public function getTableName(){
         return self::TABLENAME;
     }
+
+    public function generateObject($row)
+    {
+        $o = new stdClass();
+        $o->id = $row['id'];
+        $o->name = $row['name'];
+        $o->shortName = $row['shortname'];
+        $o->grade = $row['grade'];
+        $o->testScore = $row['testscore'];
+        $o->targetScore = $row['targetscore'];
+        $o->examineDate = $row['examinedate'];
+        $o->examinePlace = $row['examineplace'];
+        $o->teacherId = $row['teacherid'];
+        $o->description = $row['description'];
+        return $o;
+    }
 }

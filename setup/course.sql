@@ -260,35 +260,6 @@ INSERT INTO `teacherholiday` VALUES (34,NULL,'3889-08-23',1),(35,NULL,'3889-08-2
 /*!40000 ALTER TABLE `teacherholiday` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `user`
---
-
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) NOT NULL,
-  `password` varchar(64) NOT NULL,
-  `email` varchar(64) NOT NULL,
-  `qq` varchar(64) default NULL,
-  `phone` varchar(64) DEFAULT NULL,
-  `description` varchar(256) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user`
---
-
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (42,'test','*94BDCEBE19083CE2A1F959FD02F964C7AF4CFC29','longlai.li@gmail.com',NULL,'this is the test case for first course');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

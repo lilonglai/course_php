@@ -8,37 +8,40 @@
     <script type="text/javascript">
         function modifyFirstCourse(courseId) {
             $("#firstCourseForm [name='id']").val(courseId);
-            $("#firstCourseForm").attr("action","firstCourseUpdate.html" );
+            $("#firstCourseForm").attr("action","firstCourseUpdate.php" );
             $("#firstCourseForm").submit();
         }
 
         function deleteFirstCourse(courseId) {
+            /*
+            change it to ajaxcall
+             */
             $("#firstCourseForm [name='id']").val(courseId);
             $("#firstCourseForm").attr("action","firstCourseDelete.html" );
             $("#firstCourseForm").submit();
         }
 
         function addFirstCourse(grade) {
-            $("#firstCourseForm").attr("action","firstCourseAdd.html" );
+            $("#firstCourseForm").attr("action","firstCourseAdd.php" );
             $("#firstCourseForm").submit();
         }
 
 
         function modifySecondCourse(courseId) {
             $("#secondCourseForm [name='id']").val(courseId);
-            $("#secondCourseForm").attr("action","secondCourseUpdate.html" );
+            $("#secondCourseForm").attr("action","secondCourseUpdate.php" );
             $("#secondCourseForm").submit();
         }
 
         function deleteSecondCourse(courseId) {
             $("#secondCourseForm [name='id']").val(courseId);
-            $("#secondCourseForm").attr("action","secondCourseDelete.html" );
+            $("#secondCourseForm").attr("action","secondCourseDelete.php" );
             $("#secondCourseForm").submit();
         }
 
         function addSecondCourse(firstCourseId) {
             $("#secondCourseForm [name='id']").val(firstCourseId);
-            $("#secondCourseForm").attr("action","secondCourseAdd.html" );
+            $("#secondCourseForm").attr("action","secondCourseAdd.php" );
             $("#secondCourseForm").submit();
         }
 
@@ -79,7 +82,7 @@ else{
 </div>
 
 <div class="container">
-    <form method="get" action="course.html" name="gradeForm" id="gradeForm">
+    <form method="get" action="course.php" name="gradeForm" id="gradeForm">
         选择年级:
         <select name="grade" onChange="gradeChanged();">
             <?php
@@ -133,11 +136,11 @@ else{
                 echo "<td>", $firstCourse->shortName, "</td>";
                 echo "<td>", $firstCourse->description, "</td>";
                 echo '<td><input type="button" class="btn btn-default" value="修改"';
-                echo 'onclick="modifyFirstCourse(', $firstCourse->id, '">';
+                echo 'onclick="modifyFirstCourse(', $firstCourse->id, ')">';
                 echo '<input type="button" class="btn btn-default" value="删除"';
-                echo 'onclick="deleteFirstCourse(', $firstCourse->id, '">';
+                echo 'onclick="deleteFirstCourse(', $firstCourse->id, ')">';
                 echo '<input type="button" class="btn btn-default" value="增加具体课程"';
-                echo 'onclick="addSecondCourse(', $firstCourse->id, '">';
+                echo 'onclick="addSecondCourse(', $firstCourse->id, ')">';
                 echo "</td>";
                 echo "</tr>";
             }
@@ -146,7 +149,7 @@ else{
         </table>
     </div>
 
-    <input type="button" class="btn btn-default" value='增加课程' onclick="addFirstCourse(${grade})">
+    <input type="button" class="btn btn-default" value='增加课程' onclick="addFirstCourse(<?php echo $grade; ?>)">
 
     <br> <br>
     课程详细信息:<br>
@@ -168,7 +171,7 @@ else{
             <?php
             $secondCourseOperation = new SecondCourseBusinessOperation();
             $secondCourseList =  $secondCourseOperation->getByGrade($grade);
-            for($index = 0; $index < count($secondCourseList); $i++){
+            for($index = 0; $index < count($secondCourseList); $index++){
                 $secondCourse = $secondCourseList[$index];
                 $firstCourse = $firstCourseOperation->get($secondCourse->firstCourseId);
                 echo "<tr>";
@@ -178,9 +181,9 @@ else{
                 echo "<td>", $firstCourse->name, "</td>";
                 echo "<td>", $secondCourse->description, "</td>";
                 echo '<td><input type="button" class="btn btn-default" value="修改"';
-                echo 'onclick="modifySecondCourse(', $secondCourse->id, '">';
+                echo 'onclick="modifySecondCourse(', $secondCourse->id, ')">';
                 echo '<input type="button" class="btn btn-default" value="删除"';
-                echo 'onclick="deleteSecondCourse(', $secondCourse->id, '">';
+                echo 'onclick="deleteSecondCourse(', $secondCourse->id, ')">';
             }
             ?>
 
@@ -191,12 +194,12 @@ else{
 
     <form method="get" action="course.jsp" name="firstCourseForm" id="firstCourseForm">
         <input type="hidden" name="id">
-        <input type="hidden" name="grade" value="${grade}">
+        <input type="hidden" name="grade" value="<?php echo $grade; ?>">
     </form>
 
     <form method="get" action="course.jsp" name="secondCourseForm" id="secondCourseForm">
         <input type="hidden" name="id">
-        <input type="hidden" name="grade" value="${grade}">
+        <input type="hidden" name="grade" value="<?php echo $grade; ?>">
     </form>
 
 </div>
