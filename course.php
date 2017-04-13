@@ -16,9 +16,19 @@
             /*
             change it to ajaxcall
              */
-            $("#firstCourseForm [name='id']").val(courseId);
-            $("#firstCourseForm").attr("action","firstCourseDelete.html" );
-            $("#firstCourseForm").submit();
+            $.ajax({
+                url: "api/firstcourse/delete",
+                context: document.body,
+                type: "DELETE",
+                data: {id: courseId }
+            }).done(function () {
+                alert("success delete a first course");
+                $("#firstCourseForm").attr("action","course.php" );
+                $("#firstCourseForm").submit();
+            }).fail(function (data) {
+                alert("fail to delete a first course:" + data.statusText);
+            });
+
         }
 
         function addFirstCourse(grade) {
@@ -34,9 +44,20 @@
         }
 
         function deleteSecondCourse(courseId) {
-            $("#secondCourseForm [name='id']").val(courseId);
-            $("#secondCourseForm").attr("action","secondCourseDelete.php" );
-            $("#secondCourseForm").submit();
+
+            $.ajax({
+                url: "api/secondcourse/delete",
+                context: document.body,
+                type: "DELETE",
+                data: {id: courseId }
+            }).done(function () {
+                alert("success delete a second course");
+                $("#secondCourseForm").attr("action","course.php" );
+                $("#secondCourseForm").submit();
+            }).fail(function (data) {
+                alert("fail to delete a second course:" + data.statusText);
+            });
+
         }
 
         function addSecondCourse(firstCourseId) {

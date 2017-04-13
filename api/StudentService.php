@@ -51,30 +51,53 @@ class StudentService
 
     public static function add(Request $request, Response $response)
     {
-        $o = $parsedBody = $request->getParsedBody();
-        $operator = new StudentBusinessOperation();
-        $operator->add($o);
+        try {
+            $o = $parsedBody = $request->getParsedBody();
+            $operator = new StudentBusinessOperation();
+            $operator->add($o);
+        }
+        catch(Exception $e){
+            $newResponse = $response->withStatus(500, $e->getMessage());
+            return $newResponse;
+        }
     }
 
     public static function update(Request $request, Response $response)
     {
-        $o = $parsedBody = $request->getParsedBody();
-        $operator = new StudentBusinessOperation();
-        $operator->update($o);
+        try {
+            $o = $parsedBody = $request->getParsedBody();
+            $operator = new StudentBusinessOperation();
+            $operator->update($o);
+        }
+        catch(Exception $e){
+            $newResponse = $response->withStatus(500, $e->getMessage());
+            return $newResponse;
+        }
     }
 
     public static function retire(Request $request, Response $response)
     {
-        $key = $request->getParam('id');
-
-        $operator = new StudentBusinessOperation();
-        $operator->retire($key);
+        try {
+            $key = $request->getParam('id');
+            $operator = new StudentBusinessOperation();
+            $operator->retire($key);
+        }
+        catch(Exception $e){
+            $newResponse = $response->withStatus(500, $e->getMessage());
+            return $newResponse;
+        }
     }
 
     public static function delete(Request $request, Response $response)
     {
-        $key = $request->getParam('id');
-        $operator = new StudentBusinessOperation();
-        $operator->delete($key);
+        try {
+            $key = $request->getParam('id');
+            $operator = new StudentBusinessOperation();
+            $operator->delete($key);
+        }
+        catch(Exception $e){
+            $newResponse = $response->withStatus(500, $e->getMessage());
+            return $newResponse;
+        }
     }
 }

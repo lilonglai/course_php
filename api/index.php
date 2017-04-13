@@ -31,7 +31,7 @@ $app->get('/firstcourse/get', 'FirstCourseService::get');
 $app->get('/firstcourse/getAll', 'FirstCourseService::getAll');
 $app->post('/firstcourse/add', 'FirstCourseService::add');
 $app->put('/firstcourse/update', 'FirstCourseService::update');
-$app->get('/firstcourse/delete', 'FirstCourseService::delete');
+$app->delete('/firstcourse/delete', 'FirstCourseService::delete');
 
 $app->get('/secondcourse/get', 'SecondCourseService::get');
 $app->get('/secondcourse/getAll', 'SecondCourseService::getAll');

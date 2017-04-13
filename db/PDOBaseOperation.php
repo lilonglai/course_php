@@ -36,6 +36,9 @@ abstract class PDOBaseOperation{
             }
         }
         $stmt->execute();
+        if($stmt->errorInfo()){
+            throw new Exception($stmt->errorInfo()[2]);
+        }
     }
 
     protected function executeSql($sql, $binds = null){
