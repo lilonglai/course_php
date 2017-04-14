@@ -50,7 +50,7 @@ class PDOStudentOperation extends PDOBaseOperation {
     public function update($student){
         $sql = "update " . self::TABLENAME . " set 
         name = :name, shortname = :shortName, grade = :grade, testscore = :testScore, 
-        targetscore = targetScore, examinedate = :examineDate, examinePlace = :examinePlace, 
+        targetscore = :targetScore, examinedate = :examineDate, examineplace = :examinePlace, 
         teacherid = :teacherId, description = :description 
         where id = :id";
         $this->executeUpdateSql($sql, $student);

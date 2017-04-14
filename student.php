@@ -201,13 +201,13 @@ else{
                 echo "<td>", $student->name, "</td>";
                 echo "<td>", $student->shortName, "</td>";
                 if($student->grade == 1){
-                    echo "<td>", 4-6, "</td>";
+                    echo "<td>", "4-6", "</td>";
                 }
                 else if($student->grade == 2){
-                    echo "<td>", 7-9, "</td>";
+                    echo "<td>", "7-9", "</td>";
                 }
                 else if($student->grade == 3){
-                    echo "<td>", 10-12, "</td>";
+                    echo "<td>", "10-12", "</td>";
                 }
                 else{
                     echo "<td>", "</td>";
@@ -247,7 +247,7 @@ else{
 
     <form method="get" action="student.jsp" name="studentForm" id="studentForm">
         <input type="hidden" name="id" id="id">
-        <input type="hidden" name="status" value="${status}">
+        <input type="hidden" name="status" value="<?php echo $status; ?>">
     </form>
 
 </div>

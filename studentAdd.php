@@ -27,12 +27,21 @@ else{
                 return false;
             }
 
-            if ($("[name='grade']").val().length == 0) {
-                alert("请选择一个年级")
-                return false;
-            }
+            $.ajax({
+                url: "api/student/add",
+                context: document.body,
+                type: "POST",
+                data: {name: $("[name='name']").val(), shortName: $("[name='shortName']").val(), grade: $("[name='grade']").val(),
+                    testScore: $("[name='testScore']").val(), targetScore: $("[name='targetScore']").val(),
+                    examineDate: $("[name='examineDate']").val(), examinePlace: $("[name='examinePlace']").val(),
+                    teacherId: $("[name='teacherId']").val(), description: $("[name='description']").val() }
+            }).done(function () {
+                alert("success add a first course");
+            }).fail(function (data) {
+                alert("fail to add a first course:" + data.statusText);
+            });
 
-            return true;
+            return false;
         }
     </script>
 </head>

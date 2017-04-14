@@ -9,7 +9,7 @@
 abstract class PDOBaseOperation{
     const USERNAME="root";
     const PASSWORD="Bxy19890723";
-    const HOST="10.182.250.110";
+    const HOST="localhost";
     const DB="course";
 
     private static $connection;

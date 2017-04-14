@@ -20,6 +20,7 @@ $student = $studentOperator->get($id);
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>修改老师信息</title>
     <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
     <script src="js/Calendar3.js">
     </script>
     <script type="text/javascript">
@@ -29,12 +30,22 @@ $student = $studentOperator->get($id);
                 return false;
             }
 
-            if ($("[name='grade']").val().length == 0) {
-                alert("请选择一个年级")
-                return false;
-            }
+            $.ajax({
+                url: "api/student/update",
+                context: document.body,
+                type: "PUT",
+                data: {id: $("[name='id']").val(), name: $("[name='name']").val(), shortName: $("[name='shortName']").val(), grade: $("[name='grade']").val(),
+                    testScore: $("[name='testScore']").val(), targetScore: $("[name='targetScore']").val(),
+                    examineDate: $("[name='examineDate']").val(), examinePlace: $("[name='examinePlace']").val(),
+                    teacherId: $("[name='teacherId']").val(), description: $("[name='description']").val() }
+            }).done(function () {
+                alert("success update a first course");
+                window.location.replace("student.php");
+            }).fail(function (data) {
+                alert("fail to update a first course:" + data.statusText);
+            });
 
-            return true;
+            return false;
         }
     </script>
 </head>
