@@ -1,3 +1,12 @@
+<?php
+if(isset($_GET["grade"])){
+    $grade = $_GET["grade"];
+}
+else{
+    $grade = 1;
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,17 +41,8 @@
     </script>
 </head>
 <body>
-
-<?php
-if(isset($_GET["grade"])){
-    $grade = $_GET["grade"];
-}
-else{
-    $grade = 1;
-}
-?>
 <div class="container">
-    <form action="firstCourseAddSubmit.html" role="form" method="get" onSubmit="return checkForm();">
+    <form action="course.php" role="form" method="get" onSubmit="return checkForm();">
         <div class="form-group">
             年级:
             <?php

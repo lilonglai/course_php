@@ -1,3 +1,24 @@
+<?php
+require __DIR__ . "/bussiness/FirstCourseBusinessOperation.php";
+if(isset($_GET["grade"])){
+    $grade = $_GET["grade"];
+}
+else{
+    $grade = 1;
+}
+
+if(isset($_GET["id"])){
+    $id = $_GET["id"];
+}
+else{
+    echo "course id is not set";
+}
+
+$firstCourseOperator = new FirstCourseBusinessOperation();
+$firstCourse = $firstCourseOperator->get($id);
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,6 +44,7 @@
                 data: {id: $("[name='id']").val(), name: $("[name='name']").val(), shortName: $("[name='shortName']").val(), grade: $("[name='grade']").val(), description: $("[name='description']").val() }
             }).done(function () {
                 alert("success update a first course");
+                window.location.replace("course.php?grade=" + <?php echo $grade ?>);
             }).fail(function (data) {
                 alert("fail to update a first course:" + data.statusText);
             });
@@ -32,30 +54,8 @@
     </script>
 </head>
 <body>
-
-<?php
-require __DIR__ . "/bussiness/FirstCourseBusinessOperation.php";
-if(isset($_GET["grade"])){
-    $grade = $_GET["grade"];
-}
-else{
-    $grade = 1;
-}
-
-if(isset($_GET["id"])){
-    $id = $_GET["id"];
-}
-else{
-    echo "course id is not set";
-}
-
-$firstCourseOperator = new FirstCourseBusinessOperation();
-$firstCourse = $firstCourseOperator->get($id);
-
-?>
-
 <div class="container">
-    <form action="firstCourseUpdateSubmit.html" method="get" onSubmit="return checkForm();">
+    <form action="course.php" method="get" onSubmit="return checkForm();">
         <input type="hidden" name="id" value="<?php echo $firstCourse->id; ?> ">
 
         <div class="form-group">

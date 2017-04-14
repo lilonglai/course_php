@@ -1,3 +1,15 @@
+<?php
+require __DIR__ . "/bussiness/FirstCourseBusinessOperation.php";
+require __DIR__ . "/bussiness/SecondCourseBusinessOperation.php";
+if(isset($_GET["grade"])){
+    $grade = $_GET["grade"];
+}
+else{
+    $grade = 1;
+}
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -74,19 +86,6 @@
 </head>
 
 <body>
-
-<?php
-require __DIR__ . "/bussiness/FirstCourseBusinessOperation.php";
-require __DIR__ . "/bussiness/SecondCourseBusinessOperation.php";
-if(isset($_GET["grade"])){
-    $grade = $_GET["grade"];
-}
-else{
-    $grade = 1;
-}
-
-?>
-
 <div class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">

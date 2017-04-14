@@ -1,3 +1,21 @@
+<?php
+require __DIR__ . "/bussiness/FirstCourseBusinessOperation.php";
+require __DIR__ . "/bussiness/SecondCourseBusinessOperation.php";
+if(isset($_GET["grade"])){
+    $grade = $_GET["grade"];
+}
+else{
+    $grade = 1;
+}
+
+if(isset($_GET["id"])){
+    $id = $_GET["id"];
+}
+else{
+    echo "course id is not set";
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,25 +46,8 @@
     </script>
 </head>
 <body>
-<?php
-require __DIR__ . "/bussiness/FirstCourseBusinessOperation.php";
-require __DIR__ . "/bussiness/SecondCourseBusinessOperation.php";
-if(isset($_GET["grade"])){
-    $grade = $_GET["grade"];
-}
-else{
-    $grade = 1;
-}
-
-if(isset($_GET["id"])){
-    $id = $_GET["id"];
-}
-else{
-    echo "course id is not set";
-}
-?>
 <div class="container">
-    <form action="secondCourseAddSubmit.html" method="get" onSubmit="return checkForm();">
+    <form action="course.php" method="get" onSubmit="return checkForm();">
         <div class="form-group">
             课程名称: <input type="text" name="name"/>
         </div>

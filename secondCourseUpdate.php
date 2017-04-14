@@ -1,34 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>修改老师信息</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-    <script type="text/javascript">
-        function checkForm() {
-            if ($("[name='name']").val().length == 0) {
-                alert("课程名字不能为空")
-                return false;
-            }
-
-            $.ajax({
-                url: "api/secondcourse/update",
-                context: document.body,
-                type: "PUT",
-                data: {id: $("[name='id']").val(), name: $("[name='name']").val(), shortName: $("[name='shortName']").val(), firstCourseId: $("[name='firstCourseId']").val(), description: $("[name='description']").val() }
-            }).done(function () {
-                alert("success update a second course");
-            }).fail(function (data) {
-                alert("fail to update a second course:" + data.statusText);
-            });
-
-            return false;
-        }
-    </script>
-</head>
-<body>
-
 <?php
 require __DIR__ . "/bussiness/FirstCourseBusinessOperation.php";
 require __DIR__ . "/bussiness/SecondCourseBusinessOperation.php";
@@ -51,8 +20,39 @@ $secondCourse = $secondCourseOperator->get($id);
 
 ?>
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>修改老师信息</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        function checkForm() {
+            if ($("[name='name']").val().length == 0) {
+                alert("课程名字不能为空")
+                return false;
+            }
+
+            $.ajax({
+                url: "api/secondcourse/update",
+                context: document.body,
+                type: "PUT",
+                data: {id: $("[name='id']").val(), name: $("[name='name']").val(), shortName: $("[name='shortName']").val(), firstCourseId: $("[name='firstCourseId']").val(), description: $("[name='description']").val() }
+            }).done(function () {
+                alert("success update a second course");
+                window.location.replace("course.php?grade="  + <?php echo $grade ?>);
+            }).fail(function (data) {
+                alert("fail to update a second course:" + data.statusText);
+            });
+
+            return false;
+        }
+    </script>
+</head>
+<body>
 <div class="container">
-    <form action="secondCourseUpdateSubmit.html" method="get" onSubmit="return checkForm();">
+    <form action="course.php" method="get" onSubmit="return checkForm();">
         <input type="hidden" name="id" value="<?php echo $secondCourse->id; ?> ">
 
         <div class="form-group">
