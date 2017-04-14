@@ -120,7 +120,9 @@ class ScheduleService
     public static function generateObject($original)
     {
         $o = new stdClass();
-        $o->id = (int)$original['id'];
+        if(isset($original['id'])) {
+            $o->id = (int)$original['id'];
+        }
         $o->onDate = $original['onDate'];
         $o->onTime = (int)$original['onTime'];
         $o->studentId = (int)$original['studentId'];

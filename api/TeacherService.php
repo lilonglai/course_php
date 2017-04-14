@@ -106,7 +106,9 @@ class TeacherService
     public static function generateObject($original)
     {
         $o = new stdClass();
-        $o->id = (int)$original['id'];
+        if(isset($original['id'])) {
+            $o->id = (int)$original['id'];
+        }
         $o->name = $original['name'];
         $o->shortName = $original['shortName'];
         $o->phone = $original['phone'];

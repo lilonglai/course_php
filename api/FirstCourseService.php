@@ -86,7 +86,9 @@ class FirstCourseService
     public static function generateObject($original)
     {
         $o = new stdClass();
-        $o->id = (int)$original['id'];
+        if(isset($original['id'])) {
+            $o->id = (int)$original['id'];
+        }
         $o->grade = (int)$original['grade'];
         $o->name = $original['name'];
         $o->shortName = $original['shortName'];

@@ -77,7 +77,9 @@ class TeacherHolidayService
     public static function generateObject($original)
     {
         $o = new stdClass();
-        $o->id = (int)$original['id'];
+        if(isset($original['id'])) {
+            $o->id = (int)$original['id'];
+        }
         $o->teacherId = (int)$original['teacherId'];
         $o->adjustDate = $original['adjustDate'];
         $o->isHoliday = $original['isHoliday'];

@@ -9,7 +9,7 @@
 abstract class PDOBaseOperation{
     const USERNAME="root";
     const PASSWORD="Bxy19890723";
-    const HOST="localhost";
+    const HOST="10.182.250.110";
     const DB="course";
 
     private static $connection;
@@ -21,7 +21,8 @@ abstract class PDOBaseOperation{
             $password = self::PASSWORD;
             $host = self::HOST;
             $db = self::DB;
-            self::$connection  = new PDO("mysql:dbname=$db;host=$host", $username, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+            self::$connection  = new PDO("mysql:dbname=$db;host=$host", $username, $password,
+                array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return self::$connection ;
     }
@@ -33,17 +34,14 @@ abstract class PDOBaseOperation{
             foreach ($binds as $key => $value) {
                 $key = ":" . $key;
                 if(is_int($value) or is_bool($value)){
-                    $stmt->bindParam($key, $value, PDO::PARAM_INT);
+                    $stmt->bindValue($key, $value, PDO::PARAM_INT);
                 }
                 else{
-                $stmt->bindParam($key, $value);
+                $stmt->bindValue($key, $value);
                 }
             }
         }
         $stmt->execute();
-        if($stmt->errorInfo()){
-            throw new Exception($stmt->errorInfo()[2]);
-        }
     }
 
     protected function executeSql($sql, $binds = null){
@@ -52,7 +50,12 @@ abstract class PDOBaseOperation{
         if($binds != null) {
             foreach ($binds as $key => $value) {
                 $key = ":" . $key;
-                $stmt->bindParam($key, $value);
+                if(is_int($value) or is_bool($value)){
+                    $stmt->bindValue($key, $value, PDO::PARAM_INT);
+                }
+                else{
+                    $stmt->bindValue($key, $value);
+                }
             }
         }
         $stmt->execute();
