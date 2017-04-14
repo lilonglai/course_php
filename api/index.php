@@ -45,7 +45,7 @@ $app->get('/student/getAlive', 'StudentService::getAlive');
 $app->get('/student/getNotAlive', 'StudentService::getNotAlive');
 $app->post('/student/add', 'StudentService::add');
 $app->put('/student/update', 'StudentService::update');
-$app->get('/student/retire', 'StudentService::retire');
+$app->put('/student/retire', 'StudentService::retire');
 $app->delete('/student/delete', 'StudentService::delete');
 
 $app->get('/teacher/get', 'TeacherService::get');
@@ -54,7 +54,7 @@ $app->get('/teacher/getAlive', 'TeacherService::getAlive');
 $app->get('/teacher/getNotAlive', 'TeacherService::getNotAlive');
 $app->post('/teacher/add', 'TeacherService::add');
 $app->put('/teacher/update', 'TeacherService::update');
-$app->get('/teacher/retire', 'TeacherService::retire');
+$app->put('/teacher/retire', 'TeacherService::retire');
 $app->delete('/teacher/delete', 'TeacherService::delete');
 
 $app->get('/teacherability/get', 'TeacherAbilityService::get');

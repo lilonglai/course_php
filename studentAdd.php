@@ -1,13 +1,22 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-         pageEncoding="utf-8" %>
+<?php
+require __DIR__ . "/bussiness/StudentBusinessOperation.php";
+require __DIR__ . "/bussiness/TeacherBusinessOperation.php";
+
+if(isset($_GET["id"])){
+    $id = $_GET["id"];
+}
+else{
+    echo "course id is not set";
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>增加新课程</title>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
     <script src="js/Calendar3.js">
     </script>
 
@@ -62,10 +71,15 @@
         <div class="form-group">
             班主任:
             <select name="teacherId">
-                <c:forEach var="teacher" items="${teacherList}">
-                    <option value="${teacher.id}"> ${teacher.name}</option>
-                </c:forEach>
+                <?php
+                $teacherOperator = new TeacherBusinessOperation();
+                $teacherList = $teacherOperator->getAll();
+                foreach ($teacherList as $teacher){
+                    echo '<option value="',$teacher->id, '" >', $teacher->name, '</option>';
+                }
+                ?>
             </select>
+
         </div>
         <div class="form-group">
             学生描述: <textarea rows="4" cols="25" name="description"> </textarea>

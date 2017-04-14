@@ -1,42 +1,70 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<?php
+require __DIR__ . "/bussiness/StudentBusinessOperation.php";
+require __DIR__ . "/bussiness/TeacherBusinessOperation.php";
+if(isset($_GET["status"])){
+    $status = $_GET["status"];
+}
+else{
+    $status = 1;
+}
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf8">
     <title>学生</title>
     <link href="css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-2.1.1.js" ></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js" ></script>
     <script src="js/Calendar3.js">
     </script>
 
     <script type="text/javascript">
         function modifyStudent(studentId) {
             $("#id").val(studentId);
-            $("#studentForm").attr("action", "studentUpdate.html");
+            $("#studentForm").attr("action", "studentUpdate.php");
             $("#studentForm").submit();
         }
 
         function deleteStudent(studentId) {
-            $("#id").val(studentId);
-            $("#studentForm").attr("action", "studentDelete.html");
-            $("#studentForm").submit();
+            $.ajax({
+                url: "api/student/delete",
+                context: document.body,
+                type: "DELETE",
+                data: {id: studentId }
+            }).done(function () {
+                alert("success delete a student");
+                $("#studentForm").attr("action","student.php" );
+                $("#studentForm").submit();
+            }).fail(function (data) {
+                alert("fail to delete a student:" + data.statusText);
+            });
         }
 
         function retireStudent(studentId) {
-            $("#id").val(studentId);
-            $("#studentForm").attr("action", "studentRetire.html");
-            $("#studentForm").submit();
+            $.ajax({
+                url: "api/student/retire",
+                context: document.body,
+                type: "PUT",
+                data: {id: studentId }
+            }).done(function () {
+                alert("success retire a student");
+                $("#studentForm").attr("action","student.php" );
+                $("#studentForm").submit();
+            }).fail(function (data) {
+                alert("fail to retire a student:" + data.statusText);
+            });
         }
 
         function addStudent() {
-            $("#studentForm").attr("action", "studentAdd.html");
+            $("#studentForm").attr("action", "studentAdd.php");
             $("#studentForm").submit();
         }
 
         function scheduleCourse(studentId) {
             $("#id").val(studentId);
-            $("#studentForm").attr("action", "schedule.html");
+            $("#studentForm").attr("action", "schedule.php");
             $("#studentForm").submit();
         }
 
@@ -109,26 +137,30 @@
 
     <br>
 
-    <form action="student.html" method="get" name="statusForm" id="statusForm">
+    <form action="student.php" method="get" name="statusForm" id="statusForm">
         <select name="status" onChange="document.getElementById('statusForm').submit()">
-            <c:if test="${status==1}">
-                <option value="1" selected>所有学生</option>
-            </c:if>
-            <c:if test="${status!=1}">
-                <option value="1">所有学生</option>
-            </c:if>
-            <c:if test="${status==2}">
-                <option value="2" selected>在职学生</option>
-            </c:if>
-            <c:if test="${status!=2}">
-                <option value="2">在职学生</option>
-            </c:if>
-            <c:if test="${status==3}">
-                <option value="3" selected>毕业学生</option>
-            </c:if>
-            <c:if test="${status!=3}">
-                <option value="3">毕业学生</option>
-            </c:if>
+            <?php
+            if($status == 1){
+                echo '<option value="1" selected>所有学生</option>';
+            }
+            else{
+                echo '<option value="1">所有学生</option>';
+            }
+
+            if($status == 2){
+                echo '<option value="2" selected>在职学生</option>';
+            }
+            else{
+                echo '<option value="2">在职学生</option>';
+            }
+
+            if($status == 3){
+                echo '<option value="3" selected>毕业学生</option>';
+            }
+            else{
+                echo '<option value="3">毕业学生</option>';
+            }
+            ?>
         </select>
     </form>
 
@@ -150,43 +182,61 @@
             </thead>
 
             <tbody>
-            <c:forEach var="student" items="${studentList}">
-                <tr>
-                    <td>${student.name}</td>
-                    <td>${student.shortName}</td>
-                    <td>
-                        <c:choose>
-                            <c:when test="${student.grade==1}">
-                                4-6
-                            </c:when>
-                            <c:when test="${student.grade==2}">
-                                7-9
-                            </c:when>
-                            <c:when test="${student.grade==3}">
-                                10-12
-                            </c:when>
-                        </c:choose>
-                    </td>
-                    <td>${student.testScore}</td>
-                    <td>${student.targetScore}</td>
-                    <td>${student.examineDate}</td>
-                    <td>${student.examinePlace}</td>
-                    <td>${TeacherHelp.getTeacherName(teacherOperation.get(student.teacherId))}</td>
-                    <td>${student.description}</td>
-
-                    <td><input type="button" class="btn btn-default" value='修改'
-                               onclick="modifyStudent(${student.id})">
-                        <input type="button" class="btn btn-default" value='删除'
-                               onclick="deleteStudent(${student.id})">
-                        <c:if test="${status==2}">
-                            <input type="button" class="btn btn-default" value='毕业'
-                                   onclick="retireStudent(${student.id})">
-                            <input type="button" class="btn btn-default" value='排课'
-                                   onclick="scheduleCourse(${student.id})">
-                        </c:if>
-                    </td>
-                </tr>
-            </c:forEach>
+            <?php
+            $studentOperation = new StudentBusinessOperation();
+            $teacherOperation = new TeacherBusinessOperation();
+            if($status == 1){
+                $studentList =  $studentOperation->getAll();
+            }
+            else if($status == 2){
+                $studentList =  $studentOperation->getAlive();
+            }
+            else if($status == 3){
+                $studentList =  $studentOperation->getNotAlive();
+            }
+            for($index = 0; $index < count($studentList); $index++){
+                $student = $studentList[$index];
+                $teacher = $teacherOperation->get($student->teacherId);
+                echo "<tr>";
+                echo "<td>", $student->name, "</td>";
+                echo "<td>", $student->shortName, "</td>";
+                if($student->grade == 1){
+                    echo "<td>", 4-6, "</td>";
+                }
+                else if($student->grade == 2){
+                    echo "<td>", 7-9, "</td>";
+                }
+                else if($student->grade == 3){
+                    echo "<td>", 10-12, "</td>";
+                }
+                else{
+                    echo "<td>", "</td>";
+                }
+                echo "<td>", $student->testScore, "</td>";
+                echo "<td>", $student->targetScore, "</td>";
+                echo "<td>", $student->examineDate, "</td>";
+                echo "<td>", $student->examinePlace, "</td>";
+                if($teacher != null){
+                    echo "<td>", $teacher->name, "</td>";
+                }
+                else{
+                    echo "<td>", "</td>";
+                }
+                echo "<td>", $student->description, "</td>";
+                echo '<td><input type="button" class="btn btn-default" value="修改"';
+                echo 'onclick="modifyStudent(',$student->id, ')">';
+                echo '<input type="button" class="btn btn-default" value="删除"';
+                echo 'onclick="deleteStudent(', $student->id, ')">';
+                if($status == 2){
+                    echo '<input type="button" class="btn btn-default" value="毕业"';
+                    echo 'onclick="retireStudent(', $student->id, ')">';
+                    echo '<input type="button" class="btn btn-default" value="排课"';
+                    echo 'onclick="scheduleCourse(', $student->id, ')">';
+                }
+                echo '</td>';
+                echo '</tr>';
+            }
+            ?>
 
             </tbody>
         </table>
