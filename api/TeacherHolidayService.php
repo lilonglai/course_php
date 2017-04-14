@@ -37,6 +37,7 @@ class TeacherHolidayService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new TeacherHolidayBusinessOperation();
             $operator->add($o);
         }
@@ -50,6 +51,7 @@ class TeacherHolidayService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new TeacherHolidayBusinessOperation();
             $operator->update($o);
         }
@@ -70,5 +72,15 @@ class TeacherHolidayService
             $newResponse = $response->withStatus(500, $e->getMessage());
             return $newResponse;
         }
+    }
+
+    public static function generateObject($original)
+    {
+        $o = new stdClass();
+        $o->id = (int)$original['id'];
+        $o->teacherId = (int)$original['teacherId'];
+        $o->adjustDate = $original['adjustDate'];
+        $o->isHoliday = $original['isHoliday'];
+        return $o;
     }
 }

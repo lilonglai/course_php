@@ -20,7 +20,7 @@
             }).done(function () {
                 alert("success add a second course");
             }).fail(function (data) {
-                alert("fail to update a second course:" + data.statusText);
+                alert("fail to add a second course:" + data.statusText);
             });
 
             return false;

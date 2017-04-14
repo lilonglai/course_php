@@ -53,6 +53,7 @@ class TeacherService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new PDOTeacherOperation();
             $operator->add($o);
         }
@@ -66,6 +67,7 @@ class TeacherService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new TeacherBusinessOperation();
             $operator->update($o);
         }
@@ -99,5 +101,16 @@ class TeacherService
             $newResponse = $response->withStatus(500, $e->getMessage());
             return $newResponse;
         }
+    }
+
+    public static function generateObject($original)
+    {
+        $o = new stdClass();
+        $o->id = (int)$original['id'];
+        $o->name = $original['name'];
+        $o->shortName = $original['shortName'];
+        $o->phone = $original['phone'];
+        $o->isMaster = $original['isMaster'];
+        return $o;
     }
 }

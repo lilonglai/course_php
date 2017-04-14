@@ -32,7 +32,12 @@ abstract class PDOBaseOperation{
         if($binds != null) {
             foreach ($binds as $key => $value) {
                 $key = ":" . $key;
+                if(is_int($value) or is_bool($value)){
+                    $stmt->bindParam($key, $value, PDO::PARAM_INT);
+                }
+                else{
                 $stmt->bindParam($key, $value);
+                }
             }
         }
         $stmt->execute();

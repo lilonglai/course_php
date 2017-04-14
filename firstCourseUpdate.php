@@ -22,9 +22,9 @@
                 type: "PUT",
                 data: {id: $("[name='id']").val(), name: $("[name='name']").val(), shortName: $("[name='shortName']").val(), grade: $("[name='grade']").val(), description: $("[name='description']").val() }
             }).done(function () {
-                alert("success add a second course");
-            }).fail(function () {
-                alert("fail to add a second course");
+                alert("success update a first course");
+            }).fail(function (data) {
+                alert("fail to update a first course:" + data.statusText);
             });
 
             return false;

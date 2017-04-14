@@ -37,6 +37,7 @@ class TeacherAbilityService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new TeacherAbilityBusinessOperation();
             $operator->add($o);
         }
@@ -50,6 +51,7 @@ class TeacherAbilityService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new TeacherAbilityBusinessOperation();
             $operator->update($o);
         }
@@ -70,5 +72,14 @@ class TeacherAbilityService
             $newResponse = $response->withStatus(500, $e->getMessage());
             return $newResponse;
         }
+    }
+
+    public static function generateObject($original)
+    {
+        $o = new stdClass();
+        $o->id = (int)$original['id'];
+        $o->teacherId = (int)$original['teacherId'];
+        $o->courseId = (int)$original['courseId'];
+        return $o;
     }
 }

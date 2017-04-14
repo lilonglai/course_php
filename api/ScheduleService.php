@@ -80,6 +80,7 @@ class ScheduleService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new ScheduleBusinessOperation();
             $operator->add($o);
         }
@@ -93,6 +94,7 @@ class ScheduleService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new ScheduleBusinessOperation();
             $operator->update($o);
         }
@@ -113,5 +115,19 @@ class ScheduleService
             $newResponse = $response->withStatus(500, $e->getMessage());
             return $newResponse;
         }
+    }
+
+    public static function generateObject($original)
+    {
+        $o = new stdClass();
+        $o->id = (int)$original['id'];
+        $o->onDate = $original['onDate'];
+        $o->onTime = (int)$original['onTime'];
+        $o->studentId = (int)$original['studentId'];
+        $o->courseId = (int)$original['courseId'];
+        $o->teacherId = (int)$original['teacherId'];
+        $o->addition = $original['addition'];
+        $o->description = $original['description'];
+        return $o;
     }
 }

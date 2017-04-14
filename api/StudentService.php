@@ -53,6 +53,7 @@ class StudentService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new StudentBusinessOperation();
             $operator->add($o);
         }
@@ -66,6 +67,7 @@ class StudentService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new StudentBusinessOperation();
             $operator->update($o);
         }
@@ -99,5 +101,21 @@ class StudentService
             $newResponse = $response->withStatus(500, $e->getMessage());
             return $newResponse;
         }
+    }
+
+    public static function generateObject($original)
+    {
+        $o = new stdClass();
+        $o->id = (int)$original['id'];
+        $o->name = $original['name'];
+        $o->shortName = $original['shortName'];
+        $o->grade = $original['grade'];
+        $o->testScore = $original['testScore'];
+        $o->targetScore = $original['targetScore'];
+        $o->examineDate = $original['examineDate'];
+        $o->examinePlace = $original['examinePlace'];
+        $o->teacherId = (int)$original['teacherId'];
+        $o->description = $original['description'];
+        return $o;
     }
 }

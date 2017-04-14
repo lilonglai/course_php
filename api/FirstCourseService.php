@@ -46,6 +46,7 @@ class FirstCourseService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new FirstCourseBusinessOperation();
             $operator->add($o);
         }
@@ -59,6 +60,7 @@ class FirstCourseService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new FirstCourseBusinessOperation();
             $operator->update($o);
         }
@@ -79,5 +81,16 @@ class FirstCourseService
             $newResponse = $response->withStatus(500, $e->getMessage());
             return $newResponse;
         }
+    }
+
+    public static function generateObject($original)
+    {
+        $o = new stdClass();
+        $o->id = (int)$original['id'];
+        $o->grade = (int)$original['grade'];
+        $o->name = $original['name'];
+        $o->shortName = $original['shortName'];
+        $o->description = $original['description'];
+        return $o;
     }
 }

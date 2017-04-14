@@ -46,6 +46,7 @@ class SecondCourseService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new SecondCourseBusinessOperation();
             $operator->add($o);
         }
@@ -59,6 +60,7 @@ class SecondCourseService
     {
         try {
             $o = $parsedBody = $request->getParsedBody();
+            $o = self::generateObject($o);
             $operator = new SecondCourseBusinessOperation();
             $operator->update($o);
         }
@@ -79,5 +81,16 @@ class SecondCourseService
             $newResponse = $response->withStatus(500, $e->getMessage());
             return $newResponse;
         }
+    }
+
+    public static function generateObject($original)
+    {
+        $o = new stdClass();
+        $o->id = (int)$original['id'];
+        $o->name = $original['name'];
+        $o->shortName = $original['shortName'];
+        $o->firstCourseId = (int)$original['firstCourseId'];
+        $o->description = $original['description'];
+        return $o;
     }
 }
