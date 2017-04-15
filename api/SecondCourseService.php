@@ -49,6 +49,8 @@ class SecondCourseService
             $o = self::generateObject($o);
             $operator = new SecondCourseBusinessOperation();
             $operator->add($o);
+            $newResponse = $response->withJson($o);
+            return $newResponse;
         }
         catch(Exception $e){
             $newResponse = $response->withStatus(500, $e->getMessage());

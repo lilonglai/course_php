@@ -63,14 +63,18 @@ class PDOTeacherOperation extends PDOBaseOperation {
     }
 
     public function add($teacher){
+        /*
         $teacher['ismaster'] = $this->bool2String($teacher['ismaster']);
+        */
         $sql = "insert into " . self::TABLENAME . "(name,shortname,phone,ismaster) values(:name, :shortName, :phone, :isMaster)";
         $this->executeUpdateSql($sql, $teacher);
-        $teacher['id'] = $this->mysql_insert_id();
+        $teacher->id = $this->mysql_insert_id();
     }
 
     public function update($teacher){
+        /*
         $teacher['isMaster'] = $this->bool2String($teacher['isMaster']);
+        */
         $sql = "update " . self::TABLENAME . " set name = :name', shortname = :shortName, phone = :phone, ismaster = :isMaster
         where id=$teacher[id]";
         $this->executeUpdateSql($sql, $teacher);
@@ -93,6 +97,7 @@ class PDOTeacherOperation extends PDOBaseOperation {
         $o->shortName = $row['shortname'];
         $o->phone = $row['phone'];
         $o->isMaster = $row['ismaster'];
+        $o->isAlive = $row['isalive'];
         return $o;
     }
 }

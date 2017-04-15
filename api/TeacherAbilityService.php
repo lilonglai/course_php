@@ -40,6 +40,8 @@ class TeacherAbilityService
             $o = self::generateObject($o);
             $operator = new TeacherAbilityBusinessOperation();
             $operator->add($o);
+            $newResponse = $response->withJson($o);
+            return $newResponse;
         }
         catch(Exception $e){
             $newResponse = $response->withStatus(500, $e->getMessage());

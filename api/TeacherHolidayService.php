@@ -40,6 +40,8 @@ class TeacherHolidayService
             $o = self::generateObject($o);
             $operator = new TeacherHolidayBusinessOperation();
             $operator->add($o);
+            $newResponse = $response->withJson($o);
+            return $newResponse;
         }
         catch(Exception $e){
             $newResponse = $response->withStatus(500, $e->getMessage());

@@ -44,7 +44,7 @@ class PDOStudentOperation extends PDOBaseOperation {
         $sql = "insert into " . self::TABLENAME . "(name,shortname,grade,testscore,targetscore,examinedate,examineplace,teacherid,description) values(
         :name, :shortName, :grade, :testScore, :targetScore, :examineDate, :examinePlace, :teacherId, :description )";
         $this->executeUpdateSql($sql, $student);
-        $student['id'] = $this->mysql_insert_id();
+        $student->id = $this->mysql_insert_id();
     }
 
     public function update($student){

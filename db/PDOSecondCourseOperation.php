@@ -26,7 +26,7 @@ class PDOSecondCourseOperation extends PDOBaseOperation {
     public function  add($secondCourse){
         $sql = "insert into " . self::TABLENAME . "(name, shortname, firstcourseid, description) values( :name, :shortName, :firstCourseId, :description)";
         $this->executeUpdateSql($sql, $secondCourse);
-        $secondCourse['id'] = $this->mysql_insert_id();
+        $secondCourse->id = $this->mysql_insert_id();
     }
 
     public function  update($secondCourse){

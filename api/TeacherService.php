@@ -56,6 +56,8 @@ class TeacherService
             $o = self::generateObject($o);
             $operator = new PDOTeacherOperation();
             $operator->add($o);
+            $newResponse = $response->withJson($o);
+            return $newResponse;
         }
         catch(Exception $e){
             $newResponse = $response->withStatus(500, $e->getMessage());
@@ -112,7 +114,13 @@ class TeacherService
         $o->name = $original['name'];
         $o->shortName = $original['shortName'];
         $o->phone = $original['phone'];
-        $o->isMaster = $original['isMaster'];
+
+        if(isset($original['isMaster']) && $original['isMaster'] == 'on') {
+            $o->isMaster = true;
+        }
+        else{
+            $o->isMaster = false;
+        }
         return $o;
     }
 }

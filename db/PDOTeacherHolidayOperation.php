@@ -30,7 +30,7 @@ class PDOTeacherHolidayOperation extends PDOBaseOperation {
         $teacherHoliday['isholiday'] = $this->bool2String($teacherHoliday['isholiday']);
         $sql = "insert into " . self::TABLENAME . "(teacherid,adjustdate,isholiday) values(:teacherId, :adjustDate, :isHoliday)";
         $this->executeUpdateSql($sql, $teacherHoliday);
-        $teacherHoliday['id'] = $this->mysql_insert_id();
+        $teacherHoliday->id = $this->mysql_insert_id();
     }
 
     public function update($teacherHoliday){

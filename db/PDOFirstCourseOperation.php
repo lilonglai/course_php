@@ -20,7 +20,7 @@ class PDOFirstCourseOperation extends PDOBaseOperation{
     public function  add($firstCourse){
         $sql = "insert into " . self::TABLENAME . "(grade,name,shortname,description) values(:grade, :name, :shortName, :description)";
         $this->executeUpdateSql($sql, $firstCourse);
-        $firstCourse['id'] = $this->mysql_insert_id();
+        $firstCourse->id = $this->mysql_insert_id();
     }
 
     public function  update($firstCourse){

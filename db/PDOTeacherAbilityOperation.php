@@ -36,7 +36,7 @@ class PDOTeacherAbilityOperation extends PDOBaseOperation {
     public function add($teacherAbility){
         $sql = "insert into " . self::TABLENAME . "(teacherid,courseid) values(:teacherId, :courseId)";
         $this->executeUpdateSql($sql, $teacherAbility);
-        $teacherAbility['id'] = $this->mysql_insert_id();
+        $teacherAbility->id = $this->mysql_insert_id();
     }
 
     public function update($teacherAbility){

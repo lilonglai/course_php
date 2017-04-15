@@ -45,7 +45,7 @@ class PDOScheduleOperation extends PDOBaseOperation {
         $sql = "insert into " . self::TABLENAME . "(ondate,ontime,studentid,courseid,teacherid,addition,description) 
         values(:onDate, :onTime, :studentId, :courseId, :teacherId, :addition, :description)";
         $this->executeUpdateSql($sql, $schedule);
-        $schedule['id'] = $this->mysql_insert_id();
+        $schedule->id = $this->mysql_insert_id();
     }
 
     public function update($schedule){

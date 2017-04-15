@@ -40,6 +40,8 @@ class TeacherDefaultHolidayService
             $o = self::generateObject($o);
             $operator = new TeacherDefaultHolidayBusinessOperation();
             $operator->add($o);
+            $newResponse = $response->withJson($o);
+            return $newResponse;
         }
         catch(Exception $e){
             $newResponse = $response->withStatus(500, $e->getMessage());
@@ -81,13 +83,39 @@ class TeacherDefaultHolidayService
             $o->id = (int)$original['id'];
         }
         $o->teacherId = (int)$original['teacherId'];
-        $o->week1 = $original['week1'];
-        $o->week2 = $original['week2'];
-        $o->week3 = $original['week3'];
-        $o->week4 = $original['week4'];
-        $o->week5 = $original['week5'];
-        $o->week6 = $original['week6'];
-        $o->week7 = $original['week7'];
+        $o->week1 = false;
+        $o->week2 = false;
+        $o->week3 = false;
+        $o->week4 = false;
+        $o->week5 = false;
+        $o->week6 = false;
+        $o->week7 = false;
+
+        if(isset($original['weeks'])){
+            foreach ($original['weeks'] as $week){
+                if($week == 'week1'){
+                    $o->week1 = true;
+                }
+                else if($week == 'week2'){
+                    $o->week2 = true;
+                }
+                else if($week == 'week3'){
+                    $o->week3 = true;
+                }
+                else if($week == 'week4'){
+                    $o->week4 = true;
+                }
+                else if($week == 'week5'){
+                    $o->week5 = true;
+                }
+                else if($week == 'week6'){
+                    $o->week6 = true;
+                }
+                else if($week == 'week7'){
+                    $o->week7 = true;
+                }
+            }
+        }
         return $o;
     }
 }

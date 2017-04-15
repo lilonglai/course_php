@@ -1,3 +1,21 @@
+<?php
+require __DIR__ . "/bussiness/TeacherBusinessOperation.php";
+require __DIR__. "/bussiness/TeacherDefaultHolidayBusinessOperation.php";
+
+if(isset($_GET["id"])){
+    $id = $_GET["id"];
+}
+else{
+    echo "course id is not set";
+}
+
+$teacherOperator = new TeacherBusinessOperation();
+$teacherDefaultHolidayOperator = new TeacherDefaultHolidayBusinessOperation();
+$teacher = $teacherOperator->get($id);
+$teacherDefaultHoliday = $teacherDefaultHolidayOperator->getByTeacherId($teacher->id);
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,101 +30,120 @@
                 return false;
             }
 
-            return true;
+            $.ajax({
+                url: "api/teacher/update",
+                context: document.body,
+                type: "PUT",
+                data: {id: $("[name='id']").val(), name: $("[name='name']").val(), shortName: $("[name='shortName']").val(),
+                    phone: $("[name='phone']").val(), isMaster: $("[name='isMaster']").val() }
+            }).done(function () {
+                var weeksVal =[];
+                $("[name='weeks']:checked").each(function () {
+                    weeksVal.push($(this).val());
+                })
+                $.ajax({
+                    url: "api/teacherdefaultholiday/update",
+                    context: document.body,
+                    type: "PUT",
+                    data: {id: $("[name='id2']").val(), teacherId: $("[name='id']").val(),  weeks: weeksVal }
+                }).done(function () {
+                    alert("success update a teacher");
+                    //window.location.replace("teacher.php");
+                }).fail(function (data) {
+                    alert("fail to update a teacher:" + data.statusText);
+                });
+            }).fail(function (data) {
+                alert("fail to update a teacher:" + data.statusText);
+            });
 
-            return true;
+            return false;
         }
     </script>
 </head>
 <body>
 
 <div class="container">
-    <form action="teacherUpdateSubmit.html" method="get" onSubmit="return checkForm();">
-        <input type="hidden" name="id" value="${teacher.id}">
+    <form action="teacherUpdateSubmit.php" method="get" onSubmit="return checkForm();">
+        <input type="hidden" name="id" value="<?php echo $teacher->id; ?>">
 
         <div class="form-group">
-            名称: <input type="text" class="form-control" name="name" value="${teacher.name}"/>
+            名称: <input type="text" class="form-control" name="name" value="<?php echo $teacher->name; ?>"/>
         </div>
         <div class="form-group">
-            简称: <input type="text" class="form-control" name="shortName" value="${teacher.shortName}"/>
+            简称: <input type="text" class="form-control" name="shortName" value="<?php echo $teacher->shortName; ?>"/>
         </div>
         <div class="form-group">
-            电话: <input type="text" class="form-control" name="phone" value="${teacher.phone}"/>
+            电话: <input type="text" class="form-control" name="phone" value="<?php echo $teacher->phone; ?>"/>
         </div>
         <div class="form-group">
-            <c:if test="${teacher.isMaster == true}">
-                班主任: <input type="checkbox" name="isMaster" checked/> <br>
-            </c:if>
-            <c:if test="${teacher.isMaster == false}">
-                班主任: <input type="checkbox" name="isMaster"/> <br>
-            </c:if>
+            <?php
+            if($teacher->isMaster){
+                echo '班主任: <input type="checkbox" name="isMaster" checked/> <br>';
+            }
+            else{
+                echo '班主任: <input type="checkbox" name="isMaster"/> <br>';
+            }
+            ?>
         </div>
         <div class="form-group">
-            默认休假情况:<br> &nbsp;&nbsp;
+            默认休假情况:<br>
 
-
-            <c:if test="${teacherDefaultHoliday != null}">
-                <input type="hidden" name="id2" value="${teacherDefaultHoliday.id}">
-                <c:if test="${teacherDefaultHoliday.week1 == true}">
-                    周一 <input type="checkbox" name="weeks" value="week1" checked> &nbsp;
-                </c:if>
-                <c:if test="${teacherDefaultHoliday.week1 == false}">
-                    周一 <input type="checkbox" name="weeks" value="week1"> &nbsp;
-                </c:if>
-
-                <c:if test="${teacherDefaultHoliday.week2 == true}">
-                    周二 <input type="checkbox" name="weeks" value="week2" checked> &nbsp;
-                </c:if>
-                <c:if test="${teacherDefaultHoliday.week2 == false}">
-                    周二 <input type="checkbox" name="weeks" value="week2"> &nbsp;
-                </c:if>
-
-                <c:if test="${teacherDefaultHoliday.week3 == true}">
-                    周三 <input type="checkbox" name="weeks" value="week3" checked> &nbsp;
-                </c:if>
-                <c:if test="${teacherDefaultHoliday.week3 == false}">
-                    周三 <input type="checkbox" name="weeks" value="week3"> &nbsp;
-                </c:if>
-
-                <c:if test="${teacherDefaultHoliday.week4 == true}">
-                    周四 <input type="checkbox" name="weeks" value="week4" checked> &nbsp;
-                </c:if>
-                <c:if test="${teacherDefaultHoliday.week4 == false}">
-                    周四 <input type="checkbox" name="weeks" value="week4"> &nbsp;
-                </c:if>
-
-                <c:if test="${teacherDefaultHoliday.week5 == true}">
-                    周五 <input type="checkbox" name="weeks" value="week5" checked> &nbsp;
-                </c:if>
-                <c:if test="${teacherDefaultHoliday.week5 == false}">
-                    周五 <input type="checkbox" name="weeks" value="week5"> &nbsp;
-                </c:if>
-
-                <c:if test="${teacherDefaultHoliday.week6 == true}">
-                    周六 <input type="checkbox" name="weeks" value="week6" checked> &nbsp;
-                </c:if>
-                <c:if test="${teacherDefaultHoliday.week6 == false}">
-                    周六 <input type="checkbox" name="weeks" value="week6"> &nbsp;
-                </c:if>
-
-                <c:if test="${teacherDefaultHoliday.week7 == true}">
-                    周日 <input type="checkbox" name="weeks" value="week7" checked>
-                </c:if>
-                <c:if test="${teacherDefaultHoliday.week7 == false}">
-                    周日 <input type="checkbox" name="weeks" value="week7">
-                </c:if>
-
-            </c:if>
-
-            <c:if test="${teacherDefaultHoliday == null}">
-                周一 <input type="checkbox" name="weeks" value="week1"> &nbsp;
-                周二 <input type="checkbox" name="weeks" value="week2"> &nbsp;
-                周三 <input type="checkbox" name="weeks" value="week3"> &nbsp;
-                周四 <input type="checkbox" name="weeks" value="week4"> &nbsp;
-                周五 <input type="checkbox" name="weeks" value="week5"> &nbsp;
-                周六 <input type="checkbox" name="weeks" value="week6"> &nbsp;
-                周日 <input type="checkbox" name="weeks" value="week7">
-            </c:if>
+            <?php
+            if($teacherDefaultHoliday != null){
+                echo '<input type="hidden" name="id2" value="', $teacherDefaultHoliday->id, '">';
+                if($teacherDefaultHoliday->week1){
+                    echo '周一 <input type="checkbox" name="weeks" value="week1" checked>';
+                }
+                else{
+                    echo '周一 <input type="checkbox" name="weeks" value="week1">';
+                }
+                if($teacherDefaultHoliday->week2){
+                    echo '周二 <input type="checkbox" name="weeks" value="week2" checked>';
+                }
+                else{
+                    echo '周二 <input type="checkbox" name="weeks" value="week2">';
+                }
+                if($teacherDefaultHoliday->week3){
+                    echo '周三 <input type="checkbox" name="weeks" value="week3" checked>';
+                }
+                else{
+                    echo '周三 <input type="checkbox" name="weeks" value="week3">';
+                }
+                if($teacherDefaultHoliday->week4){
+                    echo '周四 <input type="checkbox" name="weeks" value="week4" checked>';
+                }
+                else{
+                    echo '周四 <input type="checkbox" name="weeks" value="week4">';
+                }
+                if($teacherDefaultHoliday->week5){
+                    echo '周五 <input type="checkbox" name="weeks" value="week5" checked>';
+                }
+                else{
+                    echo '周五 <input type="checkbox" name="weeks" value="week5">';
+                }
+                if($teacherDefaultHoliday->week6){
+                    echo '周六 <input type="checkbox" name="weeks" value="week6" checked>';
+                }
+                else{
+                    echo '周六 <input type="checkbox" name="weeks" value="week6">';
+                }
+                if($teacherDefaultHoliday->week7){
+                    echo '周日 <input type="checkbox" name="weeks" value="week7" checked>';
+                }
+                else{
+                    echo '周日 <input type="checkbox" name="weeks" value="week7">';
+                }
+            }
+            else{
+                echo '周一 <input type="checkbox" name="weeks" value="week1">';
+                echo '周二 <input type="checkbox" name="weeks" value="week2">';
+                echo '周三 <input type="checkbox" name="weeks" value="week3">';
+                echo '周四 <input type="checkbox" name="weeks" value="week4">';
+                echo '周五 <input type="checkbox" name="weeks" value="week5">';
+                echo '周六 <input type="checkbox" name="weeks" value="week6">';
+                echo '周日 <input type="checkbox" name="weeks" value="week7">';
+            }
+            ?>
 
         </div>
         <div class="form-group">

@@ -11,8 +11,33 @@
 			alert("老师名字不能为空")
 			return false;
 		}
-    	
-    	return true;	
+
+		$.ajax({
+			url: "api/teacher/add",
+			context: document.body,
+			type: "POST",
+			data: {name: $("[name='name']").val(), shortName: $("[name='shortName']").val(),
+				phone: $("[name='phone']").val(), isMaster: $("[name='isMaster']").val() }
+		}).done(function (data) {
+			var weeksVal =[];
+			$("[name='weeks']:checked").each(function () {
+				weeksVal.push($(this).val());
+			})
+			$.ajax({
+				url: "api/teacherdefaultholiday/add",
+				context: document.body,
+				type: "POST",
+				data: {teacherId: data.id,  weeks: weeksVal }
+			}).done(function () {
+				alert("success add a teacher");
+			}).fail(function (data) {
+				alert("fail to update a teacher:" + data.statusText);
+			});
+		}).fail(function (data) {
+			alert("fail to add a teacher:" + data.statusText);
+		});
+
+		return false;
     }
 </script>
 

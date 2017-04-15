@@ -16,6 +16,12 @@ class TeacherDefaultHolidayBusinessOperation
         return $o;
     }
 
+    public function getByTeacherId($teacherId){
+        $operator = new PDOTeacherDefaultHolidayOperation();
+        $o = $operator->getByTeacherId($teacherId);
+        return $o;
+    }
+
     public function getAll(){
         $operator = new PDOTeacherDefaultHolidayOperation();
         $list = $operator->getAll();
