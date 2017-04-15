@@ -33,6 +33,14 @@ class TeacherAbilityService
         return $newResponse;
     }
 
+    public static function getByTeacherId(Request $request, Response $response){
+        $key = $request->getParam('id');
+        $operator = new TeacherAbilityBusinessOperation();
+        $result = $operator->getByTeacherId($key);
+        $newResponse = $response->withJson($result);
+        return $newResponse;
+    }
+
     public static function add(Request $request, Response $response)
     {
         try {

@@ -22,6 +22,12 @@ class TeacherAbilityBusinessOperation
         return $list;
     }
 
+    public function getByTeacherId($teacherId){
+        $operator = new PDOTeacherAbilityOperation();
+        $list = $operator->getByTeacherId($teacherId);
+        return $list;
+    }
+
     public function add($o){
         $operator = new PDOTeacherAbilityOperation();
         $operator->add($o);

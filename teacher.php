@@ -26,17 +26,28 @@ else{
 
         function deleteTeacher(teacherId) {
             $.ajax({
-                url: "api/teacher/delete",
+                url: "api/teacherdefaultholiday/deleteByTeacherId",
                 context: document.body,
                 type: "DELETE",
                 data: {id: teacherId }
             }).done(function () {
-                alert("success delete a teacher");
-                $("#studentForm").attr("action","teacher.php" );
-                $("#studentForm").submit();
+                $.ajax({
+                    url: "api/teacher/delete",
+                    context: document.body,
+                    type: "DELETE",
+                    data: {id: teacherId }
+                }).done(function () {
+                    alert("success delete a teacher");
+                    $("#teacherForm").attr("action","teacher.php" );
+                    $("#teacherForm").submit();
+
+                }).fail(function (data) {
+                    alert("fail to delete a teacher:" + data.statusText);
+                });
             }).fail(function (data) {
                 alert("fail to delete a teacher:" + data.statusText);
             });
+
         }
 
         function retireTeacher(teacherId) {
@@ -47,8 +58,8 @@ else{
                 data: {id: teacherId }
             }).done(function () {
                 alert("success retire a teacher");
-                $("#studentForm").attr("action","teacher.php" );
-                $("#studentForm").submit();
+                $("#teacherForm").attr("action","teacher.php" );
+                $("#teacherForm").submit();
             }).fail(function (data) {
                 alert("fail to retire a teacher:" + data.statusText);
             });
@@ -67,7 +78,7 @@ else{
 
         function modifyTeacherAbility(teacherId) {
             $("#id").val(teacherId);
-            $("#teacherForm").attr("action","teacherHoliday.php");
+            $("#teacherForm").attr("action","teacherAbility.php");
             $("#teacherForm").submit();
         }
     </script>

@@ -76,6 +76,18 @@ class TeacherDefaultHolidayService
         }
     }
 
+    public static function deleteByTeacherId(Request $request, Response $response){
+        try {
+            $key = $request->getParam('id');
+            $operator = new TeacherDefaultHolidayBusinessOperation();
+            $operator->deleteByTeacherId($key);
+        }
+        catch(Exception $e){
+            $newResponse = $response->withStatus(500, $e->getMessage());
+            return $newResponse;
+        }
+    }
+
     public static function generateObject($original)
     {
         $o = new stdClass();

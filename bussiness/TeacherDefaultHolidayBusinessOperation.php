@@ -42,4 +42,9 @@ class TeacherDefaultHolidayBusinessOperation
         $operator = new PDOTeacherDefaultHolidayOperation();
         $operator->delete($key);
     }
+
+    public function deleteByTeacherId($teacherId){
+        $operator = new PDOTeacherDefaultHolidayOperation();
+        $operator->deleteByTeacherId($teacherId);
+    }
 }

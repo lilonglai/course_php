@@ -58,6 +58,7 @@ $app->put('/teacher/retire', 'TeacherService::retire');
 $app->delete('/teacher/delete', 'TeacherService::delete');
 
 $app->get('/teacherability/get', 'TeacherAbilityService::get');
+$app->get('/teacherability/getByTeacherId', 'TeacherAbilityService::getByTeacherId');
 $app->get('/teacherability/getAll', 'TeacherAbilityService::getAll');
 $app->post('/teacherability/add', 'TeacherAbilityService::add');
 $app->put('/teacherability/update', 'TeacherAbilityService::update');
@@ -74,6 +75,7 @@ $app->get('/teacherdefaultholiday/getAll', 'TeacherDefaultHolidayService::getAll
 $app->post('/teacherdefaultholiday/add', 'TeacherDefaultHolidayService::add');
 $app->put('/teacherdefaultholiday/update', 'TeacherDefaultHolidayService::update');
 $app->delete('/teacherdefaultholiday/delete', 'TeacherDefaultHolidayService::delete');
+$app->delete('/teacherdefaultholiday/deleteByTeacherId', 'TeacherDefaultHolidayService::deleteByTeacherId');
 
 $app->get('/schedule/get', 'ScheduleService::get');
 $app->get('/schedule/getAll', 'ScheduleService::getAll');

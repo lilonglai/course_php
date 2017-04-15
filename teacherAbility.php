@@ -1,6 +1,29 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-         pageEncoding="utf-8" %>
+<?php
+require __DIR__ . "/bussiness/TeacherAbilityBusinessOperation.php";
+require __DIR__ . "/bussiness/TeacherBusinessOperation.php";
+require __DIR__ . "/bussiness/FirstCourseBusinessOperation.php";
+
+if(isset($_GET["id"])){
+    $id = $_GET["id"];
+}
+else{
+    echo "course id is not set";
+}
+
+if(isset($_GET["grade"])){
+    $grade = $_GET["grade"];
+}
+else{
+    $grade = 1;
+}
+
+$teacherAbilityOperator = new TeacherAbilityBusinessOperation();
+$teacherOperator = new TeacherBusinessOperation();
+$firstCourseOperator = new FirstCourseBusinessOperation();
+$teacherAbilityList = $teacherAbilityOperator->getByTeacherId($id);
+$teacher = $teacherOperator->get($id);
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -66,7 +89,7 @@
 </div>
 
 <div class="container">
-    老师:${teacher.name}<br>
+    老师:<?php echo $teacher->name; ?><br>
 
     <h2>目前能力情况</h2>
     <br>
@@ -81,13 +104,16 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="firstCourse" items="${allFirstCourseList}">
-                <tr>
-                    <td>${firstCourse.grade}</td>
-                    <td>${firstCourse.name}</td>
-                    <td>${firstCourse.shortName}</td>
-                </tr>
-            </c:forEach>
+            <?php
+            foreach ($teacherAbilityList as $teacherAbility){
+                $firstCourse = $firstCourseOperator->get($teacherAbility->courseId);
+                echo "<tr>";
+                echo " <td>", $firstCourse->grade, "</td>";
+                echo " <td>", $firstCourse->name, "</td>";
+                echo " <td>", $firstCourse->shortName, "</td>";
+                echo "</tr>";
+            }
+            ?>
 
             </tbody>
         </table>
@@ -102,26 +128,28 @@
 
         <div class="form-group">
             选择年级: <select name="grade" onChange="gradeChanged();">
-            <c:if test="${grade == 1}">
-                <option value="1" selected>4-6</option>
-            </c:if>
-            <c:if test="${grade != 1}">
-                <option value="1">4-6</option>
-            </c:if>
+                <?php
+                if($grade == 1){
+                    echo '<option value="1" selected>4-6</option>';
+                }
+                else{
+                    echo '<option value="1">4-6</option>';
+                }
 
-            <c:if test="${grade == 2}">
-                <option value="2" selected>7-9</option>
-            </c:if>
-            <c:if test="${grade != 2}">
-                <option value="2">7-9</option>
-            </c:if>
+                if($grade == 2){
+                    echo '<option value="2" selected>7-9</option>';
+                }
+                else{
+                    echo '<option value="2">7-9</option>';
+                }
 
-            <c:if test="${grade == 3}">
-                <option value="3" selected>10-12</option>
-            </c:if>
-            <c:if test="${grade != 3}">
-                <option value="3">10-12</option>
-            </c:if>
+                if($grade == 3){
+                    echo '<option value="3" selected>10-12</option>';
+                }
+                else{
+                    echo '<option value="3">10-12</option>';
+                }
+                ?>
         </select>
         </div>
 
