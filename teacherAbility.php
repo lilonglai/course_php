@@ -22,6 +22,9 @@ $teacherOperator = new TeacherBusinessOperation();
 $firstCourseOperator = new FirstCourseBusinessOperation();
 $teacherAbilityList = $teacherAbilityOperator->getByTeacherId($id);
 $teacher = $teacherOperator->get($id);
+
+$firstCourseList = $firstCourseOperator->getByGrade($grade);
+$teacherAbilityList = $teacherAbilityOperator->getByTeacherId($id);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -106,8 +109,8 @@ $teacher = $teacherOperator->get($id);
             <tbody>
             <?php
             foreach ($teacherAbilityList as $teacherAbility){
-                $firstCourse = $firstCourseOperator->get($teacherAbility->courseId);
-                echo "<tr>";
+            $firstCourse = $firstCourseOperator->get($teacherAbility->courseId);
+            echo "<tr>";
                 echo " <td>", $firstCourse->grade, "</td>";
                 echo " <td>", $firstCourse->name, "</td>";
                 echo " <td>", $firstCourse->shortName, "</td>";
@@ -123,8 +126,8 @@ $teacher = $teacherOperator->get($id);
 
     <h2> 修改能力</h2>
 
-    <form action="teacherAbilitySubmit.html" method="get" name="abilityForm" id="abilityForm" onSubmit="allSelect();">
-        <input type="hidden" name="id" value="${teacher.id}">
+    <form action="teacherAbility.php" method="get" name="abilityForm" id="abilityForm" onSubmit="allSelect();">
+        <input type="hidden" name="id" value="<?php echo $teacher->id; ?>">
 
         <div class="form-group">
             选择年级: <select name="grade" onChange="gradeChanged();">
@@ -157,9 +160,19 @@ $teacher = $teacherOperator->get($id);
             <table border="0">
                 <tr>
                     <td><select name="possible" size="25" MULTIPLE width=200 style="width: 200px">
-                        <c:forEach var="firstCourse" items="${firstCourseList}">
-                            <option value="${firstCourse.id}"> ${firstCourse.name} </option>
-                        </c:forEach>
+                            <?php
+                            function isChosen($firstCourse, $teacherAbilityList){
+                                foreach ($teacherAbilityList as $teacherAbility){
+                                    if($teacherAbility->courseId == $firstCourse->id);
+                                }
+                                return false;
+                            }
+                            foreach ($firstCourseList as $firstCourse){
+                                if(!isChosen($firstCourse, $teacherAbilityList)){
+                                    echo '<option value="', $firstCourse->id, '"> ', $firstCourse->name, ' </option>';
+                                }
+                            }
+                            ?>
                     </select></td>
 
                     <td><input type="button" value='>>'
@@ -168,10 +181,14 @@ $teacher = $teacherOperator->get($id);
                     </td>
 
                     <td><select name="chosen" size="25" MULTIPLE width=200 style="width: 200px;">
-
-                        <c:forEach var="firstCourse" items="${selectedFirstCourseList}">
-                            <option value="${firstCourse.id}"> ${firstCourse.name} </option>
-                        </c:forEach>
+                            <?php
+                            foreach ($teacherAbilityList as $teacherAbility){
+                                $firstCourse = $firstCourseOperator->get($teacherAbility->courseId);
+                                if($firstCourse->grade == $grade) {
+                                    echo '<option value="', $firstCourse->id, '"> ', $firstCourse->name, ' </option>';
+                                }
+                            }
+                            ?>
                     </select></td>
                 </tr>
             </table>
